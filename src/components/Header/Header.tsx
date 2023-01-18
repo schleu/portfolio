@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useToggle, useWindowScroll } from "react-use";
 import HamburguerMenuIcon from "../../assets/hamburguer.svg";
 import Icon from "../../assets/icon.svg";
+import { menuItems } from "../../constants/menu";
 import { MenuMobile } from "./MenuMobile";
 import { Nav } from "./Nav";
 
@@ -22,7 +23,7 @@ export const Header = () => {
   return (
     <div
       className={classnames(
-        "w-full fixed top-0 left-0 flex justify-center transition-all duration-700",
+        "w-full fixed top-0 left-0 flex justify-center transition-all duration-700 z-10",
         scrolled ? "bg-green-360/80 shadow-lg" : "bg-green-360"
       )}
     >
@@ -47,10 +48,9 @@ export const Header = () => {
         />
 
         <div className="hidden sm:flex justify-between flex-1">
-          <Nav text="Sobre mim" link="#aboutMe" />
-          <Nav text="Habilidades" link="#habilit" />
-          <Nav text="Projetos" link="#projects" />
-          <Nav text="Contato" link="#contact" />
+          {menuItems.map((item) => (
+            <Nav text={item.title} link={item.link} />
+          ))}
         </div>
       </div>
     </div>

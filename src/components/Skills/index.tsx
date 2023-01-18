@@ -1,18 +1,19 @@
+import { Container } from "../Container";
+
 interface HabilitsProps {
   title: string;
   items: ItemProps[];
 }
 
-export const Habilits = ({ items, title }: HabilitsProps) => {
+export const Skills = ({ items, title }: HabilitsProps) => {
   return (
-    <div className="flex flex-col gap-4">
-      <h1 className="font-bold text-white text-4xl">{title}</h1>
+    <Container title={title} tag="skills">
       <div className="w-full flex flex-col xs:flex-row xs:flex-wrap gap-2 justify-between bg-green-360  p-4 sm:py-8 sm:px-32 rounded-xl">
         {items.map((item) => (
           <Item key={item.text} text={item.text} image={item.image} />
         ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

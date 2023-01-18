@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { ReactNode, useState } from "react";
+import { Container } from "../Container";
 import { Expericence, ExpericenceProps } from "./Expericence";
 
 const experiencesDefault: ExpericenceProps[] = [
@@ -65,12 +66,11 @@ export const ProfessionalExperience = () => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <div className="flex flex-col items-start gap-4 py-10">
-      <h1 className="text-3xl drop-shadow-sm">Experciencias:</h1>
+    <Container title="Experciencias:" tag="ProfessionalExperience">
       <div
         className={classNames(
           "flex flex-col w-full gap-10 overflow-hidden transition-transform ease-in-out py-10",
-          showMore ? "" : "max-h-[200px]"
+          showMore ? "" : "h-[270px] sm:h-[230px]"
         )}
       >
         {experiencesDefault.map((item, index) => (
@@ -82,7 +82,7 @@ export const ProfessionalExperience = () => {
       ) : (
         <Button onClick={() => setShowMore(true)}>Ver mais</Button>
       )}
-    </div>
+    </Container>
   );
 };
 

@@ -45,7 +45,7 @@ export const Expericence = ({
       <div className="flex flex-wrap gap-2 mt-4">
         {stack.map((e) => (
           <div
-            className="rounded-full px-4 py-2 bg-green-350 text-white text-xs font-normal shadow-md"
+            className="rounded-full px-4 py-2 bg-green-350 text-white text-xs font-normal shadow-md cursor-default"
             key={e}
           >
             {e}

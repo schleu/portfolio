@@ -1,24 +1,7 @@
 import CloseIcon from "../../assets/close.svg";
 import classNames from "classnames";
-
-const menuItems: NavProps[] = [
-  {
-    text: "Sobre Mim",
-    link: "#aboutMe",
-  },
-  {
-    text: "Habilidades",
-    link: "#habilit",
-  },
-  {
-    text: "Projetos",
-    link: "#projects",
-  },
-  {
-    text: "Contato",
-    link: "#contact",
-  },
-];
+import { menuItems } from "../../constants/menu";
+import { NavMobile } from "./Nav";
 
 export const MenuMobile = ({
   isOpen,
@@ -43,32 +26,13 @@ export const MenuMobile = ({
         </div>
       </div>
       {menuItems.map((item) => (
-        <Nav
-          key={item.text}
-          text={item.text}
+        <NavMobile
+          key={item.title}
+          text={item.title}
           link={item.link}
           onClick={() => onClose()}
         />
       ))}
     </div>
-  );
-};
-
-interface NavProps {
-  text: string;
-  link: string;
-  onClick?: () => void;
-}
-
-export const Nav = ({ link, text, onClick = () => {} }: NavProps) => {
-  return (
-    <nav
-      className=" hover:text-gray-100 hover:text-xl transition-all duration-500 h-10 flex justify-center items-center"
-      onClick={() => onClick()}
-    >
-      <a href={link} className="text-2xl">
-        {text}
-      </a>
-    </nav>
   );
 };
