@@ -30,7 +30,7 @@ const data = [
 export const Portfolio = () => {
   return (
     <Container title="Projetinhos" tag="projects">
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
         {data.map((e) => (
           <a
             target={"_blank"}

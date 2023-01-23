@@ -13,6 +13,7 @@ module.exports = {
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+        techMono: ["Share Tech Mono", "monospace"],
       },
     },
   },

@@ -69,8 +69,8 @@ export const ProfessionalExperience = () => {
     <Container title="Experciencias:" tag="ProfessionalExperience">
       <div
         className={classNames(
-          "flex flex-col w-full gap-10 overflow-hidden transition-transform ease-in-out py-10",
-          showMore ? "" : "h-[270px] sm:h-[230px]"
+          "flex flex-col w-full gap-10 overflow-hidden transition-transform ease-in-out",
+          showMore ? "" : "h-[270px] sm:h-[200px]"
         )}
       >
         {experiencesDefault.map((item, index) => (
