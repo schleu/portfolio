@@ -1,6 +1,8 @@
 import { format } from "date-fns";
-import { stack } from "../../constants/stack";
-import LinkIcon from "../../assets/link.svg";
+import { stack } from "../../../../constants/stack";
+import LinkIcon from "../../../../assets/link.svg";
+import { InView } from "react-intersection-observer";
+import classNames from "classnames";
 
 export interface ExpericenceProps {
   title: string;
@@ -22,7 +24,7 @@ export const Expericence = ({
   stack,
 }: ExpericenceProps) => {
   return (
-    <div className="p-4 shadow-lg rounded-lg bg-green-350/10 text-gray-700 flex flex-col gap-2 w-full">
+    <div className="p-4 shadow-lg rounded-lg bg-gray-110 text-green-360 flex flex-col gap-2 w-full max-w-[800px]">
       <div className="">
         <div className="font-bold text-xl">{title}</div>
         <div className="text-gray-500 flex items-end gap-4">

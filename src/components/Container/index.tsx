@@ -1,5 +1,7 @@
 import classNames from "classnames";
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
+import { useScroll, useScrolling, useWindowScroll } from "react-use";
+import { InView } from "react-intersection-observer";
 
 interface ContainerProps {
   title: string;
@@ -14,12 +16,24 @@ export const Container = ({
   tag = "",
 }: ContainerProps) => {
   return (
-    <div className={classNames("flex flex-col gap-4", tag)} id={tag}>
-      <h1 className="text-4xl font-bold text-white drop-shadow-lg font-techMono flex gap-2 items-center">
-        {title}
-        {titleIcon}
-      </h1>
-      {children}
-    </div>
+    <InView triggerOnce={true}>
+      {({ inView, ref }) => (
+        <div
+          ref={ref}
+          className={classNames(
+            "flex flex-col gap-4 relative",
+            tag,
+            inView ? "motion-safe:animate-fadeIn" : ""
+          )}
+          id={tag}
+        >
+          <h1 className="text-4xl font-bold text-white drop-shadow-lg font-techMono flex gap-2 items-center">
+            {title}
+            {titleIcon}
+          </h1>
+          {children}
+        </div>
+      )}
+    </InView>
   );
 };

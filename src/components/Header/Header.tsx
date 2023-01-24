@@ -1,8 +1,8 @@
 import classnames from "classnames";
 import { useState } from "react";
-import { useToggle, useWindowScroll } from "react-use";
+import { useWindowScroll } from "react-use";
 import HamburguerMenuIcon from "../../assets/hamburguer.svg";
-import Icon from "../../assets/icon.svg";
+import { ReactComponent as Icon } from "../../assets/icon.svg";
 import { menuItems } from "../../constants/menu";
 import { MenuMobile } from "./MenuMobile";
 import { Nav } from "./Nav";
@@ -27,9 +27,9 @@ export const Header = () => {
         scrolled ? "bg-green-360/80 shadow-lg" : "bg-green-360"
       )}
     >
-      <div className="flex justify-between text-white font-roboto gap-4 px-10 py-6 w-full max-w-[1440px] font-bold">
-        <a href="" className="flex items-center gap-2 text-2xl lg:pr-60 ">
-          <img src={Icon} className="h-8" />
+      <div className="flex justify-between text-white gap-4 px-10 py-6 w-full max-w-[1440px] font-bold">
+        <a href="/" className="flex items-center gap-2 text-2xl lg:pr-60 ">
+          <Icon className="w-8 h-8" />
           Danilo Schleu
         </a>
 

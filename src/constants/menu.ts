@@ -5,18 +5,18 @@ interface iMenu {
 export const menuItems: iMenu[] = [
   {
     title: "Sobre Mim",
-    link: "#aboutMe",
+    link: "/#aboutMe",
   },
   {
     title: "Experiências Profissionais",
-    link: "#ProfessionalExperience",
+    link: "/experiences",
   },
   {
     title: "Habilidades",
-    link: "#skills",
+    link: "/#skills",
   },
   {
     title: "Projetos",
-    link: "#projects",
+    link: "/#projects",
   },
 ];
