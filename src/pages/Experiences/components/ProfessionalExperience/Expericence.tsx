@@ -26,8 +26,8 @@ export const Expericence = ({
   return (
     <div className="p-4 shadow-lg rounded-lg bg-text-primary text-primary flex flex-col gap-2 w-full max-w-[800px]">
       <div className="">
-        <div className="font-bold text-xl">{title}</div>
-        <div className="text-gray-500 flex items-end gap-4">
+        <div className="font-bold text-2xl">{title}</div>
+        <div className="flex items-end gap-4">
           {linkCompany ? (
             <a href={linkCompany} className="flex gap-2">
               {company}
@@ -47,7 +47,7 @@ export const Expericence = ({
       <div className="flex flex-wrap gap-2 mt-4">
         {stack.map((e) => (
           <div
-            className="rounded-full px-4 py-2 bg-secondary text-primary text-xs font-normal shadow-md cursor-default"
+            className="rounded-md px-4 py-2 bg-secondary text-third text-xs sm:text-sm font-normal shadow-md cursor-default"
             key={e}
           >
             {e}

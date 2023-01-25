@@ -14,8 +14,8 @@ export const getMenuItems = (): iMenu[] => {
       link: "/#aboutMe",
     },
     {
-      title: translate("menu>skills"),
-      link: "/#skills",
+      title: translate("menu>experiences"),
+      link: "/experiences",
     },
     {
       title: translate("menu>projects"),

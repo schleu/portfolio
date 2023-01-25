@@ -16,8 +16,8 @@ export const MenuMobile = ({
   return (
     <div
       className={classNames(
-        "absolute top-0 left-0 h-screen bg-secondary transition-all duration-500 ease-in-out overflow-hidden",
-        isOpen ? "w-screen py-20" : "w-0"
+        "absolute top-0 left-0 h-screen bg-primary transition-all duration-500 ease-in-out overflow-hidden",
+        isOpen ? "w-screen sm:w-0 py-20" : "w-0"
       )}
     >
       <AiOutlineCloseCircle

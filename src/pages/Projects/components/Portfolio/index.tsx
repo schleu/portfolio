@@ -28,7 +28,7 @@ export const Portfolio = () => {
               className={classNames(
                 "w-full flex justify-center items-center gap-2 rounded-lg shadow-xl bg-third",
                 "transition-all duration-500",
-                "h-0 -mt-5 group-hover:h-14 group-hover:mt-0 "
+                "h-14 sm:h-0 sm:-mt-5 group-hover:h-14 group-hover:mt-0"
               )}
             >
               <h3 className="font-bold drop-shadow-md ">{e.title}</h3>

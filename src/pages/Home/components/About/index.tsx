@@ -16,7 +16,7 @@ export const About = ({ ...props }) => {
             className="w-40"
           />
         </div>
-        <div className="w-full text-primary max-w-[500px] text-xl font-bold drop-shadow-lg">
+        <div className="w-full text-primary max-w-[500px] text-center sm:text-start text-xl font-bold drop-shadow-lg">
           {tranlate("about>title")}
         </div>
       </div>

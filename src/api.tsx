@@ -196,26 +196,8 @@ export const portfolioData: iPortfolio[] = [
   {
     title: "Portfólio",
     image:
-      "https://d33wubrfki0l68.cloudfront.net/63c86818dacb0a297c67e8ac/screenshot_2023-01-18-21-44-53-0000.png",
-    link: "https://pokedex-danilo-schleu.netlify.app/",
+      "https://d33wubrfki0l68.cloudfront.net/63d1914ea923880009a97a61/screenshot_2023-01-25-20-30-31-0000.png",
+    link: "https://portfolio-danilo-schleu.netlify.app/",
     git: "https://github.com/schleu/portfolio",
-  },
-  {
-    title: "Pokedex3",
-    image:
-      "https://d33wubrfki0l68.cloudfront.net/63c86818dacb0a297c67e8ac/screenshot_2023-01-18-21-44-53-0000.png",
-    link: "https://pokedex-danilo-schleu.netlify.app/",
-  },
-  {
-    title: "Pokedex4",
-    image:
-      "https://d33wubrfki0l68.cloudfront.net/63c86818dacb0a297c67e8ac/screenshot_2023-01-18-21-44-53-0000.png",
-    link: "https://pokedex-danilo-schleu.netlify.app/",
-  },
-  {
-    title: "Pokedex5",
-    image:
-      "https://d33wubrfki0l68.cloudfront.net/63c86818dacb0a297c67e8ac/screenshot_2023-01-18-21-44-53-0000.png",
-    link: "https://pokedex-danilo-schleu.netlify.app/",
   },
 ];
