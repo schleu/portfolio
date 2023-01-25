@@ -5,7 +5,7 @@ import { Hero } from "../Hero";
 
 export const DefaultLayout = () => {
   return (
-    <div className="bg-[#c3c3c3] w-full relative font-techMono flex flex-col justify-center items-center">
+    <div className="bg-gray-50 w-full relative font-techMono flex flex-col justify-center items-center">
       <Header />
       <Hero />
       <Outlet />

@@ -25,7 +25,7 @@ export const Skills = ({ items, title, titleIcon }: SkillsPageProps) => {
           return (
             <div
               key={item.text}
-              className=" rounded-md bg-gray-100 px-1 mt-12 pb-2"
+              className=" rounded-md bg-gray-100 px-1 mt-12 pb-2 shadow-2xl"
               title={item.alt}
             >
               <Hexagon className="text-green-360 hover:text-green-350 transition-all duration-200 ease-in-out -mt-20">

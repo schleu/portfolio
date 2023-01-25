@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useWindowScroll } from "react-use";
 import HamburguerMenuIcon from "../../assets/hamburguer.svg";
 import { ReactComponent as Icon } from "../../assets/icon.svg";
-import { menuItems } from "../../constants/menu";
+import { getMenuItems } from "./getMenuItems";
 import { MenuMobile } from "./MenuMobile";
 import { Nav } from "./Nav";
 
@@ -19,6 +19,8 @@ export const Header = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
+  const menuItems = getMenuItems();
 
   return (
     <div
@@ -49,7 +51,7 @@ export const Header = () => {
 
         <div className="hidden sm:flex justify-between flex-1">
           {menuItems.map((item) => (
-            <Nav text={item.title} link={item.link} />
+            <Nav key={item.title} text={item.title} link={item.link} />
           ))}
         </div>
       </div>

@@ -177,3 +177,12 @@ export const experiences: ExpericenceProps[] = [
     locale: "Presencial",
   },
 ];
+
+export const portfolioData = [
+  {
+    image:
+      "https://d33wubrfki0l68.cloudfront.net/63c86818dacb0a297c67e8ac/screenshot_2023-01-18-21-44-53-0000.png",
+    link: "https://pokedex-danilo-schleu.netlify.app/",
+    title: "Pokedex",
+  },
+];

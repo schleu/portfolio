@@ -1,6 +1,6 @@
 import CloseIcon from "../../assets/close.svg";
 import classNames from "classnames";
-import { menuItems } from "../../constants/menu";
+import { getMenuItems } from "./getMenuItems";
 import { NavMobile } from "./Nav";
 
 export const MenuMobile = ({
@@ -10,6 +10,8 @@ export const MenuMobile = ({
   isOpen: boolean;
   onClose: () => void;
 }) => {
+  const menuItems = getMenuItems();
+
   return (
     <div
       className={classNames(
