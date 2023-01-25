@@ -2,34 +2,48 @@ import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 import { portfolioData } from "../../../../api";
 import { Container } from "../../../../components/Container";
+import { FaProjectDiagram } from "react-icons/fa";
+import { DiGit } from "react-icons/di";
+import { BsFillEyeFill } from "react-icons/bs";
 
 export const Portfolio = () => {
   const [translate] = useTranslation();
 
   return (
-    <Container title={translate("project>title")}>
+    <Container
+      title={translate("project>title")}
+      titleIcon={<FaProjectDiagram />}
+    >
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
         {portfolioData.map((e) => (
-          <a
+          <div
             key={e.title}
-            target={"_blank"}
-            href={e.link}
-            className="flex flex-col justify-center items-center text-green-350 group h-[300px]"
+            className="flex flex-col justify-start items-center text-primary group h-[280px]"
           >
             <img
               src={e.image}
-              className="rounded-lg z-10 group-hover:border-2 border-white group-hover:shadow-xl"
+              className="rounded-lg z-10 shadow-lg group-hover:shadow transition-all duration-500"
             />
-            <h3
+            <div
               className={classNames(
-                "w-5/6 text-center font-bold drop-shadow-md bg-white shadow-xl rounded-lg -mt-2 transition-all duration-500 overflow-hidden",
-                "h-0",
-                "group-hover:h-10"
+                "w-full flex justify-center items-center gap-2 rounded-lg shadow-xl bg-third",
+                "transition-all duration-500",
+                "h-0 -mt-5 group-hover:h-14 group-hover:mt-0 "
               )}
             >
-              {e.title}
-            </h3>
-          </a>
+              <h3 className="font-bold drop-shadow-md ">{e.title}</h3>
+              {e.git && (
+                <a href={e.git} title="Git">
+                  <DiGit className="h-8 w-8" />
+                </a>
+              )}
+              {e.link && (
+                <a href={e.link} title="Live">
+                  <BsFillEyeFill className="h-8 w-8" />
+                </a>
+              )}
+            </div>
+          </div>
         ))}
       </div>
     </Container>

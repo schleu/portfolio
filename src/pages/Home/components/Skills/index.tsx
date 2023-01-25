@@ -28,11 +28,11 @@ export const Skills = ({ items, title, titleIcon }: SkillsPageProps) => {
               className=" rounded-md bg-gray-100 px-1 mt-12 pb-2 shadow-2xl"
               title={item.alt}
             >
-              <Hexagon className="text-green-360 hover:text-green-350 transition-all duration-200 ease-in-out -mt-20">
+              <Hexagon className="text-primary hover:text-primary transition-all duration-200 ease-in-out -mt-20">
                 {icon}
               </Hexagon>
 
-              <div className="text-green-360 w-28 rounded-md cursor-default mx-auto text-center text-lg font-boldfont-techMono">
+              <div className="text-primary w-28 rounded-md cursor-default mx-auto text-center text-lg font-boldfont-techMono">
                 {item.text}
               </div>
             </div>

@@ -16,11 +16,11 @@ export const About = ({ ...props }) => {
             className="w-40"
           />
         </div>
-        <div className="w-full text-green-360 max-w-[500px] text-xl font-bold drop-shadow-lg">
+        <div className="w-full text-primary max-w-[500px] text-xl font-bold drop-shadow-lg">
           {tranlate("about>title")}
         </div>
       </div>
-      <div className="w-full max-w-[800px] mx-auto h-[3px] bg-gradient-to-r from-gray-50 via-green-350 to-gray-50 rounded-full" />
+      <div className="w-full max-w-[800px] mx-auto h-[3px] bg-gradient-to-r from-gray-50 via-secondary to-gray-50 rounded-full" />
     </>
   );
 };

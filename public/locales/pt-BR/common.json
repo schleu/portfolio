@@ -2,11 +2,13 @@
   "home>page>title": "Foodbusters",
   "home>title": "Home",
   "about>title": "Quando o novo lhe deixar desconfortável, talvez você esteja no caminho certo.",
+
   "project>title": "Projetos",
   "skills>softSkill": "Soft Skills",
   "skills>hardSkill": "Hard Skills",
   "menu>aboutMe": "Sobre mim",
   "menu>experiences": "Experiências",
   "menu>skills": "Habilidades",
-  "menu>projects": "Projetos"
+  "menu>projects": "Projetos",
+  "menu>title": "Danilo Schleu"
 }

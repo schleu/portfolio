@@ -27,7 +27,7 @@ export const Container = ({
           )}
           id={tag}
         >
-          <h1 className="text-4xl font-bold text-green-360 drop-shadow-lg font-techMono flex gap-2 items-center">
+          <h1 className="text-4xl font-bold text-primary drop-shadow-lg font-techMono flex gap-2 items-center">
             {title}
             {titleIcon}
           </h1>
