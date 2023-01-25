@@ -1,10 +1,9 @@
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
 
-import { HardSkills, SoftSkills } from "../../api";
-import { Portfolio } from "./components/Portfolio";
 import { useTranslation } from "react-i18next";
 import { IoExtensionPuzzleOutline, IoTerminalOutline } from "react-icons/io5";
+import { HardSkills, SoftSkills } from "../../api";
 
 export const Home = () => {
   const [translate] = useTranslation();
@@ -24,8 +23,6 @@ export const Home = () => {
         titleIcon={<IoTerminalOutline />}
         items={HardSkills}
       />
-
-      <Portfolio />
     </div>
   );
 };

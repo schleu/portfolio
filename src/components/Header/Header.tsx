@@ -51,7 +51,7 @@ export const Header = () => {
           }}
         />
 
-        <div className="hidden sm:flex justify-between flex-1">
+        <div className="hidden sm:flex justify-between flex-1 max-w-[400px]">
           {menuItems.map((item) => (
             <Nav key={item.title} text={item.title} link={item.link} />
           ))}
