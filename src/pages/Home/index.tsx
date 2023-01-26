@@ -3,7 +3,7 @@ import { Skills } from "./components/Skills";
 
 import { useTranslation } from "react-i18next";
 import { IoExtensionPuzzleOutline, IoTerminalOutline } from "react-icons/io5";
-import { HardSkills, SoftSkills } from "../../api";
+import { HardSkills, SoftSkills } from "../../services/api";
 
 export const Home = () => {
   const [translate] = useTranslation();

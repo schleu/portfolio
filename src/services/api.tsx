@@ -20,9 +20,9 @@ import {
 
 import { SiTypescript } from "react-icons/si";
 
-import { ReactComponent as CobolIcon } from "./assets/cobolIcon.svg";
-import { ReactComponent as ColdfusionIcon } from "./assets/coldfusionIcon.svg";
-import { ExpericenceProps } from "./pages/Experiences/components/ProfessionalExperience/Expericence";
+import { ReactComponent as CobolIcon } from "../assets/cobolIcon.svg";
+import { ReactComponent as ColdfusionIcon } from "../assets/coldfusionIcon.svg";
+import { ExpericenceProps } from "../pages/Experiences/components/ProfessionalExperience/Expericence";
 
 export const SoftSkills = [
   {
@@ -199,5 +199,12 @@ export const portfolioData: iPortfolio[] = [
       "https://d33wubrfki0l68.cloudfront.net/63d1914ea923880009a97a61/screenshot_2023-01-25-20-30-31-0000.png",
     link: "https://portfolio-danilo-schleu.netlify.app/",
     git: "https://github.com/schleu/portfolio",
+  },
+  {
+    title: "Web Commerce",
+    image:
+      "https://d33wubrfki0l68.cloudfront.net/63d1ee0210c5c50008d19565/screenshot_2023-01-26-03-06-09-0000.png",
+    link: "https://web-commerce-danilo-schleu.netlify.app/",
+    git: "https://github.com/schleu/web-commerce",
   },
 ];

@@ -1,4 +1,4 @@
-import { experiences } from "../../../../api";
+import { experiences } from "../../../../services/api";
 import { Container } from "../../../../components/Container";
 import { Expericence } from "./Expericence";
 

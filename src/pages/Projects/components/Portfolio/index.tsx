@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useTranslation } from "react-i18next";
-import { portfolioData } from "../../../../api";
+import { portfolioData } from "../../../../services/api";
 import { Container } from "../../../../components/Container";
 import { FaProjectDiagram } from "react-icons/fa";
 import { DiGit } from "react-icons/di";
@@ -33,12 +33,12 @@ export const Portfolio = () => {
             >
               <h3 className="font-bold drop-shadow-md ">{e.title}</h3>
               {e.git && (
-                <a href={e.git} title="Git">
+                <a href={e.git} title="Git" target={"_blank"}>
                   <DiGit className="h-8 w-8" />
                 </a>
               )}
               {e.link && (
-                <a href={e.link} title="Live">
+                <a href={e.link} title="Live" target={"_blank"}>
                   <BsFillEyeFill className="h-8 w-8" />
                 </a>
               )}
