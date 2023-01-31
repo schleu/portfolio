@@ -4,11 +4,13 @@ import { Container } from "../../../../components/Container";
 export const About = () => {
   return (
     <Container title="Um pouco da minha história" section="Sobre mim">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row gap-6 sm:justify-between sm:items-center">
         <div
           className={classNames(
-            "w-[310px] h-[392px] bg-[#333333] relative z-10",
-            "before:content-[''] before:w-[270px] before:h-[368px] before:absolute before:border-b-8 before:border-r-8 before:border-[#41B19B] before:top-8 before:left-12 before:z-0"
+            "w-[255px] sm:w-[310px] h-[322px] sm:h-[392px] bg-[#333333] relative",
+            "before:content-[''] before:absolute before:border-b-8 before:border-r-8 before:border-[#41B19B]",
+            "before:w-[212px] before:h-[278px] before:top-[3.2rem] before:left-[3.2rem]",
+            "sm:before:w-[270px] sm:before:h-[368px] sm:before:top-8 sm:before:left-12"
           )}
         >
           <img
@@ -16,12 +18,12 @@ export const About = () => {
             className="h-full w-full"
           />
         </div>
-        <div className="flex flex-col gap-16 max-w-[800px] text-[#F0F6FF]">
+        <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-[#F0F6FF]">
           <div className="flex flex-col gap-3 ">
             <h3 className="font-bold text-2xl leading-9">
               Quem é Danilo Schleu?
             </h3>
-            <p className="font-normal text-normal leading-7">
+            <p className="font-normal text-sm leading-6 sm:text-normal sm:leading-7">
               Designer UI/UX, Desenvolvedor Front-End e Graduando no Bacharelado
               de Sistemas de Sistemas de Informação pela Universidade Federal da
               Bahia. Comecei minha carreira como designer aos 15 anos com
@@ -30,7 +32,7 @@ export const About = () => {
               desenvolver Interfaces de Usuário.
             </p>
           </div>
-          <h5 className="font-normal text-xl leading-8 opacity-50">
+          <h5 className="font-normal text-base sm:text-xl leading-8 text-white/50">
             "Never stop learning" - Rocketseat
           </h5>
         </div>
