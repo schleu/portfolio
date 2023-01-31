@@ -12,9 +12,8 @@ export const Textarea = ({ label, placeholder, ...props }: iInputProps) => (
     <div className="flex items-center relative">
       <textarea
         {...props}
-        cols={30}
-        rows={10}
         className="w-full p-2  rounded bg-[#1A1A1A] border-[#333333] border "
+        placeholder={placeholder || label}
       ></textarea>
     </div>
   </Label>

@@ -8,7 +8,7 @@ export const Contact = () => {
   return (
     <div className="w-full flex justify-center">
       <div className="flex gap-20 items-center w-full max-w-screen-cut">
-        <img src={contactBanner} alt="" />
+        <img src={contactBanner} alt="" className="hidden sm:block" />
 
         <Container
           title="Solicite um orçamento"
@@ -22,18 +22,18 @@ export const Contact = () => {
               required
               disabled
             />
-            <div className="flex gap-6">
+            <div className="flex flex-col sm:flex-row gap-6">
               <Input
                 type={"tel"}
                 label="Telefone"
-                placeholder="Digite o seu nome"
+                placeholder="Digite o seu telefone"
                 required
                 disabled
               />
               <Input
                 type={"email"}
-                label="email"
-                placeholder="Digite o seu nome"
+                label="Email"
+                placeholder="Digite o seu email"
                 required
                 disabled
               />
