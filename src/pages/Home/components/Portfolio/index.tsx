@@ -18,7 +18,7 @@ export const Portfolio = () => {
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {portfolioData.map((item) => (
-          <ProjectCard {...item} />
+          <ProjectCard key={item.title} {...item} />
         ))}
       </div>
     </Container>
