@@ -5,7 +5,7 @@ import { ReactComponent as AmpersandIcon } from "../../../../assets/ampersand.sv
 import { ReactComponent as HandWaveIcon } from "../../../../assets/handWave.svg";
 
 export const Scrolling = () => (
-  <div className="w-full flex-nowrap bg-[#262626] overflow-hidden relative ">
+  <div className="w-full flex-nowrap bg-[#262626] overflow-hidden ">
     <div className="flex w-full gap-6 items-center py-2 font-bold text-2xl justify-center">
       <h5>Websites</h5>
       <BracketsIcon />

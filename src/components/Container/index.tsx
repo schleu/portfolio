@@ -37,7 +37,9 @@ export const Container = ({
       <div className="flex flex-col gap-12">
         <div className="flex justify-between items-end">
           <div className="flex flex-col gap-2">
-            <div className="flex flex-col uppercase opacity-50">{section}</div>
+            <div className="flex flex-col uppercase text-white/50">
+              {section}
+            </div>
             <div className="flex justify-between font-bold text-5xl leading-[4rem]">
               {title}
             </div>

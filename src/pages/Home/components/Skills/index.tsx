@@ -12,6 +12,7 @@ export const Skills = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-6">
         {HardSkills.map((item) => (
           <Card
+            key={item.text}
             icon={item.icon}
             title={item.text}
             description={item.description}

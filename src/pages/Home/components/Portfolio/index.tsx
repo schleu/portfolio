@@ -17,7 +17,10 @@ export const Portfolio = () => {
     >
       <div className="grid grid-cols-2 gap-6">
         {portfolioData.map((item) => (
-          <div className="flex flex-col bg-[#262626] rounded overflow-hidden">
+          <div
+            key={item.title}
+            className="flex flex-col bg-[#262626] rounded overflow-hidden"
+          >
             <div className="h-[435px] bg-red-500 object-fill">
               <img src={item.image} className="w-full h-full" />
             </div>
