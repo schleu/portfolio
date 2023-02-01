@@ -25,7 +25,7 @@ export const Hero = () => {
           </Button>
         </div>
       </div>
-      <div className="w-full flex justify-start order-1 sm:order-2 text-[#41B19B]">
+      <div className="w-full flex justify-start order-1 sm:order-2 text-primary">
         <ImagIcon className="w-full" />
       </div>
     </div>

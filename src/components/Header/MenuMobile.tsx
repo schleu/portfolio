@@ -33,7 +33,7 @@ export const MenuMobile = ({ isOpen, onClose, items }: iMenuMobileProps) => {
       {items.map((item) => (
         <div
           key={item.text}
-          className="w-full py-5 px-2.5  border-b border-transparent hover:border-[#41B19B] cursor-pointer"
+          className="w-full py-5 px-2.5  border-b border-transparent hover:border-primary cursor-pointer"
         >
           <Link to={item.link}>{item.text}</Link>
         </div>

@@ -8,7 +8,7 @@ export const About = () => {
         <div
           className={classNames(
             "w-[255px] sm:w-[310px] h-[322px] sm:h-[392px] bg-[#333333] relative",
-            "before:content-[''] before:absolute before:border-b-8 before:border-r-8 before:border-[#41B19B]",
+            "before:content-[''] before:absolute before:border-b-8 before:border-r-8 before:border-primary",
             "before:w-[212px] before:h-[278px] before:top-[3.2rem] before:left-[3.2rem]",
             "sm:before:w-[270px] sm:before:h-[368px] sm:before:top-8 sm:before:left-12"
           )}
@@ -24,12 +24,11 @@ export const About = () => {
               Quem é Danilo Schleu?
             </h3>
             <p className="font-normal text-sm leading-6 sm:text-normal sm:leading-7">
-              Designer UI/UX, Desenvolvedor Front-End e Graduando no Bacharelado
-              de Sistemas de Sistemas de Informação pela Universidade Federal da
-              Bahia. Comecei minha carreira como designer aos 15 anos com
-              trabalho voluntário em uma instituição religiosa. Lá conheci
-              desenvolvedores Front-End que começaram a passar clientes para
-              desenvolver Interfaces de Usuário.
+              Desenvolvedor Full Stack e Tecnólogo em analise e desenvovimento
+              de sistemas pela Cesumar. Comecei minha carreira como
+              desenvolvedor Cobol, e após atuando com ColdFusion. Me arrisquei
+              como front-end após 5 anos sendo back-end e hoje me sinto feliz
+              sendo apto atuar em ambas posições.
             </p>
           </div>
           <h5 className="font-normal text-base sm:text-xl leading-8 text-white/50">

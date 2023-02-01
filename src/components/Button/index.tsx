@@ -12,7 +12,7 @@ export const Button = ({
   filled = true,
   ...props
 }: iButtonProps) => {
-  const style = filled ? "bg-[#41B19B]" : "border border-[#41B19B]";
+  const style = filled ? "bg-primary" : "border border-primary";
 
   return (
     <button

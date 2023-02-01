@@ -6,7 +6,9 @@ module.exports = {
         xs: "426px",
         cut: "1236px",
       },
-      colors: {},
+      colors: {
+        primary: "#41B19B",
+      },
       fontFamily: {
         sora: ["Sora", "sans-serif"],
       },

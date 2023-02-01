@@ -19,7 +19,7 @@ export const ProjectCard = ({ title, description, image, link }: iCard) => (
       </div>
       <Link
         to={"/"}
-        className="text-[#41B19B] text-base font-bold flex gap-3 items-center"
+        className="text-primary text-base font-bold flex gap-3 items-center"
       >
         Saiba Mais <ArrowRightIcon />
       </Link>

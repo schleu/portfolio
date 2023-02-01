@@ -52,7 +52,7 @@ export const Header = () => {
 const NavLink = ({ text, link }: { text: string; link: string }) => (
   <Link
     to={link}
-    className="flex  items-center h-full border-b-2 border-transparent hover:border-[#41B19B] "
+    className="flex  items-center h-full border-b-2 border-transparent hover:border-primary "
   >
     {text}
   </Link>
