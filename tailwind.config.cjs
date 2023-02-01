@@ -7,7 +7,20 @@ module.exports = {
         cut: "1236px",
       },
       colors: {
+        "dark-900": "#121212",
+        "dark-800": "#1A1A1A",
+        "dark-500": "#262626",
+        "dark-300": "#333333",
+        "dark-200": "#D6D6DC",
+        "dark-100": "#F0F6FF",
         primary: "#41B19B",
+        danger: "#F12C4C",
+        "light-900": "#F0F6FF",
+        "light-800": "#D6D6DC",
+        "light-500": "#333333",
+        "light-300": "#262626",
+        "light-00": "#1A1A1A",
+        "light-100": "#121212",
       },
       fontFamily: {
         sora: ["Sora", "sans-serif"],
@@ -31,6 +44,6 @@ module.exports = {
       },
     },
   },
-
+  dark: "class",
   plugins: [],
 };

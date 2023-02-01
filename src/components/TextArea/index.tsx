@@ -12,7 +12,7 @@ export const Textarea = ({ label, placeholder, ...props }: iInputProps) => (
     <div className="flex items-center relative">
       <textarea
         {...props}
-        className="w-full p-2  rounded bg-[#1A1A1A] border-[#333333] border "
+        className="w-full p-2  rounded bg-light-900 dark:bg-dark-800  border-light-300  dark:border-dark-300 border"
         placeholder={placeholder || label}
       ></textarea>
     </div>

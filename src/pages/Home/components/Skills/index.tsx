@@ -18,7 +18,7 @@ export const Skills = () => {
     <Container
       section="Tecnologias"
       title="Minhas ferramentas"
-      classes={{ container: "bg-[#121212]" }}
+      classes={{ container: "bg-light-900 dark:bg-dark-900 " }}
     >
       <div ref={carouselRef} className="w-full block sm:hidden overflow-hidden">
         <motion.div
@@ -60,9 +60,9 @@ interface iCard {
 }
 
 const Card = ({ icon, description, title }: iCard) => (
-  <div className="min-w-[10rem] flex flex-col justify-center items-start gap-[3.25rem] rounded px-3 py-5 bg-[#262626]">
+  <div className="min-w-[10rem] flex flex-col justify-center items-start gap-[3.25rem] rounded px-3 py-5 bg-light-900 shadow-xl  dark:bg-dark-500 ">
     <div className="w-8 sm:w-10 h-8 sm:h-10">{icon}</div>
-    <div className="flex flex-col text-[#F0F6FF]">
+    <div className="flex flex-col text-light-100  dark:text-dark-100 ">
       <div className="font-bold text-base">{title}</div>
       <div className="font-normal text-xs leading-5">{description}</div>
     </div>

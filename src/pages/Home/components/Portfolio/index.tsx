@@ -14,7 +14,7 @@ export const Portfolio = () => {
         onClick: () => {},
         icon: <ArrowRightIcon className="-rotate-45" />,
       }}
-      classes={{ container: "bg-[#121212]" }}
+      classes={{ container: "bg-light-900 dark:bg-dark-900 " }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {portfolioData.map((item) => (

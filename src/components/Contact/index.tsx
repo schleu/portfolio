@@ -5,6 +5,8 @@ import { Textarea } from "../TextArea";
 import contactBanner from "../../assets/contact.png";
 
 export const Contact = () => {
+  const onSubmit = {};
+
   return (
     <div className="w-full flex justify-center">
       <div className="flex gap-20 items-center w-full max-w-screen-cut">
@@ -13,7 +15,7 @@ export const Contact = () => {
         <Container
           title="Solicite um orçamento"
           section="Entre em contato"
-          classes={{ container: "bg-[#121212]" }}
+          classes={{ container: "bg-light-900 dark:bg-dark-900 " }}
         >
           <form className="flex flex-col gap-6">
             <Input
@@ -41,7 +43,7 @@ export const Contact = () => {
             <Textarea label="Mensagem" required disabled />
             <Button
               type="submit"
-              className="bg-[#333333] text-[#D6D6DC] cursor-not-allowed"
+              className="bg-light-800 shadow-xl  dark:bg-dark-300  text-light-200  dark:text-dark-200 cursor-not-allowed"
               disabled
             >
               Enviar

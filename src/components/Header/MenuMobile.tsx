@@ -19,9 +19,9 @@ export const MenuMobile = ({ isOpen, onClose, items }: iMenuMobileProps) => {
   return (
     <div
       className={classNames(
-        "h-screen fixed top-0 left-0 z-50 bg-[#333] flex flex-col overflow-hidden py-8 ",
-        isOpen ? "w-full" : "w-0",
-        "transition-all duration-500"
+        "h-screen fixed top-0 left-0 z-50 bg-light-900 dark:bg-dark-300 flex flex-col overflow-hidden py-8 ",
+        "transition-all duration-500",
+        isOpen ? "w-full" : "w-0"
       )}
     >
       <div className="w-full flex justify-end px-2.5">
@@ -33,7 +33,7 @@ export const MenuMobile = ({ isOpen, onClose, items }: iMenuMobileProps) => {
       {items.map((item) => (
         <div
           key={item.text}
-          className="w-full py-5 px-2.5  border-b border-transparent hover:border-primary cursor-pointer"
+          className="w-full py-5 px-2.5 border-b-2 border-transparent hover:border-primary cursor-pointer"
         >
           <Link to={item.link}>{item.text}</Link>
         </div>

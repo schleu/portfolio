@@ -11,7 +11,7 @@ export const Services = () => {
         title: "Entrar em contato",
         onClick: () => {},
       }}
-      classes={{ container: "bg-[#1A1A1A]" }}
+      classes={{ container: "bg-light-800  dark:bg-dark-800 " }}
     >
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
         <Service

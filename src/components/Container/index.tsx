@@ -30,14 +30,14 @@ export const Container = ({
   <div
     className={classNames(
       "w-full flex justify-center py-8 sm:py-[60px]",
-      classes?.container || "bg-[#1A1A1A]"
+      classes?.container || "bg-light-800  dark:bg-dark-800 "
     )}
   >
     <div className="w-full max-w-screen-cut flex flex-col gap-12 px-2.5 sm:px-0">
       <div className="flex flex-col gap-6 sm:gap-12">
         <div className="flex justify-between items-end">
           <div className="flex flex-col gap-2">
-            <div className="flex flex-col text-xs leading-5 sm:text-base uppercase text-white/50">
+            <div className="flex flex-col text-xs leading-5 sm:text-base uppercase text-dark-900 dark:text-dark-100/50">
               {section}
             </div>
             <div className="flex justify-between font-bold text-3xl leading-[3rem] sm:text-5xl sm:leading-[4rem]">
@@ -48,7 +48,7 @@ export const Container = ({
             <Button
               onClick={button.onClick}
               className={classNames(
-                "uppercase bg-white/10 hidden sm:flex",
+                "uppercase bg-dark-100/10 hidden sm:flex",
                 classes?.button
               )}
             >

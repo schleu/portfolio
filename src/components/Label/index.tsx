@@ -14,12 +14,12 @@ export const Label = ({
   children,
   ...props
 }: iInputProps) => (
-  <div className="w-full text-white flex flex-col gap-1">
+  <div className="w-full text-dark-900 dark:text-dark-100 flex flex-col gap-1">
     <div className="flex justify-between items-center ">
       <label htmlFor="" className="text-base" {...props}>
         {label}
       </label>
-      <span className="text-sm leading-6 text-[#F12C4C]">
+      <span className="text-sm leading-6 text-danger">
         {required && "Obrigatório"}
       </span>
     </div>

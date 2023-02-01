@@ -8,11 +8,11 @@ interface iCard {
   description: string;
 }
 export const ProjectCard = ({ title, description, image, link }: iCard) => (
-  <div className="flex flex-col bg-[#262626] rounded overflow-hidden">
+  <div className="flex flex-col bg-light-900 shadow-xl  dark:bg-dark-500  rounded overflow-hidden">
     <div className="h-[200px] sm:h-[435px] bg-red-500 object-fill">
       <img src={image} className="w-full h-full" />
     </div>
-    <div className="py-9 px-4 text-[#F0F6FF] flex flex-col gap-9">
+    <div className="py-9 px-4 text-light-100  dark:text-dark-100  flex flex-col gap-9">
       <div className="flex flex-col gap-3">
         <h3 className="font-bold text-2xl leading-9">{title}</h3>
         <p>{description}</p>

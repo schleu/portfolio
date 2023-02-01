@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom";
-import { ReactComponent as ChatCircleIcon } from "../../assets/chatCircle.svg";
-import { ReactComponent as LogoIcon } from "../../assets/brackets.svg";
-import { Button } from "../Button";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { MenuMobile } from "./MenuMobile";
+import classNames from "classnames";
 import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
+import { useWindowScroll } from "react-use";
+import { ReactComponent as LogoIcon } from "../../assets/brackets.svg";
+import { ReactComponent as ChatCircleIcon } from "../../assets/chatCircle.svg";
+import { Button } from "../Button";
+import { MenuMobile } from "./MenuMobile";
 
 const menuItemsMocked = [
   { text: "Início", link: "" },
@@ -17,7 +19,13 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full h-[70px] flex justify-center items-center bg-[#12121280] backdrop-blur-md border-b border-[#262626]">
+    <div
+      className={classNames(
+        "w-full h-[70px] flex justify-center items-center backdrop-blur-md border-b ",
+        "bg-light-900 dark:bg-dark-900/80 border-light-500  dark:border-dark-500",
+        "fixed top-0 z-50"
+      )}
+    >
       <div className="w-full max-w-[1234px] flex justify-between items-center font-bold h-full px-2.5 sm:p-0 relative">
         <div className="flex gap-2.5 items-center cursor-default">
           <LogoIcon /> Danilo Schleu
