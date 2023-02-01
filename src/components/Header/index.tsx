@@ -1,18 +1,17 @@
 import classNames from "classnames";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Link } from "react-router-dom";
-import { useWindowScroll } from "react-use";
+import { Link } from "react-scroll";
 import { ReactComponent as LogoIcon } from "../../assets/brackets.svg";
 import { ReactComponent as ChatCircleIcon } from "../../assets/chatCircle.svg";
 import { Button } from "../Button";
 import { MenuMobile } from "./MenuMobile";
 
 const menuItemsMocked = [
-  { text: "Início", link: "" },
-  { text: "Serviços", link: "" },
-  { text: "Portfólio", link: "" },
-  { text: "Sobre Mim", link: "" },
+  { text: "Início", link: "home" },
+  { text: "Serviços", link: "services" },
+  { text: "Portfólio", link: "portfolio" },
+  { text: "Sobre Mim", link: "about" },
 ];
 
 export const Header = () => {
@@ -48,10 +47,12 @@ export const Header = () => {
           ))}
         </div>
 
-        <Button className="hidden md:flex">
-          Entrar em contato
-          <ChatCircleIcon />
-        </Button>
+        <Link to={"contact"} spy={true} smooth={true} activeClass="active">
+          <Button className="hidden md:flex">
+            Entrar em contato
+            <ChatCircleIcon />
+          </Button>
+        </Link>
       </div>
     </div>
   );
@@ -60,7 +61,10 @@ export const Header = () => {
 const NavLink = ({ text, link }: { text: string; link: string }) => (
   <Link
     to={link}
-    className="flex  items-center h-full border-b-2 border-transparent hover:border-primary "
+    spy={true}
+    smooth={true}
+    activeClass="active"
+    className="flex items-center h-full border-b-2 border-transparent hover:border-primary cursor-pointer"
   >
     {text}
   </Link>

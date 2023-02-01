@@ -4,7 +4,10 @@ import { Container } from "../../../../components/Container";
 export const About = () => {
   return (
     <Container title="Um pouco da minha história" section="Sobre mim">
-      <div className="flex flex-col sm:flex-row gap-6 sm:justify-between sm:items-center">
+      <div
+        className="flex flex-col sm:flex-row gap-6 sm:justify-between sm:items-center"
+        id="about"
+      >
         <div
           className={classNames(
             "w-[255px] sm:w-[310px] h-[322px] sm:h-[392px] bg-light-300  dark:bg-dark-300  relative",

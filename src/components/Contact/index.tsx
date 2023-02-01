@@ -8,7 +8,7 @@ export const Contact = () => {
   const onSubmit = {};
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center" id="contact">
       <div className="flex gap-20 items-center w-full max-w-screen-cut">
         <img src={contactBanner} alt="" className="hidden sm:block" />
 

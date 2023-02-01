@@ -16,7 +16,10 @@ export const Portfolio = () => {
       }}
       classes={{ container: "bg-light-900 dark:bg-dark-900 " }}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+        id="portfolio"
+      >
         {portfolioData.map((item) => (
           <ProjectCard key={item.title} {...item} />
         ))}

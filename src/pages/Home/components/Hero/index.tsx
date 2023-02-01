@@ -4,7 +4,10 @@ import { ReactComponent as ImagIcon } from "../../../../assets/hero.svg";
 
 export const Hero = () => {
   return (
-    <div className="w-full flex flex-col sm:flex-row gap-6 sm:gap-0 px-2.5 sm:px-0 py-6 max-w-screen-cut">
+    <div
+      className="w-full flex flex-col sm:flex-row gap-6 sm:gap-0 px-2.5 sm:px-0 py-6 max-w-screen-cut"
+      id="hero"
+    >
       <div className="flex flex-col gap-10 order-2 sm:order-1">
         <div className="flex flex-col gap-3">
           <div className="uppercase font-light text-sm sm:text-xl leading-6 sm:leading-8 tracking-wider">

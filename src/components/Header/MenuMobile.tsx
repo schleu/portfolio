@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import { useLockBodyScroll } from "react-use";
 
 interface MenuItem {
@@ -34,8 +34,11 @@ export const MenuMobile = ({ isOpen, onClose, items }: iMenuMobileProps) => {
         <div
           key={item.text}
           className="w-full py-5 px-2.5 border-b-2 border-transparent hover:border-primary cursor-pointer"
+          onClick={() => onClose()}
         >
-          <Link to={item.link}>{item.text}</Link>
+          <Link to={item.link} smooth={true} spy={true} activeClass="active">
+            {item.text}
+          </Link>
         </div>
       ))}
     </div>
