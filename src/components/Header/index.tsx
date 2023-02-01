@@ -47,8 +47,15 @@ export const Header = () => {
           ))}
         </div>
 
-        <Link to={"contact"} spy={true} smooth={true} activeClass="active">
-          <Button className="hidden md:flex">
+        <Link
+          to={"contact"}
+          spy={true}
+          smooth={true}
+          activeClass="active"
+          onClick={() => setIsOpen((e) => !e)}
+          className="hidden md:flex"
+        >
+          <Button>
             Entrar em contato
             <ChatCircleIcon />
           </Button>
