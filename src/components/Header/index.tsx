@@ -4,14 +4,16 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-scroll";
 import { ReactComponent as LogoIcon } from "../../assets/brackets.svg";
 import { ReactComponent as ChatCircleIcon } from "../../assets/chatCircle.svg";
+import { ScrollIds } from "../../constant/ScrollIds";
 import { Button } from "../Button";
 import { MenuMobile } from "./MenuMobile";
 
 const menuItemsMocked = [
-  { text: "Início", link: "home" },
-  { text: "Serviços", link: "services" },
-  { text: "Portfólio", link: "portfolio" },
-  { text: "Sobre Mim", link: "about" },
+  { text: "Início", link: ScrollIds.HOME, onClick: () => {} },
+  { text: "Serviços", link: ScrollIds.SERVICES, onClick: () => {} },
+  { text: "Portfólio", link: ScrollIds.PORTFOLIO, onClick: () => {} },
+  { text: "Sobre Mim", link: ScrollIds.ABOUT, onClick: () => {} },
+  { text: "Contato", link: ScrollIds.CONTACT, onClick: () => {}, mobile: true },
 ];
 
 export const Header = () => {
@@ -26,9 +28,13 @@ export const Header = () => {
       )}
     >
       <div className="w-full max-w-[1234px] flex justify-between items-center font-bold h-full px-2.5 sm:p-0 relative">
-        <div className="flex gap-2.5 items-center cursor-default">
+        <Link
+          to={ScrollIds.HOME}
+          smooth={true}
+          className="flex gap-2.5 items-center cursor-pointer"
+        >
           <LogoIcon /> Danilo Schleu
-        </div>
+        </Link>
 
         <GiHamburgerMenu
           onClick={() => setIsOpen((e) => !e)}
@@ -42,19 +48,16 @@ export const Header = () => {
         />
 
         <div className="hidden md:flex gap-6 h-full">
-          {menuItemsMocked.map((item) => (
-            <NavLink key={item.text} link={item.link} text={item.text} />
-          ))}
+          {menuItemsMocked.map((item) => {
+            return (
+              !item.mobile && (
+                <NavLink key={item.text} link={item.link} text={item.text} />
+              )
+            );
+          })}
         </div>
 
-        <Link
-          to={"contact"}
-          spy={true}
-          smooth={true}
-          activeClass="active"
-          onClick={() => setIsOpen((e) => !e)}
-          className="hidden md:flex"
-        >
+        <Link to={ScrollIds.CONTACT} smooth={true} className="hidden md:flex">
           <Button>
             Entrar em contato
             <ChatCircleIcon />

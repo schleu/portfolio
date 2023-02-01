@@ -1,18 +1,20 @@
 import classNames from "classnames";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { Link } from "react-scroll";
+import { Link, scroller } from "react-scroll";
 import { useLockBodyScroll } from "react-use";
 
-interface MenuItem {
+interface iMenuItem {
   text: string;
   link: string;
-  onClick?: () => void;
+  onClick: () => void;
+  mobile?: boolean;
 }
 interface iMenuMobileProps {
   isOpen: boolean;
   onClose: () => void;
-  items: MenuItem[];
+  items: iMenuItem[];
 }
+
 export const MenuMobile = ({ isOpen, onClose, items }: iMenuMobileProps) => {
   useLockBodyScroll(isOpen);
 
@@ -31,16 +33,26 @@ export const MenuMobile = ({ isOpen, onClose, items }: iMenuMobileProps) => {
         />
       </div>
       {items.map((item) => (
-        <div
-          key={item.text}
-          className="w-full py-5 px-2.5 border-b-2 border-transparent hover:border-primary cursor-pointer"
-          onClick={() => onClose()}
-        >
-          <Link to={item.link} smooth={true} spy={true} activeClass="active">
-            {item.text}
-          </Link>
-        </div>
+        <MenuItem key={item.text} {...item} onClick={onClose} />
       ))}
+    </div>
+  );
+};
+
+const MenuItem = ({ text, link, onClick }: iMenuItem) => {
+  const handleClick = () => {
+    scroller.scrollTo(link, {
+      smooth: true,
+    });
+    onClick();
+  };
+  return (
+    <div
+      key={text}
+      className="w-full py-5 px-2.5 border-b-2 border-transparent hover:border-primary cursor-pointer"
+      onClick={() => handleClick()}
+    >
+      <nav onClick={() => handleClick()}>{text}</nav>
     </div>
   );
 };

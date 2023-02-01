@@ -1,13 +1,12 @@
-import { Button } from "../../../../components/Button";
+import { Link } from "react-scroll";
 import { ReactComponent as FilePdfIcon } from "../../../../assets/filePdf.svg";
 import { ReactComponent as ImagIcon } from "../../../../assets/hero.svg";
+import { Button } from "../../../../components/Button";
+import { ScrollIds } from "../../../../constant/ScrollIds";
 
 export const Hero = () => {
   return (
-    <div
-      className="w-full flex flex-col sm:flex-row gap-6 sm:gap-0 px-2.5 sm:px-0 py-6 max-w-screen-cut"
-      id="hero"
-    >
+    <div className="w-full flex flex-col sm:flex-row gap-6 sm:gap-0 px-2.5 sm:px-0 py-6 max-w-screen-cut">
       <div className="flex flex-col gap-10 order-2 sm:order-1">
         <div className="flex flex-col gap-3">
           <div className="uppercase font-light text-sm sm:text-xl leading-6 sm:leading-8 tracking-wider">
@@ -22,7 +21,9 @@ export const Hero = () => {
           </div>
         </div>
         <div className="flex gap-4 sm:gap-6">
-          <Button>Entrar em contato</Button>
+          <Link to={ScrollIds.CONTACT} smooth={true}>
+            <Button>Entrar em contato</Button>
+          </Link>
           <Button filled={false}>
             Currículo CV <FilePdfIcon />
           </Button>

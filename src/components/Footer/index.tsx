@@ -1,4 +1,6 @@
+import { Link } from "react-scroll";
 import { ReactComponent as ArrowRightIcon } from "../../assets/arrowRight.svg";
+import { ScrollIds } from "../../constant/ScrollIds";
 import { Button } from "../Button";
 
 export const Footer = () => {
@@ -12,9 +14,11 @@ export const Footer = () => {
           Designed by: Alexandre Shyjada
         </div>
 
-        <Button className="bg-light-300  dark:bg-dark-300  w-10 h-10 p-0">
-          <ArrowRightIcon className="-rotate-90" />
-        </Button>
+        <Link to={ScrollIds.HOME} smooth={true}>
+          <Button className="bg-light-300  dark:bg-dark-300  w-10 h-10 p-0">
+            <ArrowRightIcon className="-rotate-90" />
+          </Button>
+        </Link>
       </div>
     </div>
   );

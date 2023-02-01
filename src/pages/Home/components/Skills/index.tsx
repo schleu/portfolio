@@ -2,6 +2,7 @@ import { ReactNode, useEffect, useRef, useState } from "react";
 import { Container } from "../../../../components/Container";
 import { HardSkills } from "./data";
 import { motion } from "framer-motion";
+import { ScrollIds } from "../../../../constant/ScrollIds";
 
 export const Skills = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -18,6 +19,7 @@ export const Skills = () => {
     <Container
       section="Tecnologias"
       title="Minhas ferramentas"
+      id={ScrollIds.SKILLS}
       classes={{ container: "bg-light-900 dark:bg-dark-900 " }}
     >
       <div ref={carouselRef} className="w-full block sm:hidden overflow-hidden">

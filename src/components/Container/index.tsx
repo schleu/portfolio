@@ -17,6 +17,7 @@ interface ContainerProps {
   children?: ReactNode;
   title: string;
   section: string;
+  id?: string;
   button?: iButton;
   classes?: iClassnames;
 }
@@ -26,12 +27,14 @@ export const Container = ({
   title,
   button,
   classes,
+  id = "",
 }: ContainerProps) => (
   <div
     className={classNames(
       "w-full flex justify-center py-8 sm:py-[60px]",
       classes?.container || "bg-light-800  dark:bg-dark-800 "
     )}
+    id={id}
   >
     <div className="w-full max-w-screen-cut flex flex-col gap-12 px-2.5 sm:px-0">
       <div className="flex flex-col gap-6 sm:gap-12">
