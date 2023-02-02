@@ -12,14 +12,17 @@ export const Button = ({
   filled = true,
   ...props
 }: iButtonProps) => {
-  const style = filled ? "bg-primary" : "border border-primary";
+  const style = filled
+    ? "bg-primary hover:bg-primary/80"
+    : "border border-primary hover:bg-primary/10";
 
   return (
     <button
       {...props}
       className={classNames(
         "flex justify-center items-center p-2 sm:py-2.5 sm:px-4 gap-2.5 rounded",
-        "text-sm sm:text-base leading-6",
+        "text-sm sm:text-base leading-6 text-dark-100 hover:text-dark-200",
+        "transition-colors duration-200 ease-in-out",
         className,
         style
       )}

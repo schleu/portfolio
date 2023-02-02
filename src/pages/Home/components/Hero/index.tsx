@@ -24,9 +24,11 @@ export const Hero = () => {
           <Link to={ScrollIds.CONTACT} smooth={true}>
             <Button>Entrar em contato</Button>
           </Link>
-          <Button filled={false}>
-            Currículo CV <FilePdfIcon />
-          </Button>
+          <a download={""}>
+            <Button filled={false}>
+              Currículo CV <FilePdfIcon />
+            </Button>
+          </a>
         </div>
       </div>
       <div className="w-full flex justify-start order-1 sm:order-2 text-primary">
