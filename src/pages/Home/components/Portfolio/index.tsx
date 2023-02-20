@@ -1,28 +1,30 @@
-import { Link } from "react-router-dom";
 import { Container } from "../../../../components/Container";
 
 import { ReactComponent as ArrowRightIcon } from "../../../../assets/arrowRight.svg";
-import { ProjectCard } from "./ProjectCard";
 import { ScrollIds } from "../../../../constant/ScrollIds";
 import { portfolioData } from "../../../../service/portifolio";
+import { ProjectCard } from "../../../../components/ProjectCard";
+import { useNavigate } from "react-router-dom";
+import { AppRoutes } from "../../../../constant/AppRoutes";
 
 export const Portfolio = () => {
+  const navigate = useNavigate();
   return (
     <Container
       title="Projetos em destaque"
       section="Portfólio"
       button={{
-        title: "Ver mais no Behance",
-        onClick: () => {},
+        title: "Ver mais",
+        onClick: () => navigate(AppRoutes.PROJECTS),
         icon: <ArrowRightIcon className="-rotate-45" />,
       }}
       id={ScrollIds.PORTFOLIO}
       classes={{ container: "bg-light-900 dark:bg-dark-900 " }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-        {portfolioData.map((item) => (
-          <ProjectCard key={item.title} {...item} />
-        ))}
+        {portfolioData.map(
+          (item) => item.highlight && <ProjectCard key={item.title} {...item} />
+        )}
       </div>
     </Container>
   );

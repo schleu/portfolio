@@ -24,7 +24,7 @@ export const Hero = () => {
           <Link to={ScrollIds.CONTACT} smooth={true}>
             <Button>Entrar em contato</Button>
           </Link>
-          <a download={""}>
+          <a href="/CV_Danilo_Schleu.pdf" target={"_blank"}>
             <Button filled={false}>
               Currículo CV <FilePdfIcon />
             </Button>
