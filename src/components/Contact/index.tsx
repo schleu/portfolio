@@ -86,7 +86,7 @@ export const Contact = () => {
               <Textarea label="Mensagem" required name="message" />
               <Button
                 type="submit"
-                className="bg-light-800 shadow-xl  dark:bg-dark-300  text-light-200  dark:text-dark-200 cursor-not-allowed"
+                className="bg-light-800 shadow-xl  dark:bg-dark-300  text-light-200  dark:text-dark-200"
               >
                 Enviar
               </Button>

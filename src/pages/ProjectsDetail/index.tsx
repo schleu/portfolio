@@ -8,7 +8,7 @@ import { Container } from "../../components/Container";
 import { ScrollIds } from "../../constant/ScrollIds";
 import { portfolioData } from "../../service/portifolio";
 
-export const Projects = () => {
+export const ProjectsDetail = () => {
   let { projectId } = useParams();
   const project = portfolioData.find((project) => project.id === projectId);
   useEffect(() => {
