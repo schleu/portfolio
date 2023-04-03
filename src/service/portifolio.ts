@@ -12,10 +12,10 @@ export const portfolioData: iPortfolio[] = [
   {
     id: "d0fe3dc6-15cc-4c06-9b80-ec823bb8ff86",
     image:
-      "https://d33wubrfki0l68.cloudfront.net/63d1914ea923880009a97a61/screenshot_2023-01-25-20-30-31-0000.png",
+      "https://d33wubrfki0l68.cloudfront.net/642b0e7e307ebc0008a0a084/screenshot_2023-04-03-17-37-10-0000.png",
     title: "Portfólio",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Eu sed elementum consequat id pulvinar.",
+      "Este é o meu portfólio pessoal, onde mostro meus trabalhos, habilidades e experiências como desenvolvedor web.",
     link: "https://portfolio-danilo-schleu.netlify.app/",
     git: "https://github.com/schleu/portfolio",
     highlight: true,
@@ -26,7 +26,7 @@ export const portfolioData: iPortfolio[] = [
       "https://d33wubrfki0l68.cloudfront.net/63d1ee0210c5c50008d19565/screenshot_2023-01-26-03-06-09-0000.png",
     title: "Web Commerce",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Eu sed elementum consequat id pulvinar.",
+      "O projeto web-commerce é um website de comércio eletrônico responsivo, desenvolvido com HTML, CSS e JavaScript. Ele inclui páginas para exibir produtos, carrinho de compras e checkout.",
     link: "https://web-commerce-danilo-schleu.netlify.app/",
     git: "https://github.com/schleu/web-commerce",
     highlight: false,
@@ -48,7 +48,7 @@ export const portfolioData: iPortfolio[] = [
       "https://d33wubrfki0l68.cloudfront.net/63c86818dacb0a297c67e8ac/screenshot_2023-01-18-21-44-53-0000.png",
     title: "Pokedex",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Eu sed elementum consequat id pulvinar.",
+      `O projeto pokedex-react é uma aplicação web em React que exibe informações sobre Pokémon, utilizando a PokéAPI.`,
     link: "https://pokedex-danilo-schleu.netlify.app/",
     git: "https://github.com/schleu/pokedex-react",
     highlight: false,

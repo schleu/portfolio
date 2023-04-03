@@ -1,7 +1,7 @@
+import { BsStar } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { ReactComponent as ArrowRightIcon } from "../..//assets/arrowRight.svg";
 import { AppRoutes } from "../../constant/AppRoutes";
-import { BsStar } from "react-icons/bs";
 
 interface iCard {
   id: string;
@@ -29,7 +29,7 @@ export const ProjectCard = ({
           {title}
           {highlight && <BsStar className="text-primary h-5 w-5 " />}
         </h3>
-        <p>{description}</p>
+        <div dangerouslySetInnerHTML={{__html: description}}></div>
       </div>
       <Link
         to={AppRoutes.PROJECT.replace(":projectId", id)}

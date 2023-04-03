@@ -13,7 +13,7 @@ import {
   DiSass,
   DiSqllite,
 } from "react-icons/di";
-import { SiTypescript } from "react-icons/si";
+import { SiTypescript, SiNextdotjs } from "react-icons/si";
 
 import {ReactComponent as CobolIcon} from '../../../../assets/cobolIcon.svg'
 import {ReactComponent as ColdfusionIcon} from '../../../../assets/coldfusionIcon.svg'
@@ -23,6 +23,11 @@ export const HardSkills = [
     icon: <DiReact className="w-full h-16 duration-700" />,
     text: "React",
     description: "Biblioteca JavaScript para criação de interfaces web.",
+  },
+  {
+    icon: <SiNextdotjs className="w-full h-16 duration-700" />,
+    text: "NextJs",
+    description: "Framework React para renderização no servidor SSR.",
   },
   {
     icon: <DiNodejsSmall className="w-full h-16 duration-700" />,
