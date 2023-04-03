@@ -29,6 +29,17 @@ export const portfolioData: iPortfolio[] = [
       "Lorem ipsum dolor sit amet consectetur. Eu sed elementum consequat id pulvinar.",
     link: "https://web-commerce-danilo-schleu.netlify.app/",
     git: "https://github.com/schleu/web-commerce",
+    highlight: false,
+  },
+  {
+    id: "4c54d104-1d55-4b3a-8e77-d13106816802",
+    image:
+      "https://github.com/schleu/rick-and-morty/raw/main/public/preview.png",
+    title: "Rick e Morty",
+    description:
+      `This project utilizes the Rick and Morty API to display information about the characters, episodes, and locations from the popular animated series "Rick and Morty".`,
+    link: "https://rick-and-morty-three-pi.vercel.app/",
+    git: "https://github.com/schleu/rick-and-morty",
     highlight: true,
   },
   {
