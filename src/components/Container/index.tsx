@@ -32,7 +32,7 @@ export const Container = ({
   <div
     className={classNames(
       "w-full flex justify-center py-8 sm:py-[60px]",
-      classes?.container || "bg-light-800  dark:bg-dark-800 "
+      classes?.container || "bg-dark-800 "
     )}
     id={id}
   >
@@ -40,7 +40,7 @@ export const Container = ({
       <div className="flex flex-col gap-6 sm:gap-12">
         <div className="flex justify-between items-end">
           <div className="flex flex-col gap-2">
-            <div className="flex flex-col text-xs leading-5 sm:text-base uppercase text-dark-900 dark:text-dark-100/50">
+            <div className="flex flex-col text-xs leading-5 sm:text-base uppercase text-dark-100/50">
               {section}
             </div>
             <div className="flex justify-between font-bold text-3xl leading-[3rem] sm:text-5xl sm:leading-[4rem]">

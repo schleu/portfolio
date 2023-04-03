@@ -19,11 +19,11 @@ export const ProjectCard = ({
   link,
   highlight,
 }: iCard) => (
-  <div className="flex flex-col bg-light-900 shadow-xl dark:bg-dark-500 rounded overflow-hidden">
+  <div className="flex flex-col shadow-xl bg-dark-500 rounded overflow-hidden">
     <div className="h-[200px] sm:h-[435px] bg-red-500 object-fill">
       <img src={image} className="w-full h-full" />
     </div>
-    <div className="py-9 px-4 text-light-100 dark:text-dark-100 flex flex-col gap-9">
+    <div className="py-9 px-4 text-dark-100 flex flex-col gap-9">
       <div className="flex flex-col gap-3">
         <h3 className="font-bold text-2xl leading-9 flex justify-between items-center">
           {title}

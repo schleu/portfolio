@@ -16,7 +16,7 @@ export const Textarea = ({ label, placeholder, ...props }: iInputProps) => {
         <textarea
           {...props}
           {...register(props.name || "")}
-          className="w-full p-2  rounded bg-light-900 dark:bg-dark-800  border-light-300  dark:border-dark-300 border"
+          className="w-full p-2 rounded bg-dark-800 border-dark-300 border"
           placeholder={placeholder || label}
         ></textarea>
       </div>

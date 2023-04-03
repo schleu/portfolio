@@ -16,7 +16,7 @@ export const Input = ({ label, placeholder, ...props }: iInputProps) => {
         <input
           type={"text"}
           {...register(props.name || "")}
-          className="w-full p-2 pl-9 rounded bg-light-900 dark:bg-dark-800 border-light-300 dark:border-dark-300 border"
+          className="w-full p-2 pl-9 rounded bg-dark-800 border-dark-300 border"
           placeholder={placeholder || label}
           {...props}
         />

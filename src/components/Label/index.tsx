@@ -14,7 +14,7 @@ export const Label = ({
   children,
   ...props
 }: iInputProps) => (
-  <div className="w-full text-dark-900 dark:text-dark-100 flex flex-col gap-1">
+  <div className="w-full text-dark-100 flex flex-col gap-1">
     <div className="flex justify-between items-center ">
       <label htmlFor="" className="text-base" {...props}>
         {label}

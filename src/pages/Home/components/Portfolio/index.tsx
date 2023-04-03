@@ -19,7 +19,7 @@ export const Portfolio = () => {
         icon: <ArrowRightIcon className="-rotate-45" />,
       }}
       id={ScrollIds.PORTFOLIO}
-      classes={{ container: "bg-light-900 dark:bg-dark-900 " }}
+      classes={{ container: "bg-dark-900 " }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {portfolioData.map(

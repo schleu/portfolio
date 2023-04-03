@@ -32,7 +32,7 @@ export const Services = () => {
           }),
       }}
       id={ScrollIds.SERVICES}
-      classes={{ container: "bg-light-800 dark:bg-dark-800" }}
+      classes={{ container: "bg-dark-800" }}
     >
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
         {services.map((service) => (

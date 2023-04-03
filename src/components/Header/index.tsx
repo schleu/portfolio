@@ -52,7 +52,7 @@ export const Header = () => {
     <div
       className={classNames(
         "w-full h-[70px] flex justify-center items-center backdrop-blur-md border-b ",
-        "bg-light-900 dark:bg-dark-900/80 border-light-500  dark:border-dark-500",
+        "bg-dark-900/80 border-dark-500",
         "fixed top-0 z-50"
       )}
     >

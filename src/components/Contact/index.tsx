@@ -54,7 +54,7 @@ export const Contact = () => {
         <Container
           title="Solicite um orçamento"
           section="Entre em contato"
-          classes={{ container: "bg-light-900 dark:bg-dark-900 " }}
+          classes={{ container: "bg-dark-900 " }}
         >
           <FormProvider {...methods}>
             <form
@@ -86,7 +86,7 @@ export const Contact = () => {
               <Textarea label="Mensagem" required name="message" />
               <Button
                 type="submit"
-                className="bg-light-800 shadow-xl  dark:bg-dark-300  text-light-200  dark:text-dark-200"
+                className="shadow-xl bg-dark-300  text-dark-200"
               >
                 Enviar
               </Button>

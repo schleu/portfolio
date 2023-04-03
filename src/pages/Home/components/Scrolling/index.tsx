@@ -6,7 +6,7 @@ import { ReactComponent as HandWaveIcon } from "../../../../assets/handWave.svg"
 import { ParallaxText } from "./ParallaxText";
 
 export const Scrolling = () => (
-  <div className="w-full flex-nowrap bg-light-900 shadow-xl border-t dark:border-none  dark:bg-dark-500  overflow-hidden z-0 ">
+  <div className="w-full flex-nowrap shadow-xl border-none bg-dark-500  overflow-hidden z-0 ">
     <ParallaxText>
       <div className="w-full flex gap-6 items-center py-2 font-bold text-base leading-5 sm:textx-2xl justify-center cursor-default">
         <h5>Websites</h5>

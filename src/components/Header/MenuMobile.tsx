@@ -21,7 +21,7 @@ export const MenuMobile = ({ isOpen, onClose, items }: iMenuMobileProps) => {
   return (
     <div
       className={classNames(
-        "h-screen fixed top-0 left-0 z-50 bg-light-900 dark:bg-dark-300 flex flex-col overflow-hidden py-8 ",
+        "h-screen fixed top-0 left-0 z-50 bg-dark-300 flex flex-col overflow-hidden py-8 ",
         "transition-all duration-500",
         isOpen ? "w-full" : "w-0"
       )}
