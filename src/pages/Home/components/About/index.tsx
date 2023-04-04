@@ -3,6 +3,7 @@ import { differenceInYears } from "date-fns";
 import { ReactNode, useState } from "react";
 import { Container } from "../../../../components/Container";
 import { ScrollIds } from "../../../../constant/ScrollIds";
+import ProfileImage from '../../../../assets/profile.webp'
 
 export const About = () => {
   const [showMore, setShowMore] = useState(false);
@@ -25,7 +26,7 @@ export const About = () => {
             "sm:before:w-[270px] sm:before:h-[368px] sm:before:top-8 sm:before:left-12"
           )}
         >
-          <img src="profile.jpg" className="h-full w-full object-cover" />
+          <img src={ProfileImage} className="h-full w-full object-cover" />
         </div>
         <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 ">
           <div className="flex flex-col gap-3 ">

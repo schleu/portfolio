@@ -1,22 +1,22 @@
+import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
-import contactBanner from "../../assets/contact.png";
+import { z as zod } from "zod";
+import contactBanner from "../../assets/contact.webp";
 import { ScrollIds } from "../../constant/ScrollIds";
 import { Button } from "../Button";
 import { Container } from "../Container";
 import { Input } from "../Input";
 import { Textarea } from "../TextArea";
-import { Schema, TypeOf, z, z as zod } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 export const Contact = () => {
   const schema = zod.object({
-    name: zod.string().nonempty(),
+    name: zod.string(),
     email: zod.string().email(),
     phone: zod.string(),
     message: zod.string(),
   });
 
-  type ContactForm = z.infer<typeof schema>;
+  type ContactForm = zod.infer<typeof schema>;
 
   const onSubmit = (e: ContactForm) => {
     console.log(e);
