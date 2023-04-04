@@ -14,7 +14,7 @@ export const Footer = () => {
           Designed by: Alexandre Shyjada
         </div>
 
-        <Link to={ScrollIds.HOME} smooth={true}>
+        <Link href={ScrollIds.HOME} to={ScrollIds.HOME} smooth={true}>
           <Button className="bg-dark-300  w-10 h-10 p-0">
             <ArrowRightIcon className="-rotate-90" />
           </Button>

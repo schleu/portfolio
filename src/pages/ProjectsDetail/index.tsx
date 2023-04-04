@@ -22,8 +22,8 @@ export const ProjectsDetail = () => {
       <div className="flex flex-col gap-5">
         <div className="w-full flex justify-center ">
           <img
+            alt="Imagem previa do projeto"
             src={project?.image}
-            alt=""
             className="border border-dark-100 rounded-lg"
           />
         </div>

@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
-import { scroller } from "react-scroll";
+import { Link, scroller } from "react-scroll";
 import { useLocation } from "react-use";
 import { ReactComponent as LogoIcon } from "../../assets/brackets.svg";
 import { ReactComponent as ChatCircleIcon } from "../../assets/chatCircle.svg";
@@ -91,13 +91,12 @@ export const Header = () => {
           })}
         </div>
 
-        <Button
-          className="hidden md:flex"
-          onClick={() => Scrolling(ScrollIds.CONTACT)}
-        >
-          Entrar em contato
-          <ChatCircleIcon />
-        </Button>
+          <Link to={ScrollIds.CONTACT} href={ScrollIds.CONTACT} smooth={true} >
+            <Button className="hidden md:flex" >
+              Entrar em contato
+              <ChatCircleIcon />
+            </Button>
+          </Link>
       </div>
     </div>
   );

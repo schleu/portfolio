@@ -7,7 +7,6 @@ interface iCard {
   id: string;
   title: string;
   image: string;
-  link: string;
   description: string;
   highlight?: boolean;
 }
@@ -16,12 +15,11 @@ export const ProjectCard = ({
   title,
   description,
   image,
-  link,
   highlight,
 }: iCard) => (
   <div className="flex flex-col shadow-xl bg-dark-500 rounded overflow-hidden">
     <div className="h-[200px] sm:h-[435px] bg-red-500 object-fill">
-      <img src={image} className="w-full h-full" />
+      <img src={image} alt="imagem prévia do projeto" className="w-full h-full" />
     </div>
     <div className="py-9 px-4 text-dark-100 flex flex-col gap-9">
       <div className="flex flex-col gap-3">

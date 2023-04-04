@@ -49,7 +49,7 @@ export const Contact = () => {
   return (
     <div className="w-full flex justify-center" id={ScrollIds.CONTACT}>
       <div className="flex gap-20 items-center w-full max-w-screen-cut">
-        <img src={contactBanner} alt="" className="hidden sm:block" />
+        <img src={contactBanner} alt="Imagem com uma luminária acesa, um notebook aberto e um celular ao lado." className="hidden sm:block" />
 
         <Container
           title="Solicite um orçamento"
