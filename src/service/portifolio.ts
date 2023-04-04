@@ -1,6 +1,7 @@
 interface iPortfolio {
   id: string;
   image: string;
+  smallImage: string;
   title: string;
   description: string;
   link: string;
@@ -8,13 +9,11 @@ interface iPortfolio {
   highlight?: boolean;
 }
 
-import PortfolioPreview from '../assets/preview/portfolio-danilo-schleu.webp'
-import RickAndMortyPreview from '../assets/preview/rick-and-morty.webp'
-
 export const portfolioData: iPortfolio[] = [
   {
     id: "d0fe3dc6-15cc-4c06-9b80-ec823bb8ff86",
-    image: PortfolioPreview,
+    image: "https://res.cloudinary.com/dzo8dip4y/image/upload/c_scale,w_1440/v1680628360/portfolio-danilo-schleu_uszxxg.webp",
+    smallImage: "https://res.cloudinary.com/dzo8dip4y/image/upload/c_scale,w_606/v1680628360/portfolio-danilo-schleu_uszxxg.webp",
     title: "Portfólio",
     description:
       "Este é o meu portfólio pessoal, onde mostro meus trabalhos, habilidades e experiências como desenvolvedor web.",
@@ -24,7 +23,8 @@ export const portfolioData: iPortfolio[] = [
   },
   {
     id: "4c54d104-1d55-4b3a-8e77-d13106816802",
-    image:RickAndMortyPreview,
+    image:"https://res.cloudinary.com/dzo8dip4y/image/upload/c_scale,w_1440/v1680628360/rick-and-morty_b13mi6.webp",
+    smallImage:"https://res.cloudinary.com/dzo8dip4y/image/upload/c_scale,w_606/v1680628360/rick-and-morty_b13mi6.webp",
     title: "Rick e Morty",
     description:
       `This project utilizes the Rick and Morty API to display information about the characters, episodes, and locations from the popular animated series "Rick and Morty".`,
@@ -36,6 +36,8 @@ export const portfolioData: iPortfolio[] = [
     id: "cc45a05f-0d63-4d16-9196-439f0907b8ef",
     image:
       "https://d33wubrfki0l68.cloudfront.net/63d1ee0210c5c50008d19565/screenshot_2023-01-26-03-06-09-0000.png",
+    smallImage:
+      "https://d33wubrfki0l68.cloudfront.net/63d1ee0210c5c50008d19565/screenshot_2023-01-26-03-06-09-0000.png",
     title: "Web Commerce",
     description:
       "O projeto web-commerce é um website de comércio eletrônico responsivo, desenvolvido com HTML, CSS e JavaScript. Ele inclui páginas para exibir produtos, carrinho de compras e checkout.",
@@ -46,6 +48,8 @@ export const portfolioData: iPortfolio[] = [
   {
     id: "d725abac-58c6-4109-8c92-0a8fcc5c842a",
     image:
+      "https://d33wubrfki0l68.cloudfront.net/63c86818dacb0a297c67e8ac/screenshot_2023-01-18-21-44-53-0000.png",
+    smallImage:
       "https://d33wubrfki0l68.cloudfront.net/63c86818dacb0a297c67e8ac/screenshot_2023-01-18-21-44-53-0000.png",
     title: "Pokedex",
     description:

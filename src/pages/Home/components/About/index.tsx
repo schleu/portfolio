@@ -26,7 +26,11 @@ export const About = () => {
             "sm:before:w-[270px] sm:before:h-[368px] sm:before:top-8 sm:before:left-12"
           )}
         >
-          <img alt="Foto do Danilo usando um casaco rosa escrito NASA, utilizando um notebook." src={ProfileImage} className="h-full w-full object-cover" />
+          <img 
+            src={ProfileImage} 
+            className="h-full w-full object-cover" 
+            alt="Foto do Danilo usando um casaco rosa escrito NASA, utilizando um notebook." 
+          />
         </div>
         <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 ">
           <div className="flex flex-col gap-3 ">
