@@ -22,10 +22,10 @@ export const Hero = () => {
         </div>
         <div className="flex gap-4 sm:gap-6">
           <Link to={ScrollIds.CONTACT} smooth={true}>
-            <Button>Entrar em contato</Button>
+            <Button title="Vai para o formulário de contato">Entrar em contato</Button>
           </Link>
           <a href="/CV_Danilo_Schleu.pdf" target={"_blank"}>
-            <Button filled={false}>
+            <Button filled={false} title="Abre currículo em outra aba">
               Currículo CV <FilePdfIcon />
             </Button>
           </a>

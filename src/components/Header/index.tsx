@@ -92,7 +92,7 @@ export const Header = () => {
         </div>
 
           <Link to={ScrollIds.CONTACT} href={ScrollIds.CONTACT} smooth={true} >
-            <Button className="hidden md:flex" >
+            <Button className="hidden md:flex" title="Go to contact form" >
               Entrar em contato
               <ChatCircleIcon />
             </Button>

@@ -87,6 +87,7 @@ export const Contact = () => {
               <Button
                 type="submit"
                 className="shadow-xl bg-dark-300  text-dark-200"
+                title="Send contact"
               >
                 Enviar
               </Button>

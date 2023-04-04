@@ -180,12 +180,13 @@ export const About = () => {
             </Paragraph>
           </div>
 
-          <button onClick={() => setShowMore((e) => !e)}>
+          <button onClick={() => setShowMore((e) => !e)} title="Mostrar ou Esconder todo o conteudo acima.">
             {showMore ? "Ver resumido" : "Ver completo"}
           </button>
-          <h5 className="font-normal text-base sm:text-xl leading-8 text-dark-100/50">
+
+          <p className="font-normal text-base sm:text-xl leading-8 text-dark-100/50">
             "Os limites só existem se você os deixar existir." - Son Goku
-          </h5>
+          </p>
         </div>
       </div>
     </Container>

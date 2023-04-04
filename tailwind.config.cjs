@@ -12,7 +12,7 @@ module.exports = {
         "dark-500": "#262626",
         "dark-300": "#333333",
         "dark-200": "#D6D6DC",
-        "dark-100": "#F0F6FF",
+        "dark-100": "#FFFFFF",
         primary: "#41B19B",
         danger: "#F12C4C",
         "light-900": "#F0F6FF",

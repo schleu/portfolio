@@ -54,6 +54,7 @@ export const Container = ({
                 "uppercase bg-dark-100/10 hidden sm:flex",
                 classes?.button
               )}
+              title={button.title}
             >
               {button.title}
               {button.icon}
