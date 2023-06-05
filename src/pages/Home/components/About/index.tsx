@@ -3,7 +3,7 @@ import { differenceInYears } from "date-fns";
 import { ReactNode, useState } from "react";
 import { Container } from "../../../../components/Container";
 import { ScrollIds } from "../../../../constant/ScrollIds";
-import ProfileImage from '../../../../assets/profile.webp'
+import ProfileImage from "../../../../assets/profile.webp";
 
 export const About = () => {
   const [showMore, setShowMore] = useState(false);
@@ -26,10 +26,10 @@ export const About = () => {
             "sm:before:w-[270px] sm:before:h-[368px] sm:before:top-8 sm:before:left-12"
           )}
         >
-          <img 
-            src={ProfileImage} 
-            className="h-full w-full object-cover" 
-            alt="Foto do Danilo usando um casaco rosa escrito NASA, utilizando um notebook." 
+          <img
+            src={ProfileImage}
+            className="h-full w-full object-cover"
+            alt="Foto do Danilo usando um casaco rosa escrito NASA, utilizando um notebook."
           />
         </div>
         <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 ">
@@ -182,9 +182,35 @@ export const About = () => {
               Utilizando Typescript, Tailwind, Next.JS, React.JS, Styled
               Components. Metodologias ágeis. Git para versionamento.
             </Paragraph>
+
+            {/* Hiperbanco */}
+            <Paragraph>
+              [Abr 2022 - Atualmente] Desenvolvedor Pleno no Hiperbanco.
+              <div
+                className={classNames(
+                  "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
+                  "transition-all duration-1000 ease-in-out overflow-y-auto",
+                  showMore ? "h-[100px]" : "h-0 w-0 p-0 overflow-hidden "
+                )}
+              >
+                <Project
+                  title="Internet Banking"
+                  description="Padronização de tecnologias, melhoria de código, correções de bugs."
+                />
+                <Project
+                  title="Credit as a Service"
+                  description="Serviço de solicitação de crédito online."
+                />
+              </div>
+              Utilizando Typescript, MaterialUI, React.JS. Metodologias ágeis.
+              Git para versionamento.
+            </Paragraph>
           </div>
 
-          <button onClick={() => setShowMore((e) => !e)} title="Mostrar ou Esconder todo o conteudo acima.">
+          <button
+            onClick={() => setShowMore((e) => !e)}
+            title="Mostrar ou Esconder todo o conteudo acima."
+          >
             {showMore ? "Ver resumido" : "Ver completo"}
           </button>
 
