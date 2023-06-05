@@ -185,7 +185,7 @@ export const About = () => {
 
             {/* Hiperbanco */}
             <Paragraph>
-              [Abr 2022 - Atualmente] Desenvolvedor Pleno no Hiperbanco.
+              [Abr 2023 - Atualmente] Desenvolvedor Pleno no Hiperbanco.
               <div
                 className={classNames(
                   "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
