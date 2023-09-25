@@ -6,7 +6,7 @@ import { ScrollIds } from "../../../../constant/ScrollIds";
 import ProfileImage from "../../../../assets/profile.webp";
 
 export const About = () => {
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
 
   const age = differenceInYears(new Date(), new Date("02/18/1993"));
   const city = "Salvador - Bahia";
@@ -32,21 +32,21 @@ export const About = () => {
             alt="Foto do Danilo usando um casaco rosa escrito NASA, utilizando um notebook."
           />
         </div>
-        <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 ">
+        <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 h-[500px] overflow-y-scroll pr-4 ">
           <div className="flex flex-col gap-3 ">
             <h3 className="font-bold text-2xl leading-9">
               Quem é Danilo Schleu?
             </h3>
             <Paragraph>
-              Desenvolvedor Full Stack, tecnólogo em analise e desenvovimento de
+              Desenvolvedor Full Stack, tecnólogo em análise e desenvovimento de
               sistemas pela Cesumar.
             </Paragraph>
 
             <Paragraph>
               <span className="flex flex-wrap gap-2 ">
                 Solteiro, {age} anos, residente em {city}, amante de esportes,{" "}
-                sempre estou procurando algo novo praticar. No tempo livre,
-                adoro me aventurar na cozinha. Além de ver alguma série ou
+                sempre estou procurando praticar algo novo. No tempo livre,
+                adoro me aventurar na cozinha, além de ver alguma série ou
                 filme.
               </span>
             </Paragraph>
@@ -55,7 +55,8 @@ export const About = () => {
 
             <Paragraph>
               <span className="flex flex-wrap gap-2">
-                [ Jan 2015 - Jan 2016 ] - Estagiário na InnovaUp,
+                [ Jan 2015 - Jan 2016 ] - Estagiário na InnovaUp, fiz alguns
+                sistemas pequenos complementares em Delphi.
                 <div
                   className={classNames(
                     "text-primary overflow-hidden bg-white/5 p-1 rounded-md",
@@ -64,18 +65,18 @@ export const About = () => {
                   )}
                 >
                   <i className="text-primary">
-                    {" "}
-                    atuei maior parte do tempo como N1(suporte),
+                    Reporte de Error: Projeto em delphi que captura a tela do
+                    cliente e permite descrever a duvida que possuia na tela.
+                    Atendimento ao cliente N1
                   </i>
-                </div>{" "}
-                fiz alguns sistemas pequenos complementares em Delphi.
+                </div>
               </span>
             </Paragraph>
 
             {/* Capgemini */}
             <Paragraph>
               [ Fev 2016 - Fev 2019 ] Desenvolvedor Pleno na Capgemini, atuando
-              com analise de código para atualização de sistemas gerados por um
+              com análise de código para atualização de sistemas gerados por um
               codemaker para uma versão de cobol mais atual. Metodologias ágeis.
             </Paragraph>
 
@@ -83,7 +84,8 @@ export const About = () => {
             <Paragraph>
               [ Ago 2019 - Jul 2021 ] Desenvolvedor Full Stack na Click
               Interativo, atuei na manutenção e desenvolvimento de aplicações
-              web.
+              web, utilizando Coldfusion e MySql no backend. HTML5, CSS3,
+              Javascript, Jquery no front.
               <div
                 className={classNames(
                   "text-primary bg-white/5 p-2 rounded-md",
@@ -113,13 +115,15 @@ export const About = () => {
                     Stella Maris"
                 />
               </div>
-              Utilizando Coldfusion e MySql no backend. HTML5, CSS3, Javascript,
-              Jquery no front.
             </Paragraph>
 
             {/* Supera */}
             <Paragraph>
               [Ago 2021 - Jan 2022] Desenvolvedor React na Supera Inovação.
+              Utilizando React.JS, Typescript, Next.JS, Styled Components,
+              ChakraUI, Tailwind no Frontend. NodeJS, mongoDB, Strapi no
+              Backend. React Native no Mobile. Metodologias ágeis. Git para
+              versionamento.
               <div
                 className={classNames(
                   "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
@@ -137,7 +141,7 @@ export const About = () => {
                 />
                 <Project
                   title="Liver Mobile"
-                  description="Refatorar funções de classes para hooks, desenvovimento novas funções."
+                  description="Refatorar funções de classes para hooks, desenvolvimento de novas features."
                 />
                 <Project
                   title="Liver Web"
@@ -150,18 +154,16 @@ export const About = () => {
                 />
                 <Project
                   title="GetJus"
-                  description="Analise de erro e correção."
+                  description="Análise de erro e correção."
                 />
               </div>
-              Utilizando React.JS, Typescript, Next.JS, Styled Components,
-              ChakraUI, Tailwind no Frontend. NodeJS, mongoDB, Strapi no
-              Backend. React Native no Mobile. Metodologias ágeis. Git para
-              versionamento.
             </Paragraph>
 
             {/* W3block */}
             <Paragraph>
               [Fev 2022 - Dez 2022] Desenvolvedor Pleno na W3block.io.
+              Utilizando Typescript, Tailwind, Next.JS, React.JS, Styled
+              Components. Metodologias ágeis. Git para versionamento.
               <div
                 className={classNames(
                   "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
@@ -179,8 +181,6 @@ export const About = () => {
                   description="implementação de novas features"
                 />
               </div>
-              Utilizando Typescript, Tailwind, Next.JS, React.JS, Styled
-              Components. Metodologias ágeis. Git para versionamento.
             </Paragraph>
 
             {/* Hiperbanco */}
@@ -211,7 +211,7 @@ export const About = () => {
             onClick={() => setShowMore((e) => !e)}
             title="Mostrar ou Esconder todo o conteudo acima."
           >
-            {showMore ? "Ver resumido" : "Ver completo"}
+            {showMore ? "Ver resumido" : "Ver projetos"}
           </button>
 
           <p className="font-normal text-base sm:text-xl leading-8 text-dark-100/50">
