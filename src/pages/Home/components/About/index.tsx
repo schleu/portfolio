@@ -195,12 +195,13 @@ export const About = () => {
               >
                 <Project
                   title="Internet Banking"
-                  description="Padronização de tecnologias, melhoria de código, correções de bugs."
+                  description="Substituí o Metronic pelo Vite, efetuei uma atualização completa, reestruturei o projeto, corrigi erros e implementei a seção completa de folha de pagamento."
                 />
                 <Project
                   title="Credit as a Service"
                   description="Serviço de solicitação de crédito online."
                 />
+                <Project title="Geopay" description="Serviço de checkout." />
               </div>
               Utilizando Typescript, MaterialUI, React.JS. Metodologias ágeis.
               Git para versionamento.
