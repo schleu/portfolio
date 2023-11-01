@@ -26,10 +26,7 @@ export const Services = () => {
       title="Serviços"
       button={{
         title: "Entrar em contato",
-        onClick: () =>
-          scroller.scrollTo(ScrollIds.CONTACT, {
-            smooth: true,
-          }),
+        onClick: () => scroller.scrollTo(ScrollIds.CONTACT, { smooth: true }),
       }}
       id={ScrollIds.SERVICES}
       classes={{ container: "bg-dark-800" }}

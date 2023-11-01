@@ -1,15 +1,14 @@
-import { ReactNode, useRef } from "react";
+import { wrap } from "@motionone/utils";
 import {
+  MotionValue,
   motion,
-  useScroll,
+  useAnimationFrame,
+  useMotionValue,
   useSpring,
   useTransform,
-  useMotionValue,
   useVelocity,
-  useAnimationFrame,
-  MotionValue,
 } from "framer-motion";
-import { wrap } from "@motionone/utils";
+import { ReactNode, useRef } from "react";
 
 interface ParallaxProps {
   children: ReactNode;
@@ -64,13 +63,7 @@ export function ParallaxText({ children, baseVelocity = 10 }: ParallaxProps) {
   return (
     <div className="w-full overflow-hidden flex flex-nowrap">
       <motion.div className="w-full uppercase flex flex-nowrap" style={{ x }}>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
+        <span>{children}</span>
       </motion.div>
     </div>
   );

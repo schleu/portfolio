@@ -20,19 +20,27 @@ export const About = () => {
       <div className="flex flex-col sm:flex-row gap-6 sm:gap-20 sm:items-center">
         <div
           className={classNames(
-            "w-[255px] sm:w-[310px] h-[322px] sm:h-[392px] bg-dark-300  relative",
-            "before:content-[''] before:absolute before:border-b-8 before:border-r-8 before:border-primary",
-            "before:w-[212px] before:h-[278px] before:top-[3.2rem] before:left-[3.2rem]",
-            "sm:before:w-[270px] sm:before:h-[368px] sm:before:top-8 sm:before:left-12"
+            "w-[255px] sm:w-[310px] h-[322px] sm:h-[392px] bg-dark-300 relative",
+            "transition-all ease-in-out duration-700 animate-fadeInUp"
           )}
         >
+          <div
+            className={classNames(
+              "border-b-8 border-r-8 absolute z-0",
+              "border-primary bg-primary",
+              "w-[212px] h-[278px] top-[3.2rem] left-[3.2rem]",
+              "sm:w-[270px] sm:h-[368px] sm:top-8 sm:left-12",
+              "transition-all ease-in-out duration-700",
+              "sm:hover:h-[575px]"
+            )}
+          />
           <img
             src={ProfileImage}
-            className="h-full w-full object-cover"
+            className={classNames("h-full w-full object-cover z-20 absolute ")}
             alt="Foto do Danilo usando um casaco rosa escrito NASA, utilizando um notebook."
           />
         </div>
-        <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 h-[500px] overflow-y-scroll pr-4 ">
+        <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 h-[500px] overflow-y-scroll pr-4 animate-fadeIn ">
           <div className="flex flex-col gap-3 ">
             <h3 className="font-bold text-2xl leading-9">
               Quem é Danilo Schleu?

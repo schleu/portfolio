@@ -7,6 +7,7 @@ import { Button } from "../Button";
 import { Container } from "../Container";
 import { Input } from "../Input";
 import { Textarea } from "../TextArea";
+import { ReactComponent as CrownIcon } from "../../assets/crownSimple.svg";
 
 export const Contact = () => {
   const schema = zod.object({
@@ -49,10 +50,10 @@ export const Contact = () => {
   return (
     <div className="w-full flex justify-center" id={ScrollIds.CONTACT}>
       <div className="flex gap-20 items-center w-full max-w-screen-cut">
-        <img 
-          src={contactBanner} 
-          className="hidden sm:block" 
-          alt="Imagem com uma luminária acesa, um notebook aberto e um celular ao lado." 
+        <img
+          src={contactBanner}
+          className="hidden sm:block"
+          alt="Imagem com uma luminária acesa, um notebook aberto e um celular ao lado."
         />
 
         <Container
@@ -69,6 +70,7 @@ export const Contact = () => {
                 label="Nome Completo"
                 placeholder="Digite o seu nome"
                 required
+                Icon={CrownIcon}
                 name="name"
               />
               <div className="flex flex-col sm:flex-row gap-6">

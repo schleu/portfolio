@@ -10,12 +10,17 @@ export const Footer = () => {
         <div className="flex gap-2.5 items-center cursor-default">
           Copyright© 2022 - Danilo Schleu
         </div>
-        <div className="hidden /*flex*/ items-center font-normal text-xs cursor-default">
-          Designed by: Alexandre Shyjada
-        </div>
 
-        <Link href={ScrollIds.HOME} to={ScrollIds.HOME} smooth={true} alt="Move para o topo da pagina">
-          <Button className="bg-dark-300  w-10 h-10 p-0" title="Move para o topo da pagina">
+        <Link
+          href={ScrollIds.HOME}
+          to={ScrollIds.HOME}
+          smooth={true}
+          alt="Move para o topo da pagina"
+        >
+          <Button
+            className="bg-dark-300  w-10 h-10 p-0 hover:animate-bounce hover:ease-in-out"
+            title="Move para o topo da pagina"
+          >
             <ArrowRightIcon className="-rotate-90" />
           </Button>
         </Link>

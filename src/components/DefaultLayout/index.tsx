@@ -10,7 +10,7 @@ export const DefaultLayout = () => {
   return (
     <div className="">
       <div
-        className="w-full font-sora text-dark-100 bg-dark-900  overflow-x-hidden"
+        className="w-full font-sora text-dark-100 bg-dark-900 overflow-x-hidden"
         id={ScrollIds.HOME}
       >
         <Header />
