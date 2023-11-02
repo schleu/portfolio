@@ -24,6 +24,8 @@ module.exports = {
       },
       fontFamily: {
         sora: ["Sora", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
       },
       variants: {
         animation: ["motion-safe"],

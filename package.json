@@ -1,7 +1,7 @@
 {
-  "name": "portfolio2",
+  "name": "portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,7 +19,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.0",
     "react-i18next": "^12.1.4",
-    "react-icons": "^4.7.1",
+    "react-icons": "^4.11.0",
     "react-router-dom": "^6.7.0",
     "react-scroll": "^1.8.9",
     "react-use": "^17.4.0",

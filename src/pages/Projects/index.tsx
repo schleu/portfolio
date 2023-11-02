@@ -8,7 +8,7 @@ import { portfolioData } from "../../service/portifolio";
 
 export const Projects = () => {
   let { projectId } = useParams();
-  const project = portfolioData.find((project) => project.id === projectId);
+
   useEffect(() => {
     scroller.scrollTo(ScrollIds.HOME, {
       smooth: true,

@@ -1,5 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
+import { AiOutlineMail } from "react-icons/ai";
+import { BsPerson, BsTelephone } from "react-icons/bs";
 import { z as zod } from "zod";
 import contactBanner from "../../assets/contact.webp";
 import { ScrollIds } from "../../constant/ScrollIds";
@@ -7,7 +9,6 @@ import { Button } from "../Button";
 import { Container } from "../Container";
 import { Input } from "../Input";
 import { Textarea } from "../TextArea";
-import { ReactComponent as CrownIcon } from "../../assets/crownSimple.svg";
 
 export const Contact = () => {
   const schema = zod.object({
@@ -20,8 +21,6 @@ export const Contact = () => {
   type ContactForm = zod.infer<typeof schema>;
 
   const onSubmit = (e: ContactForm) => {
-    console.log(e);
-
     let text = `Nome: ${e.name}\n`;
     text += `Telefone: ${e.phone}\n`;
     text += `Mensagem: ${e.message}`;
@@ -70,7 +69,7 @@ export const Contact = () => {
                 label="Nome Completo"
                 placeholder="Digite o seu nome"
                 required
-                Icon={CrownIcon}
+                Icon={BsPerson}
                 name="name"
               />
               <div className="flex flex-col sm:flex-row gap-6">
@@ -80,6 +79,7 @@ export const Contact = () => {
                   placeholder="Digite o seu telefone"
                   required
                   name="phone"
+                  Icon={BsTelephone}
                 />
                 <Input
                   type={"email"}
@@ -87,6 +87,7 @@ export const Contact = () => {
                   placeholder="Digite o seu email"
                   required
                   name="email"
+                  Icon={AiOutlineMail}
                 />
               </div>
               <Textarea label="Mensagem" required name="message" />
