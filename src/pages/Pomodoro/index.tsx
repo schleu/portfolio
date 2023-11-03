@@ -1,90 +1,59 @@
-import { ReactNode, useState, HTMLProps } from "react";
-import { Countdown } from "./components/Countdown";
-import { add } from "date-fns";
-import classNames from "classnames";
+import { useEffect, useState } from "react";
+import { Pomodoro } from "./components/Pomodoro";
+import { Task, Tasks } from "./components/Tasks";
 
-import { AiOutlineReload, AiOutlinePause } from "react-icons/ai";
-import { BsFillPlayFill } from "react-icons/bs";
+const mokedTasks: Task[] = [
+  { name: "PWA", done: true },
+  { name: "Design Patterns", done: true },
+  { name: "NextJs 13", done: true },
+  { name: "NestJs", done: false },
+  { name: "Adicionar animação port", done: false },
+  { name: "Wordpress", done: false },
+  { name: "Pomodoro App", done: false },
+];
 
 export function PomodoroPage() {
-  const [time, setTime] = useState(25);
-  const [started, setStarted] = useState(false);
+  const [start, setStart] = useState(false);
+  const [pause, setPause] = useState(false);
   const [reset, setReset] = useState(false);
+  const [tasks, setTasks] = useState<Task[]>(mokedTasks);
+  const [actualTask, setActualTask] = useState(0);
 
-  const startCountDown = () => setStarted(true);
-  const stopCountdown = () => setStarted(false);
+  useEffect(() => {
+    const i = mokedTasks.findIndex((e) => e.done === false);
+    setActualTask(i);
+  }, []);
 
-  const workTime = 25;
-  const BreakTime = 5;
+  function onTimerFinished() {
+    console.log("danilo", actualTask, tasks[actualTask].name);
+    const lengthTask = tasks.length - 1;
 
-  const handleTime = (t: number) => {
-    setTime(t);
-    setStarted(false);
-  };
+    if (lengthTask === actualTask) {
+      setPause((e) => !e);
+    } else {
+      const t = tasks.map((e, idx) =>
+        idx === actualTask ? { ...e, done: true } : e
+      );
+      setTasks(t);
+
+      setActualTask((e) => (e < lengthTask ? e + 1 : 0));
+    }
+  }
 
   return (
-    <div
-      className={classNames(
-        "p-10 bg-dark-500 rounded-lg mx-auto w-fit mt-32 mb-10",
-        "flex flex-col justify-center items-center gap-10"
-      )}
-    >
-      <div className="flex gap-4">
-        <Badge active={time === workTime} onClick={() => handleTime(workTime)}>
-          Work
-        </Badge>
-        <Badge
-          active={time === BreakTime}
-          onClick={() => handleTime(BreakTime)}
-        >
-          Break
-        </Badge>
+    <div className="w-full flex flex-col gap-8 p-10">
+      <div className="flex gap-2 justify-center">
+        <button onClick={() => setStart((e) => !e)}>start</button>
+        <button onClick={() => setPause((e) => !e)}>pause</button>
+        <button onClick={() => setReset((e) => !e)}>reset</button>
       </div>
-
-      <Countdown
-        min={time}
-        onFinished={stopCountdown}
-        start={started}
-        reset={reset}
+      <Pomodoro
+        pause={pause}
+        restart={reset}
+        start={start}
+        onFinishedCicle={onTimerFinished}
       />
-
-      <div className="flex gap-4">
-        <button
-          className="bg-blue-500 w-[150px] px-10 py-2 rounded-md flex items-center gap-2"
-          onClick={started ? stopCountdown : startCountDown}
-        >
-          {started ? <AiOutlinePause /> : <BsFillPlayFill />}
-          {started ? "Pause" : "Start"}
-        </button>
-
-        <button
-          onClick={() => setReset((e) => !e)}
-          disabled={started}
-          className="bg-blue-500 w-fit px-4 py-2 rounded-md disabled:bg-dark-800"
-          title="Reset"
-        >
-          <AiOutlineReload />
-        </button>
-      </div>
-    </div>
-  );
-}
-
-interface Props extends HTMLProps<HTMLDivElement> {
-  children: ReactNode;
-  active?: boolean;
-}
-
-function Badge({ children, active = false, ...props }: Props) {
-  return (
-    <div
-      className={classNames(
-        "w-20 text-center border rounded-sm cursor-pointer",
-        active ? "border-blue-500 font-bold text-blue-500" : "border-white"
-      )}
-      {...props}
-    >
-      {children}
+      <Tasks tasks={mokedTasks} actived={actualTask} />
     </div>
   );
 }

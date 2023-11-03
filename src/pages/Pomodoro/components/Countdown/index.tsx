@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 interface Props {
   onFinished?: () => void;
-  min: number;
+  min?: number;
+  sec?: number;
   start: boolean;
   reset?: boolean;
 }
@@ -10,11 +11,12 @@ interface Props {
 export function Countdown({
   onFinished,
   min = 0,
+  sec = 0,
   start,
   reset = false,
 }: Props) {
   const [minutes, setMinutes] = useState(min);
-  const [seconds, setSeconds] = useState(0);
+  const [seconds, setSeconds] = useState(sec);
 
   useEffect(() => {
     if (start) {
@@ -38,11 +40,9 @@ export function Countdown({
   }, [seconds, start]);
 
   useEffect(() => {
-    if (min !== minutes) {
-      setMinutes(min);
-      setSeconds(0);
-    }
-  }, [min, reset]);
+    setMinutes(min);
+    setSeconds(sec);
+  }, [min, sec, reset]);
 
   return (
     <div className="flex justify-between text-9xl text-center font-nunito font-bold">
