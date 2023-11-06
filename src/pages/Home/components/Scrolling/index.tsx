@@ -1,9 +1,7 @@
-import { ReactComponent as LightingIcon } from "../../../../assets/lighting.svg";
-import { ReactComponent as BracketsIcon } from "../../../../assets/brackets.svg";
-import { ReactComponent as SmileIcon } from "../../../../assets/smile.svg";
 import { ReactComponent as AmpersandIcon } from "../../../../assets/ampersand.svg";
-import { ParallaxText } from "./ParallaxText";
-import { array } from "zod";
+import { ReactComponent as BracketsIcon } from "../../../../assets/brackets.svg";
+import { ReactComponent as LightingIcon } from "../../../../assets/lighting.svg";
+import { ReactComponent as SmileIcon } from "../../../../assets/smile.svg";
 
 export const Scrolling = () => (
   <>
