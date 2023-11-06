@@ -25,7 +25,6 @@ export function PomodoroPage() {
   }, []);
 
   function onTimerFinished() {
-    console.log("danilo", actualTask, tasks[actualTask].name);
     const lengthTask = tasks.length - 1;
 
     if (lengthTask === actualTask) {

@@ -2,7 +2,6 @@ export async function useLocalstorage() {
   const db = getLS();
 
   const dbs = getLS();
-  console.log(dbs);
 
   window.indexedDB;
   window.localStorage;
