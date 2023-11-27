@@ -17,7 +17,7 @@ export const About = () => {
       section="Sobre mim"
       id={ScrollIds.ABOUT}
     >
-      <div className="flex flex-col sm:flex-row gap-6 sm:gap-20 sm:items-center">
+      <div className="flex flex-col sm:flex-row gap-6 sm:gap-20 sm:items-start">
         <div
           className={classNames(
             "w-[255px] sm:w-[310px] h-[322px] sm:h-[392px] bg-dark-300 relative",
@@ -30,34 +30,39 @@ export const About = () => {
               "border-primary bg-primary",
               "w-[212px] h-[278px] top-[3.2rem] left-[3.2rem]",
               "sm:w-[270px] sm:h-[368px] sm:top-8 sm:left-12",
-              "transition-all ease-in-out duration-700",
-              "sm:hover:h-[575px]"
+              "transition-all ease-in-out duration-700"
             )}
           />
           <img
             src={ProfileImage}
-            className={classNames("h-full w-full object-cover z-20 absolute ")}
+            className={classNames(
+              "h-full w-full object-cover z-20 absolute hover:scale-110 transition-all duration-700 ease-in-out"
+            )}
             alt="Foto do Danilo usando um casaco rosa escrito NASA, utilizando um notebook."
           />
         </div>
-        <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 h-[500px] overflow-y-scroll pr-4 animate-fadeIn ">
-          <div className="flex flex-col gap-3 ">
+
+        <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 h-screen overflow-y-scroll pr-4 animate-fadeIn ">
+          <div className="flex flex-col gap-10 ">
             <h3 className="font-bold text-2xl leading-9">
               Quem é Danilo Schleu?
             </h3>
-            <Paragraph>
-              Desenvolvedor Full Stack, tecnólogo em análise e desenvovimento de
-              sistemas pela Cesumar.
-            </Paragraph>
 
-            <Paragraph>
-              <span className="flex flex-wrap gap-2 ">
-                Solteiro, {age} anos, residente em {city}, amante de esportes,{" "}
-                sempre estou procurando praticar algo novo. No tempo livre,
-                adoro me aventurar na cozinha, além de ver alguma série ou
-                filme.
-              </span>
-            </Paragraph>
+            <div className="flex flex-col gap-6">
+              <Paragraph>
+                Desenvolvedor Full Stack, tecnólogo em análise e desenvovimento
+                de sistemas pela Cesumar.
+              </Paragraph>
+
+              <Paragraph>
+                <span className="flex flex-wrap gap-2 ">
+                  Solteiro, {age} anos, residente em {city}, amante de esportes,{" "}
+                  sempre estou procurando praticar algo novo. No tempo livre,
+                  adoro me aventurar na cozinha, além de ver alguma série ou
+                  filme.
+                </span>
+              </Paragraph>
+            </div>
 
             <i>Aqui começa minha jornada profissional:</i>
 
@@ -67,6 +72,7 @@ export const About = () => {
                 sistemas pequenos complementares em Delphi.
                 <div
                   className={classNames(
+                    "hidden",
                     "text-primary overflow-hidden bg-white/5 p-1 rounded-md",
                     "transition-all duration-1000 ease-in-out ",
                     showMore ? "text-sm" : "text-[0px] w-0 hidden"
@@ -96,10 +102,11 @@ export const About = () => {
               Javascript, Jquery no front.
               <div
                 className={classNames(
+                  "hidden",
                   "text-primary bg-white/5 p-2 rounded-md",
                   "transition-all duration-1000 ease-in-out",
                   showMore
-                    ? "h-[100px]  overflow-y-auto"
+                    ? "h-fit overflow-y-auto"
                     : "h-0 overflow-hidden w-0 p-0"
                 )}
               >
@@ -134,9 +141,10 @@ export const About = () => {
               versionamento.
               <div
                 className={classNames(
+                  "hidden",
                   "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
                   "transition-all duration-1000 ease-in-out overflow-y-auto",
-                  showMore ? "h-[100px]" : "h-0 overflow-hidden w-0 p-0"
+                  showMore ? "h-fit" : "h-0 overflow-hidden w-0 p-0"
                 )}
               >
                 <Project
@@ -174,9 +182,10 @@ export const About = () => {
               Components. Metodologias ágeis. Git para versionamento.
               <div
                 className={classNames(
+                  "hidden",
                   "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
                   "transition-all duration-1000 ease-in-out overflow-y-auto",
-                  showMore ? "h-[100px]" : "h-0 w-0 p-0 overflow-hidden "
+                  showMore ? "h-fit" : "h-0 w-0 p-0 overflow-hidden "
                 )}
               >
                 <Project title="Eventix" description="Ticketeria" />
@@ -193,12 +202,14 @@ export const About = () => {
 
             {/* Hiperbanco */}
             <Paragraph>
-              [Abr 2023 - Atualmente] Desenvolvedor Pleno no Hiperbanco.
+              Desenvolvedor Pleno no Hiperbanco. <br />
+              [Abr 2023 - Atualmente]
               <div
                 className={classNames(
+                  "hidden",
                   "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
                   "transition-all duration-1000 ease-in-out overflow-y-auto",
-                  showMore ? "h-[100px]" : "h-0 w-0 p-0 overflow-hidden "
+                  showMore ? "h-fit" : "h-0 w-0 p-0 overflow-hidden "
                 )}
               >
                 <Project

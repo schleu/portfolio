@@ -76,7 +76,7 @@ const Card = ({ icon, description, title, index }: iCard) => (
   >
     <div className="w-8 sm:w-10 h-8 sm:h-10">{icon}</div>
     <div className="flex flex-col justify-start items-start gap-2 text-dark-100">
-      <div className="font-bold text-base">{title + index}</div>
+      <div className="font-bold text-base">{title}</div>
       <div className="font-normal text-xs leading-5 h-16">{description}</div>
     </div>
   </div>
