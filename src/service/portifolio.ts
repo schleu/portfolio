@@ -13,13 +13,13 @@ export const portfolioData: iPortfolio[] = [
   {
     id: "de952c67-6a41-4598-8aa0-732516c867c8",
     image:
-      "https://d33wubrfki0l68.cloudfront.net/6547e79882d3680009e14a0c/screenshot_2023-11-05-19-06-24-0000.png",
+      "https://d33wubrfki0l68.cloudfront.net/654ce06705a0bd0008167264/screenshot_2023-11-09-13-37-06-0000.png",
     smallImage:
-      "https://d33wubrfki0l68.cloudfront.net/6547e79882d3680009e14a0c/screenshot_2023-11-05-19-06-24-0000.png",
-    title: "Agency SE",
-    description: `Landing page de uma agência de publicidade.`,
-    link: "https://agency-se.netlify.app/",
-    git: "https://github.com/schleu/agency-se",
+      "https://d33wubrfki0l68.cloudfront.net/654ce06705a0bd0008167264/screenshot_2023-11-09-13-37-06-0000.png",
+    title: "Digital Pro",
+    description: `DigitalPro Connect: Sua rota direta para o sucesso digital. Descubra como nossas soluções inovadoras de marketing digital podem transformar o seu negócio.`,
+    link: "https://digital-pro.netlify.app/",
+    git: "https://github.com/schleu/digital-pro",
     highlight: true,
   },
   {
