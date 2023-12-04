@@ -14,11 +14,11 @@ import { MenuMobile } from "./MenuMobile";
 
 const menuItemsMocked = [
   { text: "Início", link: ScrollIds.HOME, onClick: () => {} },
-  {
-    text: "Serviços",
-    link: ScrollIds.SERVICES,
-    onClick: () => {},
-  },
+  // {
+  //   text: "Serviços",
+  //   link: ScrollIds.SERVICES,
+  //   onClick: () => {},
+  // },
   { text: "Portfólio", link: ScrollIds.PORTFOLIO, onClick: () => {} },
   { text: "Sobre Mim", link: ScrollIds.ABOUT, onClick: () => {} },
   { text: "Contato", link: ScrollIds.CONTACT, onClick: () => {}, mobile: true },
@@ -91,12 +91,12 @@ export const Header = () => {
           })}
         </div>
 
-          <Link to={ScrollIds.CONTACT} href={ScrollIds.CONTACT} smooth={true} >
-            <Button className="hidden md:flex" title="Go to contact form" >
-              Entrar em contato
-              <ChatCircleIcon />
-            </Button>
-          </Link>
+        <Link to={ScrollIds.CONTACT} href={ScrollIds.CONTACT} smooth={true}>
+          <Button className="hidden md:flex" title="Go to contact form">
+            Entrar em contato
+            <ChatCircleIcon />
+          </Button>
+        </Link>
       </div>
     </div>
   );

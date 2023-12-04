@@ -10,7 +10,7 @@ export const Home = () => {
     <div className="flex flex-col items-center" id="home">
       <Hero />
       <Scrolling />
-      <Services />
+      {/* <Services /> */}
       <Portfolio />
       <About />
       <Skills />

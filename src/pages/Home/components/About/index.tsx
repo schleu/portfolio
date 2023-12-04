@@ -1,15 +1,192 @@
 import classNames from "classnames";
 import { differenceInYears } from "date-fns";
-import { ReactNode, useState } from "react";
+import ProfileImage from "../../../../assets/profile.webp";
 import { Container } from "../../../../components/Container";
 import { ScrollIds } from "../../../../constant/ScrollIds";
-import ProfileImage from "../../../../assets/profile.webp";
+import { Experience } from "./Experience";
+import { Paragraph } from "./Paragraph";
 
 export const About = () => {
-  const [showMore, setShowMore] = useState(true);
-
   const age = differenceInYears(new Date(), new Date("02/18/1993"));
   const city = "Salvador - Bahia";
+
+  const experiencies = [
+    {
+      company: "InnovaUp",
+      role: "Estagiário",
+      description:
+        "Desenvolvi alguns sistemas pequenos complementares em Delphi",
+      startDate: new Date("01.01.2015"),
+      finalDate: new Date("01.01.2016"),
+      stack: ["Delphi"],
+      projects: [
+        {
+          title: "Reporte de Error",
+          description:
+            "Projeto em delphi que captura a tela do cliente e permite descrever a duvida que possuia na tela. Atendimento ao cliente N1",
+        },
+      ],
+    },
+    {
+      company: "Capgemini",
+      role: "Desenvolvedor Pleno",
+      description:
+        "atuando com análise de código para atualização de sistemas gerados por um codemaker para uma versão de cobol mais atual. Metodologias ágeis.",
+      startDate: new Date("02.01.2016"),
+      finalDate: new Date("02.01.2019"),
+      stack: ["COBOL", "Scrum", "Kanban"],
+      projects: [],
+    },
+    {
+      company: "Click Interativo",
+      role: "Desenvolvedor Full Stack",
+      description:
+        "Atuei na manutenção e desenvolvimento de aplicações web, utilizando Coldfusion e MySql no backend. HTML5, CSS3, Javascript, Jquery no front.",
+      startDate: new Date("08.01.2019"),
+      finalDate: new Date("07.01.2021"),
+      stack: ["ColdFusion", "MySql", "Javascript", "HTML5", "CSS3", "JQuery"],
+      projects: [
+        {
+          title: "Cejas Online",
+          description:
+            "E-commerce, gestão de aulas e alunos, emissão de cerificado.",
+        },
+        {
+          title: "B&A Imoveis",
+          description: "Gerenciamento de leads e demanda dos corretores",
+        },
+        {
+          title: "AlphaOnfit",
+          description: "E-commerce, gestão de aulas e alunos",
+        },
+        {
+          title: "Outros projetos",
+          description:
+            "Shopping Bela Vista, Faculdade SantaCasa, AlphaOnfit, Labchecap, Academia Alpha, Hammer, Reveillon Gran Hotel Stella Maris",
+        },
+      ],
+    },
+    {
+      company: "Supera Inovação",
+      role: "Desenvolvedor Front-end",
+      description:
+        " Utilizando React.JS, Typescript, Next.JS, Styled Components, ChakraUI, Tailwind no Frontend. NodeJS, mongoDB, Strapi no Backend. React Native no Mobile. Metodologias ágeis. Git para versionamento.",
+      startDate: new Date("08.01.2021"),
+      finalDate: new Date("01.01.2022"),
+      stack: [
+        "React.JS",
+        "NodeJS",
+        "React Native",
+        "Typescript",
+        "Next.JS",
+        "Styled Components",
+        "ChakraUI",
+        "Tailwind",
+        "Strapi",
+        "MongoDB",
+        "Git",
+        "GitLab",
+        "Scrum",
+        "Kanban",
+      ],
+      projects: [
+        {
+          title: "Algar",
+          description: "Ajustes em aplicativo em react classe.",
+        },
+        {
+          title: "Bristom",
+          description:
+            "Refatorar funções de classes para hooks, além de implementar algumas telas.",
+        },
+        {
+          title: "Liver Mobile",
+          description:
+            "Refatorar funções de classes para hooks, desenvolvimento de novas features.",
+        },
+        {
+          title: "Liver Web",
+          description: "Implementação de telas e suas funcionalidades",
+        },
+        {
+          title: "Daexe",
+          description: "Site institucional.",
+        },
+        {
+          title: "Sapcana",
+          description: "Formulários dinâmicos com validação.",
+        },
+        {
+          title: "GetJus",
+          description: "Análise de erro e correção.",
+        },
+      ],
+    },
+    {
+      company: "W3block.io",
+      role: "Desenvolvedor Front-end Pleno",
+      description:
+        "Utilizando Typescript, Tailwind, Next.JS, React.JS, Styled Components. Metodologias ágeis. Git para versionamento.",
+      startDate: new Date("02.01.2022"),
+      finalDate: new Date("12.01.2022"),
+      stack: [
+        "React.JS",
+        "Typescript",
+        "Next.JS",
+        "Tailwind",
+        "Git",
+        "GitHub",
+        "Scrum",
+        "Kanban",
+      ],
+      projects: [
+        {
+          title: "Eventix",
+          description: "Ticketeria",
+        },
+        {
+          title: "Foodburster",
+          description: "Clube de Beneficios",
+        },
+        {
+          title: "SDK",
+          description: "implementação de novas features",
+        },
+      ],
+    },
+    {
+      company: "Hiperbanco",
+      role: "Desenvolvedor React",
+      description:
+        "Utilizando Typescript, MaterialUI, React.JS. Metodologias ágeis. Git para versionamento.",
+      startDate: new Date("04.01.2023"),
+      finalDate: new Date("09.01.2023"),
+      stack: [
+        "React.JS",
+        "Typescript",
+        "ChakraUI",
+        "Git",
+        "GitHub",
+        "Scrum",
+        "Kanban",
+      ],
+      projects: [
+        {
+          title: "Internet Banking",
+          description:
+            "Substituí o Metronic pelo Vite, efetuei uma atualização completa, reestruturei o projeto, corrigi erros e implementei a seção completa de folha de pagamento.",
+        },
+        {
+          title: "Credit as a Service",
+          description: "Serviço de solicitação de crédito online.",
+        },
+        {
+          title: "Geopay",
+          description: "Serviço de checkout.",
+        },
+      ],
+    },
+  ];
 
   return (
     <Container
@@ -66,173 +243,24 @@ export const About = () => {
 
             <i>Aqui começa minha jornada profissional:</i>
 
-            <Paragraph>
-              <span className="flex flex-wrap gap-2">
-                [ Jan 2015 - Jan 2016 ] - Estagiário na InnovaUp, fiz alguns
-                sistemas pequenos complementares em Delphi.
-                <div
-                  className={classNames(
-                    "hidden",
-                    "text-primary overflow-hidden bg-white/5 p-1 rounded-md",
-                    "transition-all duration-1000 ease-in-out ",
-                    showMore ? "text-sm" : "text-[0px] w-0 hidden"
-                  )}
-                >
-                  <i className="text-primary">
-                    Reporte de Error: Projeto em delphi que captura a tela do
-                    cliente e permite descrever a duvida que possuia na tela.
-                    Atendimento ao cliente N1
-                  </i>
-                </div>
-              </span>
-            </Paragraph>
-
-            {/* Capgemini */}
-            <Paragraph>
-              [ Fev 2016 - Fev 2019 ] Desenvolvedor Pleno na Capgemini, atuando
-              com análise de código para atualização de sistemas gerados por um
-              codemaker para uma versão de cobol mais atual. Metodologias ágeis.
-            </Paragraph>
-
-            {/* Click Interativo */}
-            <Paragraph>
-              [ Ago 2019 - Jul 2021 ] Desenvolvedor Full Stack na Click
-              Interativo, atuei na manutenção e desenvolvimento de aplicações
-              web, utilizando Coldfusion e MySql no backend. HTML5, CSS3,
-              Javascript, Jquery no front.
-              <div
-                className={classNames(
-                  "hidden",
-                  "text-primary bg-white/5 p-2 rounded-md",
-                  "transition-all duration-1000 ease-in-out",
-                  showMore
-                    ? "h-fit overflow-y-auto"
-                    : "h-0 overflow-hidden w-0 p-0"
-                )}
-              >
-                <Project
-                  title="Cejas Online"
-                  description="E-commerce, gestão de aulas e alunos, emissão de
-                      cerificado."
-                />
-                <Project
-                  title="B&A Imoveis"
-                  description="Gerenciamento de leads e demanda dos corretores"
-                />
-                <Project
-                  title="AlphaOnfit"
-                  description="E-commerce, gestão de aulas e alunos"
-                />
-                <Project
-                  title="Outros projetos"
-                  description="Shopping Bela Vista, Faculdade SantaCasa, AlphaOnfit,
-                    Labchecap, Academia Alpha, Hammer, Reveillon Gran Hotel
-                    Stella Maris"
-                />
-              </div>
-            </Paragraph>
-
-            {/* Supera */}
-            <Paragraph>
-              [Ago 2021 - Jan 2022] Desenvolvedor React na Supera Inovação.
-              Utilizando React.JS, Typescript, Next.JS, Styled Components,
-              ChakraUI, Tailwind no Frontend. NodeJS, mongoDB, Strapi no
-              Backend. React Native no Mobile. Metodologias ágeis. Git para
-              versionamento.
-              <div
-                className={classNames(
-                  "hidden",
-                  "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
-                  "transition-all duration-1000 ease-in-out overflow-y-auto",
-                  showMore ? "h-fit" : "h-0 overflow-hidden w-0 p-0"
-                )}
-              >
-                <Project
-                  title="Algar"
-                  description="Ajustes em aplicativo em react classe."
-                />
-                <Project
-                  title="Bristom"
-                  description="Refatorar funções de classes para hooks, além de implementar algumas telas."
-                />
-                <Project
-                  title="Liver Mobile"
-                  description="Refatorar funções de classes para hooks, desenvolvimento de novas features."
-                />
-                <Project
-                  title="Liver Web"
-                  description="Implementação de telas e suas funcionalidades"
-                />
-                <Project title="Daexe" description="Site institucional." />
-                <Project
-                  title="Sapcana"
-                  description="Formulários dinâmicos com validação."
-                />
-                <Project
-                  title="GetJus"
-                  description="Análise de erro e correção."
-                />
-              </div>
-            </Paragraph>
-
-            {/* W3block */}
-            <Paragraph>
-              [Fev 2022 - Dez 2022] Desenvolvedor Pleno na W3block.io.
-              Utilizando Typescript, Tailwind, Next.JS, React.JS, Styled
-              Components. Metodologias ágeis. Git para versionamento.
-              <div
-                className={classNames(
-                  "hidden",
-                  "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
-                  "transition-all duration-1000 ease-in-out overflow-y-auto",
-                  showMore ? "h-fit" : "h-0 w-0 p-0 overflow-hidden "
-                )}
-              >
-                <Project title="Eventix" description="Ticketeria" />
-                <Project
-                  title="Foodburster"
-                  description="Clube de Beneficios"
-                />
-                <Project
-                  title="SDK"
-                  description="implementação de novas features"
-                />
-              </div>
-            </Paragraph>
-
-            {/* Hiperbanco */}
-            <Paragraph>
-              Desenvolvedor Pleno no Hiperbanco. <br />
-              [Abr 2023 - Atualmente]
-              <div
-                className={classNames(
-                  "hidden",
-                  "text-primary overflow-hidden bg-white/5 p-2 rounded-md",
-                  "transition-all duration-1000 ease-in-out overflow-y-auto",
-                  showMore ? "h-fit" : "h-0 w-0 p-0 overflow-hidden "
-                )}
-              >
-                <Project
-                  title="Internet Banking"
-                  description="Substituí o Metronic pelo Vite, efetuei uma atualização completa, reestruturei o projeto, corrigi erros e implementei a seção completa de folha de pagamento."
-                />
-                <Project
-                  title="Credit as a Service"
-                  description="Serviço de solicitação de crédito online."
-                />
-                <Project title="Geopay" description="Serviço de checkout." />
-              </div>
-              Utilizando Typescript, MaterialUI, React.JS. Metodologias ágeis.
-              Git para versionamento.
-            </Paragraph>
+            {experiencies.map((exp) => (
+              <Experience
+                company={exp.company}
+                role={exp.role}
+                description={exp.description}
+                startDate={exp.startDate}
+                finalDate={exp.finalDate}
+                projects={exp.projects}
+              />
+            ))}
           </div>
 
-          <button
+          {/* <button
             onClick={() => setShowMore((e) => !e)}
             title="Mostrar ou Esconder todo o conteudo acima."
           >
             {showMore ? "Ver resumido" : "Ver projetos"}
-          </button>
+          </button> */}
 
           <p className="font-normal text-base sm:text-xl leading-8 text-dark-100/50">
             "Os limites só existem se você os deixar existir." - Son Goku
@@ -242,22 +270,3 @@ export const About = () => {
     </Container>
   );
 };
-
-const Paragraph = ({ children }: { children: ReactNode }) => (
-  <div className="max-w-[600px] font-normal text-sm leading-6 sm:text-normal sm:leading-7 ">
-    {children}
-  </div>
-);
-
-const Project = ({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) => (
-  <div className="flex gap-4">
-    <h3 className="w-32">{title}</h3>
-    <p className="flex-1">{description}</p>
-  </div>
-);
