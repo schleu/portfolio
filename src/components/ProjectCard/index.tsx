@@ -18,8 +18,12 @@ export const ProjectCard = ({
   highlight,
 }: iCard) => (
   <div className="flex flex-col shadow-xl bg-dark-500 rounded overflow-hidden">
-    <div className="h-[200px] sm:h-[435px] bg-red-500 object-fill">
-      <img src={image} alt="imagem prévia do projeto" className="w-full h-full" />
+    <div className="h-[200px] sm:h-[435px] object-fill">
+      <img
+        src={image}
+        alt="imagem prévia do projeto"
+        className="w-full h-full"
+      />
     </div>
     <div className="py-9 px-4 text-dark-100 flex flex-col gap-9">
       <div className="flex flex-col gap-3">
@@ -27,7 +31,7 @@ export const ProjectCard = ({
           {title}
           {highlight && <BsStar className="text-primary h-5 w-5 " />}
         </h3>
-        <div dangerouslySetInnerHTML={{__html: description}}></div>
+        <div dangerouslySetInnerHTML={{ __html: description }}></div>
       </div>
       <Link
         to={AppRoutes.PROJECT.replace(":projectId", id)}

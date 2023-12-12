@@ -47,4 +47,18 @@ export const portfolioData: iPortfolio[] = [
     git: "https://github.com/schleu/portfolio",
     highlight: true,
   },
+  {
+    id: "13515d47-cb7e-4bea-b7a4-bc23f0b1594b",
+    image:
+      "https://res.cloudinary.com/dzo8dip4y/image/upload/c_scale,w_1440/v1702353043/my-class-danilo-schleu.webp",
+    smallImage:
+      "https://res.cloudinary.com/dzo8dip4y/image/upload/c_scale,w_606/v1702353043/my-class-danilo-schleu.webp",
+
+    title: "My Class",
+    description:
+      "O objetivo deste projeto é desenvolver um sistema de aula online que permita aos professores ministrar aulas de forma mais eficiente e interativa, e aos alunos aprender de forma mais eficaz.",
+    link: "https://myclass-danilo-schleu.netlify.app/",
+    git: "https://github.com/schleu/my-class",
+    highlight: true,
+  },
 ];

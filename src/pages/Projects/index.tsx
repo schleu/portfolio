@@ -7,8 +7,6 @@ import { ScrollIds } from "../../constant/ScrollIds";
 import { portfolioData } from "../../service/portifolio";
 
 export const Projects = () => {
-  let { projectId } = useParams();
-
   useEffect(() => {
     scroller.scrollTo(ScrollIds.HOME, {
       smooth: true,
