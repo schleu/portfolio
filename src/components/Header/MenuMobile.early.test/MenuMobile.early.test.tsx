@@ -1,13 +1,8 @@
-
 // Unit tests for: MenuMobile
-
-
-
 import { scroller } from 'react-scroll';
-
-
-
 import { MenuMobile } from '../MenuMobile';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 
 class MockiMenuItem {
@@ -57,7 +52,7 @@ describe('MenuMobile() MenuMobile method', () => {
             const { getByRole } = render(<MenuMobile {...mockProps as any} />);
 
             // Act
-            fireEvent.click(getByRole('button'));
+            userEvent.click(getByRole('button'));
 
             // Assert
             expect(mockProps.onClose).toHaveBeenCalled();
@@ -69,7 +64,7 @@ describe('MenuMobile() MenuMobile method', () => {
             const menuItem = getByText(mockProps.items[0].text);
 
             // Act
-            fireEvent.click(menuItem);
+            userEvent.click(menuItem);
 
             // Assert
             expect(mockProps.items[0].onClick).toHaveBeenCalled();

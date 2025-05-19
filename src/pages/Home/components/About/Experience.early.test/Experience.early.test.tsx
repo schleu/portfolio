@@ -1,8 +1,10 @@
-
 // Unit tests for: Experience
 
 
 import { format } from 'date-fns';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
 
 
 
@@ -53,13 +55,14 @@ describe('Experience() Experience method', () => {
             (format as jest.Mock).mockReturnValueOnce('Jan 2020').mockReturnValueOnce('Dec 2020');
 
             // Act
-            render(
+            const { getByText } = render(
                 <Experience
                     company="Test Company"
                     role="Developer"
                     startDate={mockStartDate}
                     finalDate={mockFinalDate}
                     description="Test description"
+                    stack={['React', 'TypeScript']}
                     projects={[
                         { title: 'Project 1', description: 'Description 1' },
                         { title: 'Project 2', description: 'Description 2' },
@@ -68,11 +71,11 @@ describe('Experience() Experience method', () => {
             );
 
             // Assert
-            expect(screen.getByText('Developer @Test Company')).toBeInTheDocument();
-            expect(screen.getByText('Jan 2020 - Dec 2020')).toBeInTheDocument();
-            expect(screen.getByText('Test description')).toBeInTheDocument();
-            expect(screen.getByText('Project 1')).toBeInTheDocument();
-            expect(screen.getByText('Project 2')).toBeInTheDocument();
+            expect(getByText('Developer @Test Company')).toBeInTheDocument();
+            expect(getByText('Jan 2020 - Dec 2020')).toBeInTheDocument();
+            expect(getByText('Test description')).toBeInTheDocument();
+            expect(getByText('Project 1')).toBeInTheDocument();
+            expect(getByText('Project 2')).toBeInTheDocument();
         });
 
         it('should toggle showMore state when clicking on the role', () => {
@@ -82,24 +85,25 @@ describe('Experience() Experience method', () => {
             (format as jest.Mock).mockReturnValueOnce('Jan 2020').mockReturnValueOnce('Dec 2020');
 
             // Act
-            render(
+            const { getByText } = render(
                 <Experience
                     company="Test Company"
                     role="Developer"
                     startDate={mockStartDate}
                     finalDate={mockFinalDate}
                     description="Test description"
+                    stack={['React', 'TypeScript']}
                     projects={[
                         { title: 'Project 1', description: 'Description 1' },
                     ]}
                 />
             );
 
-            const roleElement = screen.getByText('Developer @Test Company');
-            fireEvent.click(roleElement);
+            const roleElement = getByText('Developer @Test Company');
+            userEvent.click(roleElement);
 
             // Assert
-            expect(screen.getByText('Project 1')).toBeInTheDocument();
+            expect(getByText('Project 1')).toBeInTheDocument();
         });
     });
 
@@ -111,22 +115,23 @@ describe('Experience() Experience method', () => {
             (format as jest.Mock).mockReturnValueOnce('Jan 2020').mockReturnValueOnce('Dec 2020');
 
             // Act
-            render(
+            const { getByText, queryByText } = render(
                 <Experience
                     company="Test Company"
                     role="Developer"
                     startDate={mockStartDate}
                     finalDate={mockFinalDate}
                     description="Test description"
+                    stack={['React', 'TypeScript']}
                     projects={[]}
                 />
             );
 
             // Assert
-            expect(screen.getByText('Developer @Test Company')).toBeInTheDocument();
-            expect(screen.getByText('Jan 2020 - Dec 2020')).toBeInTheDocument();
-            expect(screen.getByText('Test description')).toBeInTheDocument();
-            expect(screen.queryByText('Project 1')).not.toBeInTheDocument();
+            expect(getByText('Developer @Test Company')).toBeInTheDocument();
+            expect(getByText('Jan 2020 - Dec 2020')).toBeInTheDocument();
+            expect(getByText('Test description')).toBeInTheDocument();
+            expect(queryByText('Project 1')).not.toBeInTheDocument();
         });
 
         it('should handle invalid date formats gracefully', () => {
@@ -138,20 +143,21 @@ describe('Experience() Experience method', () => {
             });
 
             // Act
-            render(
+            const { getByText } = render(
                 <Experience
                     company="Test Company"
                     role="Developer"
                     startDate={mockStartDate}
                     finalDate={mockFinalDate}
                     description="Test description"
+                    stack={['React', 'TypeScript']}
                     projects={[]}
                 />
             );
 
             // Assert
-            expect(screen.getByText('Developer @Test Company')).toBeInTheDocument();
-            expect(screen.getByText('Test description')).toBeInTheDocument();
+            expect(getByText('Developer @Test Company')).toBeInTheDocument();
+            expect(getByText('Test description')).toBeInTheDocument();
         });
     });
 });
