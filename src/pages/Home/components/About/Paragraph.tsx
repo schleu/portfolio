@@ -1,11 +1,15 @@
 import { ReactNode } from "react";
+import { FaChevronCircleRight } from "react-icons/fa";
+
 
 export const Paragraph = ({
   children,
   indicator = false,
+  isActive = false,
 }: {
   children: ReactNode;
   indicator?: boolean;
+  isActive?: boolean;
 }) => (
   <div
     className={`max-w-[600px] font-normal text-sm leading-6 sm:text-normal sm:leading-7 relative ${
@@ -14,10 +18,12 @@ export const Paragraph = ({
   >
     {indicator && (
       <div
-        className=" rounded-full border-2 h-5 w-5 absolute left-0 translate-x-1/2 bg-dark-800 border-primary top-1 
-          after:w-3 after:h-3 after:rounded-full after:bg-primary after:content-[''] after:animate-pulse
-          after:absolute after:top-1/2 after:-translate-y-1/2 after:left-1/2 after:-translate-x-1/2"
-      />
+        className="absolute left-0 translate-x-1/2 top-1 text-primary  
+        flex items-center justify-center"
+        
+      >
+        <FaChevronCircleRight className={`h-5 w-5 transition-all duration-300 ease-in-out ${isActive ? "rotate-90" : ""}`} />
+      </div>
     )}
     {children}
   </div>

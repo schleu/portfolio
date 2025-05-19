@@ -31,6 +31,7 @@ export const Portfolio = () => {
                 title={item.title}
                 description={item.description} 
                 highlight={item.highlight} 
+                link={item.link}
               />
             )
         )}

@@ -20,12 +20,13 @@ export const ProjectsDetail = () => {
   return (
     <Container title={project?.title || ""} section="projeto">
       <div className="flex flex-col gap-5">
-        <div className="w-full flex justify-center ">
-          <img
+        <div className="w-full flex justify-center h-[635px]">
+          {/* <img
             alt="Imagem previa do projeto"
             src={project?.image}
             className="border border-dark-100 rounded-lg"
-          />
+          /> */}
+          <iframe src={project?.link} className="w-full h-full" />
         </div>
         <h2 className="text-3xl  font-bold">{project?.title}</h2>
         <p className="text-xl">{project?.description}</p>

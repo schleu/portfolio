@@ -3,4 +3,5 @@ export enum AppRoutes {
   PROJECTS = "/projects",
   PROJECT = "/project/:projectId",
   POMODORO = "/pomodoro",
+  TELEGRAM = "/telegram",
 }

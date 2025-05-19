@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { Projects } from "./pages/Projects";
 import { ProjectsDetail } from "./pages/ProjectsDetail";
 import { PomodoroPage } from "./pages/Pomodoro";
+import { TelegramPage } from "./pages/Telegram";
 
 export const Router = () => {
   return (
@@ -14,6 +15,7 @@ export const Router = () => {
         <Route path={AppRoutes.PROJECTS} element={<Projects />} />
         <Route path={AppRoutes.PROJECT} element={<ProjectsDetail />} />
         <Route path={AppRoutes.POMODORO} element={<PomodoroPage />} />
+        <Route path={AppRoutes.TELEGRAM} element={<TelegramPage />} />
       </Route>
     </Routes>
   );

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
+    "@v9v/ts-react-telegram-login": "^1.1.1",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "framer-motion": "^8.5.5",
@@ -22,6 +23,7 @@
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.7.0",
     "react-scroll": "^1.8.9",
+    "react-telegram-login": "^1.1.2",
     "react-use": "^17.4.0",
     "zod": "^3.20.2"
   },

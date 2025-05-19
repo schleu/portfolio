@@ -12,23 +12,25 @@ export const Experience = ({
   finalDate,
   description,
   projects,
+  stack,
 }: {
   company: string;
   role: string;
   startDate: Date;
-  finalDate: Date;
+  finalDate?: Date;
   description: string;
+  stack: string[];
   projects: {
     title: string;
     description: string;
   }[];
 }) => {
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
 
   const haveProjects = projects.length > 0;
 
   return (
-    <Paragraph indicator>
+    <Paragraph indicator isActive={showMore}>
       <h1
         className={`text-xl ${haveProjects ? "cursor-pointer" : ""}`}
         onClick={() => setShowMore((e) => !e)}
@@ -37,10 +39,16 @@ export const Experience = ({
       </h1>
       <p className="text-xs capitalize">
         {format(startDate, "MMM yyyy", { locale: ptBr })} -{" "}
-        {format(finalDate, "MMM yyyy", { locale: ptBr })}
+        {finalDate ? format(finalDate, "MMM yyyy", { locale: ptBr }) : "Atual"}
       </p>
 
-      <p>{description}</p>
+      <p className="py-4">{description}</p>
+
+      <div className="flex flex-wrap items-center justify-start gap-2 pb-4"> 
+        {stack.map((e) => (
+          <span className="text-xs capitalize border border-primary py-1 px-2 rounded-md">{e}</span>
+        ))}
+      </div>
 
       {projects.length ? (
         <div
@@ -51,7 +59,7 @@ export const Experience = ({
           )}
         >
           {projects.map((e) => (
-            <Project title={e.title} description={e.description} />
+            <Project key={e.title} title={e.title} description={e.description} />
           ))}
         </div>
       ) : (
