@@ -8,17 +8,22 @@ import { Paragraph } from "./Paragraph";
 import { useState } from "react";
 import { experienciesMoked } from "./moked";
 import { AboutFilter, FilterAboutType } from "./AboutFilter";
+import { AppRoutes } from "../../../../constant/AppRoutes";
+import { useNavigate } from "react-router-dom";
+import { ReactComponent as ArrowRightIcon } from "../../../../assets/arrowRight.svg";
 
 export const About = () => {
   const [filter, setFilter] = useState<FilterAboutType>("recente");
   const [stack, setStack] = useState<string[]>([]);
 
   const age = differenceInYears(new Date(), new Date("02/18/1993"));
-  const city = "Salvador - Bahia";
+  const city = "Juazeiro do Norte - Ceará";
 
   const experiencies = experienciesMoked.sort((a, b) => {
-    if (filter === "recente") return b.startDate.getTime() - a.startDate.getTime();
-    if (filter === "antigo") return a.startDate.getTime() - b.startDate.getTime();
+    if (filter === "recente")
+      return b.startDate.getTime() - a.startDate.getTime();
+    if (filter === "antigo")
+      return a.startDate.getTime() - b.startDate.getTime();
     return 0;
   });
 
@@ -26,18 +31,23 @@ export const About = () => {
     return stack.every((s) => exp.stack.includes(s));
   });
 
-
   function handleFilterChange(filter: FilterAboutType, stack: string[]) {
     setFilter(filter);
     setStack(stack);
   }
 
+  const navigate = useNavigate();
 
   return (
     <Container
       title="Um pouco da minha história"
       section="Sobre mim"
       id={ScrollIds.ABOUT}
+      button={{
+        title: "ver mais",
+        onClick: () => navigate(AppRoutes.ABOUT),
+        icon: <ArrowRightIcon className="-rotate-45" />,
+      }}
     >
       <div className="flex flex-col sm:flex-row gap-6 sm:gap-20 sm:items-start">
         <div
@@ -72,17 +82,44 @@ export const About = () => {
 
             <div className="flex flex-col gap-6">
               <Paragraph>
-                Desenvolvedor Full Stack, tecnólogo em análise e desenvovimento
-                de sistemas pela Cesumar.
+                Desenvolvedor Full Stack, tecnólogo em Análise e Desenvolvimento
+                de Sistemas pela Cesumar. Solteiro, {age} anos, residente em{" "}
+                {city}. Apaixonado por esportes, estou sempre buscando
+                experimentar novas atividades físicas. No tempo livre, gosto de
+                explorar receitas na cozinha e me desconectar com uma boa série
+                ou filme.
               </Paragraph>
 
               <Paragraph>
-                <span className="flex flex-wrap gap-2 ">
-                  Solteiro, {age} anos, residente em {city}, amante de esportes,{" "}
-                  sempre estou procurando praticar algo novo. No tempo livre,
-                  adoro me aventurar na cozinha, além de ver alguma série ou
-                  filme.
-                </span>
+                Atuo como desenvolvedor full stack, mas tenho uma afinidade
+                muito maior com a parte lógica e estrutural dos sistemas do que
+                com a camada visual. Gosto de trabalhar com regras de negócio,
+                integrações, automações e arquiteturas bem definidas. Meu foco
+                está em entregar soluções robustas, eficientes e pensadas para
+                facilitar a vida de quem vai usá-las.
+              </Paragraph>
+
+              <Paragraph>
+                Sou movido por propósito. Amo aprender, mas tenho dificuldade em
+                me atualizar com coisas que não pretendo usar — meu aprendizado
+                é muito mais eficaz quando entendo a utilidade real do que estou
+                estudando.
+              </Paragraph>
+
+              <Paragraph>
+                Valorizo ambientes colaborativos e estou sempre pronto para
+                ajudar quem precisa. Tenho certa resistência em pedir ajuda, e
+                só o faço quando percebo que já esgotei minhas tentativas. Ainda
+                assim, não tenho problema algum em assumir responsabilidades ou
+                reconhecer meus erros.
+              </Paragraph>
+
+              <Paragraph>
+                Sou adepto de uma cultura de feedback constante — gosto de ouvir
+                críticas construtivas e também me disponho sempre a dar
+                feedbacks com empatia e clareza. Acredito que o crescimento
+                profissional vem da troca, da escuta e do esforço contínuo em
+                evoluir como pessoa e como profissional.
               </Paragraph>
             </div>
 
@@ -92,7 +129,9 @@ export const About = () => {
               <AboutFilter onFilterChange={handleFilterChange} />
             </div>
 
-            {experienciesFiltered.map((exp) => <Experience key={exp.company} {...exp} />)}
+            {experienciesFiltered.map((exp) => (
+              <Experience key={exp.company} {...exp} />
+            ))}
           </div>
 
           <p className="font-normal text-base sm:text-xl leading-8 text-dark-100/50">
@@ -103,5 +142,3 @@ export const About = () => {
     </Container>
   );
 };
-
-
