@@ -11,6 +11,9 @@ import { localStorageKeys } from "../../constant/LocalStorageKeys";
 import { ScrollIds } from "../../constant/ScrollIds";
 import { Button } from "../Button";
 import { MenuMobile } from "./MenuMobile";
+import { FiGithub } from "react-icons/fi";
+import { FiLinkedin } from "react-icons/fi";
+import { SocialMedias } from "../SocialMedias";
 
 const menuItemsMocked = [
   { text: "Início", link: ScrollIds.HOME, onClick: () => {} },
@@ -21,11 +24,12 @@ const menuItemsMocked = [
   // },
   { text: "Portfólio", link: ScrollIds.PORTFOLIO, onClick: () => {} },
   { text: "Sobre Mim", link: ScrollIds.ABOUT, onClick: () => {} },
-  { text: "Contato", link: ScrollIds.CONTACT, onClick: () => {}, mobile: true },
+  { text: "Contato", link: ScrollIds.CONTACT, onClick: () => {} },
 ];
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [actualMenu, setActualMenu] = useState("");
 
   const location = useLocation();
   const ls = localStorage.getItem(localStorageKeys.scroll);
@@ -46,6 +50,7 @@ export const Header = () => {
       JSON.stringify({ link: scroll })
     );
     navigate(AppRoutes.HOME);
+    setActualMenu(scroll);
   }
 
   return (
@@ -78,25 +83,21 @@ export const Header = () => {
         <div className="hidden md:flex gap-6 h-full">
           {menuItemsMocked.map((item) => {
             return (
-              !item.mobile && (
-                <nav
-                  key={item.text}
-                  onClick={() => Scrolling(item.link)}
-                  className="flex items-center h-full border-b-2 border-transparent hover:border-primary cursor-pointer"
-                >
-                  {item.text}
-                </nav>
-              )
+              <nav
+                key={item.text}
+                onClick={() => Scrolling(item.link)}
+                className={classNames(
+                  "flex items-center h-full border-b-2 border-transparent hover:border-primary cursor-pointer",
+                  actualMenu === item.link && "border-primary"
+                )}
+              >
+                {item.text}
+              </nav>
             );
           })}
         </div>
 
-        <Link to={ScrollIds.CONTACT} href={ScrollIds.CONTACT} smooth={true}>
-          <Button className="hidden md:flex" title="Go to contact form">
-            Entrar em contato
-            <ChatCircleIcon />
-          </Button>
-        </Link>
+        <SocialMedias />
       </div>
     </div>
   );

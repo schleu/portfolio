@@ -2,6 +2,8 @@ import { Link } from "react-scroll";
 import { ReactComponent as ArrowRightIcon } from "../../assets/arrowRight.svg";
 import { ScrollIds } from "../../constant/ScrollIds";
 import { Button } from "../Button";
+import { FiLinkedin } from "react-icons/fi";
+import { SocialMedias } from "../SocialMedias";
 
 export const Footer = () => {
   return (
@@ -11,19 +13,23 @@ export const Footer = () => {
           Copyright© 2022 - Danilo Schleu
         </div>
 
-        <Link
-          href={ScrollIds.HOME}
-          to={ScrollIds.HOME}
-          smooth={true}
-          alt="Move para o topo da pagina"
-        >
-          <Button
-            className="bg-dark-300  w-10 h-10 p-0 hover:animate-bounce hover:ease-in-out"
-            title="Move para o topo da pagina"
+        <div className="flex items-center gap-4">
+          <SocialMedias />
+
+          <Link
+            href={ScrollIds.HOME}
+            to={ScrollIds.HOME}
+            smooth={true}
+            alt="Move para o topo da pagina"
           >
-            <ArrowRightIcon className="-rotate-90" />
-          </Button>
-        </Link>
+            <Button
+              className="bg-dark-300  w-10 h-10 p-0 hover:animate-bounce hover:ease-in-out"
+              title="Move para o topo da pagina"
+            >
+              <ArrowRightIcon className="-rotate-90" />
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -37,7 +37,7 @@ export const Container = ({
       )}
       id={id}
     >
-      <div className="w-full max-w-screen-cut flex flex-col gap-12 px-2.5 sm:px-0">
+      <div className="w-full max-w-screen-cut flex flex-col gap-12 px-2.5 sm:px-4">
         <div className={`flex flex-col gap-6 sm:gap-12`}>
           <div className="flex justify-between items-end">
             <div className="flex flex-col gap-2 animate-fadeInRight">
