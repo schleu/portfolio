@@ -2,7 +2,7 @@ import { Container } from "../../../../components/Container";
 
 import { ReactComponent as ArrowRightIcon } from "../../../../assets/arrowRight.svg";
 import { ScrollIds } from "../../../../constant/ScrollIds";
-import { portfolioData } from "../../../../service/portifolio";
+import { portfolioData } from "../../../../data/portifolio";
 import { ProjectCard } from "../../../../components/ProjectCard";
 import { useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../../../constant/AppRoutes";
@@ -23,14 +23,15 @@ export const Portfolio = () => {
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         {portfolioData.map(
-          (item) => item.highlight && (
-              <ProjectCard 
-                key={item.title} 
-                id={item.id} 
-                image={item.smallImage} 
+          (item) =>
+            item.highlight && (
+              <ProjectCard
+                key={item.title}
+                id={item.id}
+                image={item.smallImage}
                 title={item.title}
-                description={item.description} 
-                highlight={item.highlight} 
+                description={item.description}
+                highlight={item.highlight}
                 link={item.link}
               />
             )

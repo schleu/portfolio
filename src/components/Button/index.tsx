@@ -22,7 +22,7 @@ export const Button = ({
       className={classNames(
         "flex justify-center items-center p-2 sm:py-2.5 sm:px-4 gap-2.5 rounded",
         "text-sm sm:text-base leading-6 text-dark-100 hover:text-dark-200",
-        "transition-colors duration-200 ease-in-out",
+        "transition-all duration-300 ease-in-out",
         className,
         style
       )}

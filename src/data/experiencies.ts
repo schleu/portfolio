@@ -1,106 +1,80 @@
-export const stackMoked = {
-    'frontend': [
-        "React.JS",
-        "Typescript",
-        "Next.JS",
-        "Tailwind",
-        "JQuery",
-        "HTML5",
-        "CSS3",
-    ],
-    'backend': [
-        "Python (FastAPI)",
-        "Google Cloud",
-        "Node.JS",
-        "ColdFusion",
-        "Delphi",
-    ],
-    'mobile': [
-        "React Native",
-    ],
-    'database': [
-        "MySQL",
-        "PostgreSQL",
-        "MongoDB",
-        "Firebase",
-    ],
-    'tools': [
-        "GitHub",
-        "GitLab",
-        "Scrum",
-        "Kanban",
-    ],
-    'design': [
-        "Figma",
-        "Adobe",
-        "Photoshop",
-        "Illustrator",
-        "Git",
-    ],
-    
+export interface Project {
+  title: string;
+  description: string;
 }
 
-export const experienciesMoked = [
+export interface Experience {
+  company: string;
+  role: string;
+  description: string;
+  startDate: Date;
+  finalDate: Date | undefined;
+  stack: string[];
+  projects: Project[];
+}
+export const experienciesMoked: Record<string, Experience[]> = {
+  en: [],
+  pt: [
     {
       company: "InnovaUp",
       role: "Estagiário",
       description:
-        "Desenvolvi alguns sistemas pequenos complementares em Delphi",
+        "Responsável por atender o cliente N1, desenvolvi um sistema de abertura de chamado, onde o cliente pode descrever sua duvida, capturava a tela e envia para o suporte.",
       startDate: new Date("01.01.2015"),
       finalDate: new Date("01.01.2016"),
       stack: ["Delphi"],
-      projects: [
-        {
-          title: "Reporte de Error",
-          description:
-            "Projeto em delphi que captura a tela do cliente e permite descrever a duvida que possuia na tela. Atendimento ao cliente N1",
-        },
-      ],
+      projects: [],
     },
     {
       company: "Capgemini",
       role: "Desenvolvedor Pleno",
       description:
-        "atuando com análise de código para atualização de sistemas gerados por um codemaker para uma versão de cobol mais atual. Metodologias ágeis.",
+        "Atuando com análise de código para atualização de sistemas gerados por um codemaker para uma versão de cobol mais atual.",
       startDate: new Date("02.01.2016"),
       finalDate: new Date("02.01.2019"),
-      stack: ["COBOL", "Scrum", "Kanban"],
+      stack: ["COBOL", "Scrum", "Kanban", "Metodologias ágeis"],
       projects: [],
     },
     {
       company: "Click Interativo",
       role: "Desenvolvedor Full Stack",
       description:
-        "Atuei na manutenção e desenvolvimento de aplicações web.",
+        "Desenvolvimento focado no backend com ColdFusion e MySQL, participando também do frontend com JavaScript e jQuery. Responsável pela criação de novos sistemas, incluindo modelagem de banco de dados, arquitetura, desenvolvimento de APIs e interfaces. Atuei no planejamento completo dos projetos, desde a concepção até a entrega. Sendo um dos principais desafios a constante mudança de projetos, as vezes atuando em mais de um projeto ao mesmo tempo.",
       startDate: new Date("08.01.2019"),
       finalDate: new Date("07.01.2021"),
       stack: ["ColdFusion", "MySql", "Javascript", "HTML5", "CSS3", "JQuery"],
       projects: [
         {
+          title: "Reveillon Gran Hotel Stella Maris",
+          description:
+            "Sistema de compra de ingressos e gerenciamento de entradas para o reveillon, foi solicitado a menos de 1 mês para a realização do evento. O sistema existente tinha dado centenas de problemas no ano anterior, e foi necessário refatorar todo o código. Reduzi a 0 a quantidade de erros e otimizei o sistema para que ele pudesse evitar a duplicação de entradas.",
+        },
+        {
           title: "Cejas Online",
           description:
-            "E-commerce, gestão de aulas e alunos, emissão de cerificado.",
+            "E-commerce de cursos juridicos com aulas online, com gerenciamento de alunos, emissão de certificados e gerenciamento de aulas.",
         },
         {
           title: "B&A Imoveis",
-          description: "Gerenciamento de leads e demanda dos corretores",
+          description:
+            "Site imobiliário com gerenciamento de leads e demanda. Sendo o maior desafio a constante mudança de requisitos, e a necessidade de manter o sistema atualizado com as novas regras de negócios.",
         },
         {
-          title: "AlphaOnfit",
-          description: "E-commerce, gestão de aulas e alunos",
+          title: "Labchecap",
+          description:
+            "Site institucional para uma grande rede de laboratórios clínicos, incluindo desenvolvimento de sistema integrado para visualização de resultados de exames online, com autenticação segura e interface intuitiva para pacientes e médicos.",
         },
         {
           title: "Outros projetos",
           description:
-            "Shopping Bela Vista, Faculdade SantaCasa, AlphaOnfit, Labchecap, Academia Alpha, Hammer, Reveillon Gran Hotel Stella Maris",
+            "Shopping Bela Vista, Faculdade SantaCasa, AlphaOnfit, Labchecap, Academia Alpha, Academia Hammer, Mosello Lima",
         },
       ],
     },
     {
       company: "Supera Inovação",
       role: "Desenvolvedor Front-end",
-      description:
-        "",
+      description: "",
       startDate: new Date("08.01.2021"),
       finalDate: new Date("01.01.2022"),
       stack: [
@@ -220,8 +194,8 @@ export const experienciesMoked = [
       company: "OMP",
       role: "Desenvolvedor Full Stack",
       description: `
-        Desenvolvimento front-end plataforma de criação de memes com IA generativa, distribuição autônoma e sistema de monetização, utilizando ReactJS, Vite, Tailwind, Redux e Shadcn.\r\n
-        Desenvolvimento back-end utilizando Python com FastAPI, Firestore e Google Cloud.`,
+          Desenvolvimento front-end plataforma de criação de memes com IA generativa, distribuição autônoma e sistema de monetização, utilizando ReactJS, Vite, Tailwind, Redux e Shadcn.\r\n
+          Desenvolvimento back-end utilizando Python com FastAPI, Firestore e Google Cloud.`,
       startDate: new Date("01.01.2024"),
       finalDate: undefined,
       stack: [
@@ -246,4 +220,5 @@ export const experienciesMoked = [
         },
       ],
     },
-  ];
+  ],
+};

@@ -9,6 +9,7 @@ import { Button } from "../Button";
 import { Container } from "../Container";
 import { Input } from "../Input";
 import { Textarea } from "../TextArea";
+import { useTranslation } from "react-i18next";
 
 export const Contact = () => {
   const schema = zod.object({
@@ -21,11 +22,14 @@ export const Contact = () => {
   type ContactForm = zod.infer<typeof schema>;
 
   const onSubmit = (e: ContactForm) => {
-    let text = `Nome: ${e.name}\n`;
-    text += `Telefone: ${e.phone}\n`;
-    text += `Mensagem: ${e.message}`;
+    let text = `${t("contact.name")}: ${e.name}\n`;
+    text += `${t("contact.phone")}: ${e.phone}\n`;
+    if (e.email) {
+      text += `${t("contact.email")}: ${e.email}\n`;
+    }
+    text += `${t("contact.message")}: ${e.message}`;
 
-    const myPhone = "5571993501216";
+    const myPhone = "5588992092318";
 
     const url = `https://api.whatsapp.com/send?phone=${myPhone}&text=${encodeURI(
       text
@@ -46,18 +50,20 @@ export const Contact = () => {
 
   const { handleSubmit } = methods;
 
+  const { t } = useTranslation();
+
   return (
     <div className="w-full flex justify-center" id={ScrollIds.CONTACT}>
       <div className="flex gap-20 items-center w-full max-w-screen-cut">
         <img
           src={contactBanner}
           className="hidden sm:block"
-          alt="Imagem com uma luminária acesa, um notebook aberto e um celular ao lado."
+          alt={t("contact.imgAlt")}
         />
 
         <Container
-          title="Solicite um orçamento"
-          section="Entre em contato"
+          title={t("contact.title")}
+          section={t("contact.section")}
           classes={{ container: "bg-dark-900 " }}
         >
           <FormProvider {...methods}>
@@ -66,8 +72,8 @@ export const Contact = () => {
               onSubmit={handleSubmit(onSubmit)}
             >
               <Input
-                label="Nome Completo"
-                placeholder="Digite o seu nome"
+                label={t("contact.name")}
+                placeholder={t("contact.namePlaceholder")}
                 required
                 Icon={BsPerson}
                 name="name"
@@ -75,28 +81,32 @@ export const Contact = () => {
               <div className="flex flex-col sm:flex-row gap-6">
                 <Input
                   type={"tel"}
-                  label="Telefone"
-                  placeholder="Digite o seu telefone"
+                  label={t("contact.phone")}
+                  placeholder={t("contact.phonePlaceholder")}
                   required
                   name="phone"
                   Icon={BsTelephone}
                 />
                 <Input
                   type={"email"}
-                  label="Email"
-                  placeholder="Digite o seu email"
-                  required
+                  label={t("contact.email")}
+                  placeholder={t("contact.emailPlaceholder")}
                   name="email"
                   Icon={AiOutlineMail}
                 />
               </div>
-              <Textarea label="Mensagem" required name="message" />
+              <Textarea
+                label={t("contact.message")}
+                required
+                name="message"
+                placeholder={t("contact.messagePlaceholder")}
+              />
               <Button
                 type="submit"
                 className="shadow-xl bg-dark-300  text-dark-200"
-                title="Send contact"
+                title={t("contact.send")}
               >
-                Enviar
+                {t("contact.send")}
               </Button>
             </form>
           </FormProvider>

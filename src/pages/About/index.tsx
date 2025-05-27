@@ -12,7 +12,7 @@ import {
   FilterAboutType,
 } from "../Home/components/About/AboutFilter";
 import { Experience } from "../Home/components/About/Experience";
-import { experienciesMoked } from "../Home/components/About/moked";
+import { experienciesMoked } from "../../data/experiencies";
 import { Paragraph } from "../Home/components/About/Paragraph";
 
 enum ScrollIds {

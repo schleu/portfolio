@@ -1,25 +1,31 @@
 import classNames from "classnames";
 import { differenceInYears } from "date-fns";
-import ProfileImage from "../../../../assets/profile.webp";
-import { Container } from "../../../../components/Container";
-import { ScrollIds } from "../../../../constant/ScrollIds";
-import { Experience } from "./Experience";
-import { Paragraph } from "./Paragraph";
 import { useState } from "react";
-import { experienciesMoked } from "./moked";
-import { AboutFilter, FilterAboutType } from "./AboutFilter";
-import { AppRoutes } from "../../../../constant/AppRoutes";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowRightIcon } from "../../../../assets/arrowRight.svg";
+import ProfileImage from "../../../../assets/profile.webp";
+import { Container } from "../../../../components/Container";
+import { AppRoutes } from "../../../../constant/AppRoutes";
+import { ScrollIds } from "../../../../constant/ScrollIds";
+import { experienciesMoked } from "../../../../data/experiencies";
+import { FilterAboutType } from "./AboutFilter";
+import { Experience } from "./Experience";
+import { Paragraph } from "./Paragraph";
 
 export const About = () => {
   const [filter, setFilter] = useState<FilterAboutType>("recente");
   const [stack, setStack] = useState<string[]>([]);
 
+  const { t, i18n } = useTranslation();
+  const language = i18n.language;
+
   const age = differenceInYears(new Date(), new Date("02/18/1993"));
   const city = "Juazeiro do Norte - Ceará";
 
-  const experiencies = experienciesMoked.sort((a, b) => {
+  const experiencies = experienciesMoked[
+    language as keyof typeof experienciesMoked
+  ].sort((a, b) => {
     if (filter === "recente")
       return b.startDate.getTime() - a.startDate.getTime();
     if (filter === "antigo")
@@ -40,11 +46,11 @@ export const About = () => {
 
   return (
     <Container
-      title="Um pouco da minha história"
-      section="Sobre mim"
+      title={t("about.title")}
+      section={t("about.section")}
       id={ScrollIds.ABOUT}
       button={{
-        title: "ver mais",
+        title: t("common.seeMore"),
         onClick: () => navigate(AppRoutes.ABOUT),
         icon: <ArrowRightIcon className="-rotate-45" />,
       }}
@@ -70,67 +76,36 @@ export const About = () => {
             className={classNames(
               "h-full w-full object-cover z-10 absolute hover:scale-110 transition-all duration-700 ease-in-out"
             )}
-            alt="Foto do Danilo usando um casaco rosa escrito NASA, utilizando um notebook."
+            alt={t("about.photoAlt")}
           />
         </div>
 
         <div className="flex flex-col gap-6 sm:gap-16 max-w-[800px] text-dark-100 h-screen overflow-y-scroll pr-4 animate-fadeIn ">
           <div className="flex flex-col gap-10 ">
-            <h3 className="font-bold text-2xl leading-9">
-              Quem é Danilo Schleu?
-            </h3>
-
             <div className="flex flex-col gap-6">
               <Paragraph>
-                Desenvolvedor Full Stack, tecnólogo em Análise e Desenvolvimento
-                de Sistemas pela Cesumar. Solteiro, {age} anos, residente em{" "}
-                {city}. Apaixonado por esportes, estou sempre buscando
-                experimentar novas atividades físicas. No tempo livre, gosto de
-                explorar receitas na cozinha e me desconectar com uma boa série
-                ou filme.
+                {t("about.description.p1", {
+                  age,
+                  city,
+                })}
               </Paragraph>
 
-              <Paragraph>
-                Atuo como desenvolvedor full stack, mas tenho uma afinidade
-                muito maior com a parte lógica e estrutural dos sistemas do que
-                com a camada visual. Gosto de trabalhar com regras de negócio,
-                integrações, automações e arquiteturas bem definidas. Meu foco
-                está em entregar soluções robustas, eficientes e pensadas para
-                facilitar a vida de quem vai usá-las.
-              </Paragraph>
+              <Paragraph>{t("about.description.p2")}</Paragraph>
 
-              <Paragraph>
-                Sou movido por propósito. Amo aprender, mas tenho dificuldade em
-                me atualizar com coisas que não pretendo usar — meu aprendizado
-                é muito mais eficaz quando entendo a utilidade real do que estou
-                estudando.
-              </Paragraph>
+              <Paragraph>{t("about.description.p3")}</Paragraph>
 
-              <Paragraph>
-                Valorizo ambientes colaborativos e estou sempre pronto para
-                ajudar quem precisa. Tenho certa resistência em pedir ajuda, e
-                só o faço quando percebo que já esgotei minhas tentativas. Ainda
-                assim, não tenho problema algum em assumir responsabilidades ou
-                reconhecer meus erros.
-              </Paragraph>
-
-              <Paragraph>
-                Sou adepto de uma cultura de feedback constante — gosto de ouvir
-                críticas construtivas e também me disponho sempre a dar
-                feedbacks com empatia e clareza. Acredito que o crescimento
-                profissional vem da troca, da escuta e do esforço contínuo em
-                evoluir como pessoa e como profissional.
-              </Paragraph>
+              <Paragraph>{t("about.description.p4")}</Paragraph>
+              <Paragraph>{t("about.description.p5")}</Paragraph>
             </div>
 
-            <div className="flex justify-between gap-2">
-              <i>Aqui começa minha jornada profissional:</i>
+            <div className="flex justify-between gap-2 relative">
+              <i>{t("about.experience.title")}</i>
 
-              <AboutFilter onFilterChange={handleFilterChange} />
+              {/* <AboutFilter onFilterChange={handleFilterChange} /> */}
             </div>
 
             {experienciesFiltered.map((exp) => (
-              <Experience key={exp.company} {...exp} />
+              <Experience key={exp.startDate.getTime()} {...exp} />
             ))}
           </div>
 

@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Link, scroller } from "react-scroll";
 import { useLockBodyScroll } from "react-use";
@@ -40,6 +41,7 @@ export const MenuMobile = ({ isOpen, onClose, items }: iMenuMobileProps) => {
 };
 
 const MenuItem = ({ text, link, onClick }: iMenuItem) => {
+  const { t } = useTranslation();
   const handleClick = () => {
     scroller.scrollTo(link, {
       smooth: true,
@@ -52,7 +54,7 @@ const MenuItem = ({ text, link, onClick }: iMenuItem) => {
       className="w-full py-5 px-2.5 border-b-2 border-transparent hover:border-primary cursor-pointer"
       onClick={() => handleClick()}
     >
-      <nav onClick={() => handleClick()}>{text}</nav>
+      <nav onClick={() => handleClick()}>{t(`header.menu.${text}`)}</nav>
     </div>
   );
 };

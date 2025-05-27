@@ -15,7 +15,7 @@ module.exports = {
         "dark-200": "#D6D6DC",
         "dark-100": "#D4D4D8",
         "dark-50": "#F0F6FF",
-        primary: "#41B19B",
+        primary: "#2A8F7C",
         danger: "#F12C4C",
         "light-900": "#F0F6FF",
         "light-800": "#D6D6DC",
@@ -43,37 +43,37 @@ module.exports = {
       },
       keyframes: {
         fadeInDown: {
-          "0%":{ transform: "translate(0,-350%)", opacity: '0' },
-          "60%":{ opacity: '0' },
-          "100%":{ transform: "translate(0,0)", opacity: '1' }
+          "0%": { transform: "translate(0,-350%)", opacity: "0" },
+          "60%": { opacity: "0" },
+          "100%": { transform: "translate(0,0)", opacity: "1" },
         },
         fadeInUp: {
-          "0%":{ transform: "translate(0,150%)", opacity: '0' },
-          "60%":{ opacity: '0' },
-          "100%":{ transform: "translate(0,0)", opacity: '1'}
+          "0%": { transform: "translate(0,150%)", opacity: "0" },
+          "60%": { opacity: "0" },
+          "100%": { transform: "translate(0,0)", opacity: "1" },
         },
         fadeOutUp: {
-          "0%":{ transform: "translate(0,0)",opacity: '1'},
-          "60%":{ opacity: '0' },
-          "100%":{ transform: "translate(0,-150%)", opacity: '0' }
+          "0%": { transform: "translate(0,0)", opacity: "1" },
+          "60%": { opacity: "0" },
+          "100%": { transform: "translate(0,-150%)", opacity: "0" },
         },
         fadeInLeft: {
-          "0%":{ transform: "translate(150%,0)", opacity: '0' },
-          "60%":{ opacity: '0' },
-          "100%":{ transform: "translate(0,0)", opacity: '1'}
+          "0%": { transform: "translate(150%,0)", opacity: "0" },
+          "60%": { opacity: "0" },
+          "100%": { transform: "translate(0,0)", opacity: "1" },
         },
         fadeInRight: {
-          "0%":{transform: "translate(-150%,0)", opacity: '0'},
-          "60%":{ opacity: '0' },
-          "100%":{ transform: "translate(0,0)", opacity: '1'}
+          "0%": { transform: "translate(-150%,0)", opacity: "0" },
+          "60%": { opacity: "0" },
+          "100%": { transform: "translate(0,0)", opacity: "1" },
         },
         fadeIn: {
-          "0%": { opacity: '0' },
-          "60%":{ opacity: '0' },
-          "100%": { opacity: '1' },
+          "0%": { opacity: "0" },
+          "60%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
         moveLeft: {
-          "0%": { right: "-100%", },
+          "0%": { right: "-100%" },
           "100%": { right: "0%" },
         },
       },

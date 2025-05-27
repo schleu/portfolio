@@ -2,34 +2,29 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
-import { Link, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 import { useLocation } from "react-use";
 import { ReactComponent as LogoIcon } from "../../assets/brackets.svg";
-import { ReactComponent as ChatCircleIcon } from "../../assets/chatCircle.svg";
 import { AppRoutes } from "../../constant/AppRoutes";
 import { localStorageKeys } from "../../constant/LocalStorageKeys";
 import { ScrollIds } from "../../constant/ScrollIds";
-import { Button } from "../Button";
-import { MenuMobile } from "./MenuMobile";
-import { FiGithub } from "react-icons/fi";
-import { FiLinkedin } from "react-icons/fi";
+import { LanguageButton } from "../LanguageButton";
 import { SocialMedias } from "../SocialMedias";
+import { MenuMobile } from "./MenuMobile";
+import { useTranslation } from "react-i18next";
 
 const menuItemsMocked = [
-  { text: "Início", link: ScrollIds.HOME, onClick: () => {} },
-  // {
-  //   text: "Serviços",
-  //   link: ScrollIds.SERVICES,
-  //   onClick: () => {},
-  // },
-  { text: "Portfólio", link: ScrollIds.PORTFOLIO, onClick: () => {} },
-  { text: "Sobre Mim", link: ScrollIds.ABOUT, onClick: () => {} },
-  { text: "Contato", link: ScrollIds.CONTACT, onClick: () => {} },
+  { text: "home", link: ScrollIds.HOME, onClick: () => {} },
+  { text: "portfolio", link: ScrollIds.PORTFOLIO, onClick: () => {} },
+  { text: "about", link: ScrollIds.ABOUT, onClick: () => {} },
+  { text: "contact", link: ScrollIds.CONTACT, onClick: () => {} },
 ];
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [actualMenu, setActualMenu] = useState("");
+
+  const { t } = useTranslation();
 
   const location = useLocation();
   const ls = localStorage.getItem(localStorageKeys.scroll);
@@ -91,13 +86,14 @@ export const Header = () => {
                   actualMenu === item.link && "border-primary"
                 )}
               >
-                {item.text}
+                {t(`header.menu.${item.text}`)}
               </nav>
             );
           })}
         </div>
 
         <SocialMedias />
+        <LanguageButton />
       </div>
     </div>
   );

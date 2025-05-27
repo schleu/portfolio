@@ -1,0 +1,24 @@
+{
+  "home": {
+    "title": "Bem-vindo ao meu portfólio",
+    "description": "Este é o meu portfólio pessoal, onde mostro meus trabalhos, habilidades e experiências como desenvolvedor web."
+  },
+  "about": {},
+  "portfolio": {
+    "title": "Portfólio",
+    "description": "Este é o meu portfólio pessoal, onde mostro meus trabalhos, habilidades e experiências como desenvolvedor web."
+  },
+  "contact": {
+    "title": "Contato",
+    "section": "Entre em contato",
+    "name": "Nome Completo",
+    "namePlaceholder": "Digite o seu nome",
+    "phone": "Telefone",
+    "phonePlaceholder": "Digite o seu telefone",
+    "email": "Email",
+    "emailPlaceholder": "Digite o seu email",
+    "message": "Mensagem",
+    "messagePlaceholder": "Digite a sua mensagem",
+    "send": "Enviar"
+  }
+}

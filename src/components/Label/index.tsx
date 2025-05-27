@@ -1,4 +1,5 @@
 import { LabelHTMLAttributes, ReactNode } from "react";
+import { useTranslation } from "react-i18next";
 
 interface iInputProps extends LabelHTMLAttributes<HTMLLabelElement> {
   id: string;
@@ -15,16 +16,20 @@ export const Label = ({
   required,
   children,
   ...props
-}: iInputProps) => (
-  <div className="w-full text-dark-100 flex flex-col gap-1">
-    <div className="flex justify-between items-center ">
-      <label htmlFor={id} className="text-base" {...props}>
-        {label}
-      </label>
-      <span className="text-sm leading-6 text-danger">
-        {required && "Obrigatório"}
-      </span>
+}: iInputProps) => {
+  const { t } = useTranslation();
+
+  return (
+    <div className="w-full text-dark-100 flex flex-col gap-1">
+      <div className="flex justify-between items-center ">
+        <label htmlFor={id} className="text-base" {...props}>
+          {label}
+        </label>
+        <span className="text-sm leading-6 text-danger">
+          {required && t("required")}
+        </span>
+      </div>
+      <div className="w-full">{children}</div>
     </div>
-    <div className="w-full">{children}</div>
-  </div>
-);
+  );
+};

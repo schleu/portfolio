@@ -1,0 +1,70 @@
+{
+  "common": {
+    "selectAll": "Select all",
+    "deselectAll": "Deselect all",
+    "seeMore": "See more"
+  },
+  "header": {
+    "menu": {
+      "home": "Home",
+      "portfolio": "Portfolio",
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "home": {
+    "title": "Welcome to my portfolio",
+    "description": "This is my personal portfolio, where I showcase my work, skills and experiences as a web developer.",
+    "hero": {
+      "title": "Danilo Schleu",
+      "position": "Full Stack Developer",
+      "description": "My availability to develop technology solutions that meet the needs of your business",
+      "contact": "Contact me",
+      "contactAlt": "Go to the contact form",
+      "resume": "Download resume",
+      "resumeAlt": "Open resume in another tab"
+    }
+  },
+  "about": {
+    "title": "Who is Danilo Schleu?",
+    "section": "About me",
+    "description": {
+      "p1": "Full Stack Developer, technology in Systems Analysis and Development from Cesumar. Single, {{age}} years old, resident in {{city}}. Passionate about sports, I am always looking to try new physical activities. In my free time, I like to explore recipes in the kitchen and disconnect with a good series",
+      "p2": "I work as a full stack developer, but I have a much greater affinity for the logical and structural part of systems than the visual layer. I like to work with business rules, integrations, automations and well-defined architectures. My focus is on delivering robust, efficient and thought-out solutions to make life easier for those who will use them.",
+      "p3": "I am driven by purpose. I love to learn, but I have difficulty updating myself with things I don't intend to use — my learning is much more effective when I understand the real utility of what I am studying.",
+      "p4": "I value collaborative environments and I am always ready to help those who need it. I have a certain resistance to asking for help, and I only do it when I realize that I have exhausted all my attempts. Nevertheless, I have no problem assuming responsibilities or assuming the role of leader when necessary.",
+      "p5": "I am a constant feedback culture — I like to listen to constructive criticisms and also offer feedbacks with empathy and clarity. I believe that professional growth comes from exchange, listening and continuous effort to evolve as a person and as a professional."
+    },
+    "experience": {
+      "title": "Here begins my professional journey:",
+      "filter": "Filter by"
+    },
+    "skills": {
+      "title": "Skills",
+      "description": "Skills that I have"
+    },
+    "photoAlt": "Photo of Danilo wearing a pink coat with the NASA logo, using a notebook."
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "This is my personal portfolio, where I showcase my work, skills and experiences as a web developer."
+  },
+  "contact": {
+    "title": "Contact",
+    "section": "Get in touch",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "phone": "Phone",
+    "phonePlaceholder": "Enter your phone",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "message": "Message",
+    "messagePlaceholder": "Enter your message",
+    "send": "Send",
+    "required": "Required"
+  },
+  "footer": {
+    "moveTop": "Move to the top of the page",
+    "moveTopAlt": "Move to the top of the page"
+  }
+}

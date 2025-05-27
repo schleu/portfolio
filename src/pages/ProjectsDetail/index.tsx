@@ -6,7 +6,7 @@ import { scroller } from "react-scroll";
 import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
 import { ScrollIds } from "../../constant/ScrollIds";
-import { portfolioData } from "../../service/portifolio";
+import { portfolioData } from "../../data/portifolio";
 
 export const ProjectsDetail = () => {
   let { projectId } = useParams();
@@ -33,13 +33,21 @@ export const ProjectsDetail = () => {
 
         <div className="flex items-center gap-10">
           <a href={project?.git} target={"_blank"}>
-            <Button filled={false} className="text-lg" title="Abre github do projeto">
+            <Button
+              filled={false}
+              className="text-lg"
+              title="Abre github do projeto"
+            >
               <DiGithub className="h-7 w-7" />
               Github
             </Button>
           </a>
           <a href={project?.link} target={"_blank"}>
-            <Button filled={false} className="text-lg" title="Abre projeto hospedados">
+            <Button
+              filled={false}
+              className="text-lg"
+              title="Abre projeto hospedados"
+            >
               <TbExternalLink className="w-7 h-7" />
               Live
             </Button>
