@@ -13,7 +13,7 @@ export const Home = () => {
       {/* <Services /> */}
       <Portfolio />
       <About />
-      <Skills />
+      {/* <Skills /> */}
     </div>
   );
 };

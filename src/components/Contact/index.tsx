@@ -53,11 +53,11 @@ export const Contact = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full flex justify-center" id={ScrollIds.CONTACT}>
+    <div className="w-full flex justify-center pt-4" id={ScrollIds.CONTACT}>
       <div className="flex gap-20 items-center w-full max-w-screen-cut">
         <img
           src={contactBanner}
-          className="hidden sm:block"
+          className="hidden sm:block blur-sm border border-primary/50 rounded-md"
           alt={t("contact.imgAlt")}
         />
 
