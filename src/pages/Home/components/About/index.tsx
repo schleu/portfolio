@@ -9,8 +9,9 @@ import { useState } from "react";
 import { experienciesMoked } from "./moked";
 import { AboutFilter, FilterAboutType } from "./AboutFilter";
 import { AppRoutes } from "../../../../constant/AppRoutes";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowRightIcon } from "../../../../assets/arrowRight.svg";
+import { aboutMe } from "../../../../data/aboutMe";
 
 export const About = () => {
   const [filter, setFilter] = useState<FilterAboutType>("recente");
@@ -19,7 +20,7 @@ export const About = () => {
   const age = differenceInYears(new Date(), new Date("02/18/1993"));
   const city = "Juazeiro do Norte - Ceará";
 
-  const experiencies = experienciesMoked.sort((a, b) => {
+  const experienciesFiltered = experienciesMoked.sort((a, b) => {
     if (filter === "recente")
       return b.startDate.getTime() - a.startDate.getTime();
     if (filter === "antigo")
@@ -27,13 +28,8 @@ export const About = () => {
     return 0;
   });
 
-  const experienciesFiltered = experiencies.filter((exp) => {
-    return stack.every((s) => exp.stack.includes(s));
-  });
-
-  function handleFilterChange(filter: FilterAboutType, stack: string[]) {
+  function handleFilterChange(filter: FilterAboutType) {
     setFilter(filter);
-    setStack(stack);
   }
 
   const navigate = useNavigate();
@@ -82,49 +78,22 @@ export const About = () => {
 
             <div className="flex flex-col gap-6">
               <Paragraph>
-                Desenvolvedor Full Stack, tecnólogo em Análise e Desenvolvimento
-                de Sistemas pela Cesumar. Solteiro, {age} anos, residente em{" "}
-                {city}. Apaixonado por esportes, estou sempre buscando
-                experimentar novas atividades físicas. No tempo livre, gosto de
-                explorar receitas na cozinha e me desconectar com uma boa série
-                ou filme.
+              {aboutMe.paragraph1.replace("{age}", age.toString()).replace("{city}", city)}
               </Paragraph>
 
               <Paragraph>
-                Atuo como desenvolvedor full stack, mas tenho uma afinidade
-                muito maior com a parte lógica e estrutural dos sistemas do que
-                com a camada visual. Gosto de trabalhar com regras de negócio,
-                integrações, automações e arquiteturas bem definidas. Meu foco
-                está em entregar soluções robustas, eficientes e pensadas para
-                facilitar a vida de quem vai usá-las.
+                {aboutMe.paragraph2}
               </Paragraph>
 
-              <Paragraph>
-                Sou movido por propósito. Amo aprender, mas tenho dificuldade em
-                me atualizar com coisas que não pretendo usar — meu aprendizado
-                é muito mais eficaz quando entendo a utilidade real do que estou
-                estudando.
-              </Paragraph>
-
-              <Paragraph>
-                Valorizo ambientes colaborativos e estou sempre pronto para
-                ajudar quem precisa. Tenho certa resistência em pedir ajuda, e
-                só o faço quando percebo que já esgotei minhas tentativas. Ainda
-                assim, não tenho problema algum em assumir responsabilidades ou
-                reconhecer meus erros.
-              </Paragraph>
-
-              <Paragraph>
-                Sou adepto de uma cultura de feedback constante — gosto de ouvir
-                críticas construtivas e também me disponho sempre a dar
-                feedbacks com empatia e clareza. Acredito que o crescimento
-                profissional vem da troca, da escuta e do esforço contínuo em
-                evoluir como pessoa e como profissional.
-              </Paragraph>
+              <Link to={AppRoutes.ABOUT} className="text-primary text-sm -mt-4">
+                Leia mais...
+              </Link>
             </div>
 
+
+
             <div className="flex justify-between gap-2">
-              <i>Aqui começa minha jornada profissional:</i>
+              <i className="text-dark-100/50 text-sm">Aqui começa minha jornada profissional:</i>
 
               <AboutFilter onFilterChange={handleFilterChange} />
             </div>
