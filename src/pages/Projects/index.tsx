@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import { scroller } from "react-scroll";
 import { Container } from "../../components/Container";
 import { ProjectCard } from "../../components/ProjectCard";
 import { ScrollIds } from "../../constant/ScrollIds";
-import { portfolioData } from "../../service/portifolio";
-
+import { portfolioData } from "../../data/portifolio";
+  
 export const Projects = () => {
   useEffect(() => {
     scroller.scrollTo(ScrollIds.HOME, {

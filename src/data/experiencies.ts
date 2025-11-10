@@ -1,6 +1,8 @@
 export interface Project {
   title: string;
   description: string;
+  responsible?: string;
+  
 }
 
 export interface Experience {
@@ -198,6 +200,7 @@ export const experienciesMoked: Record<string, Experience[]> = {
           title: "MyMeme",
           description:
             "Meme creation platform with generative AI, autonomous distribution and monetization system.",
+          responsible: "Responsible for the frontend development.",
         },
         {
           title: "PaalX",

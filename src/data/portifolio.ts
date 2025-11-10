@@ -11,6 +11,18 @@ interface iPortfolio {
 
 export const portfolioData: iPortfolio[] = [
   {
+    id: "bc62b8fe-34c0-4ac3-bb32-96f7ca4cfb34",
+    image:
+      "https://res.cloudinary.com/dzo8dip4y/image/upload/c_scale,w_1440/v1731274263/tubaroes-da-areia_v1731274263.webp",
+    smallImage:
+      "https://res.cloudinary.com/dzo8dip4y/image/upload/c_scale,w_606/v1731274263/tubaroes-da-areia_v1731274263.webp",
+    title: "Tubarões da Areia",
+    description: `Tubarões da Areia: Sistema inteligente para balanceamento de grupos de jogadores de voleibol.`,
+    link: "https://tubaroes-da-areia.vercel.app/",
+    git: "https://github.com/schleu/voleizin",
+    highlight: true,
+  },
+  {
     id: "de952c67-6a41-4598-8aa0-732516c867c8",
     image:
       "https://d33wubrfki0l68.cloudfront.net/654ce06705a0bd0008167264/screenshot_2023-11-09-13-37-06-0000.png",

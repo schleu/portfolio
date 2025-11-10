@@ -2,7 +2,7 @@ import { Container } from "../../../../components/Container";
 
 import { ReactComponent as ArrowRightIcon } from "../../../../assets/arrowRight.svg";
 import { ScrollIds } from "../../../../constant/ScrollIds";
-import { portfolioData } from "../../../../service/portifolio";
+import { portfolioData } from "../../../../data/portifolio";
 import { ProjectCard } from "../../../../components/ProjectCard";
 import { useNavigate } from "react-router-dom";
 import { AppRoutes } from "../../../../constant/AppRoutes";

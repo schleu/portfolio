@@ -6,7 +6,7 @@ import { scroller } from "react-scroll";
 import { Button } from "../../components/Button";
 import { Container } from "../../components/Container";
 import { ScrollIds } from "../../constant/ScrollIds";
-import { portfolioData } from "../../service/portifolio";
+import { portfolioData } from "../../data/portifolio";
 
 export const ProjectsDetail = () => {
   let { projectId } = useParams();
