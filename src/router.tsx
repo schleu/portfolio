@@ -9,6 +9,8 @@ import { TelegramPage } from "./pages/Telegram";
 import { AboutPage } from "./pages/About";
 import TodoPage from "./pages/Todo";
 
+import { FitPage } from './pages/Fit'
+
 export const Router = () => {
   return (
     <Routes>
@@ -19,6 +21,7 @@ export const Router = () => {
         <Route path={AppRoutes.POMODORO} element={<PomodoroPage />} />
         <Route path={AppRoutes.TELEGRAM} element={<TelegramPage />} />
         <Route path={AppRoutes.ABOUT} element={<AboutPage />} />
+        <Route path={AppRoutes.FIT} element={<FitPage />} />
         <Route path={AppRoutes.TODO} element={<TodoPage />} />
       </Route>
     </Routes>

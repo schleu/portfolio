@@ -5,5 +5,6 @@ export enum AppRoutes {
   POMODORO = "/pomodoro",
   TELEGRAM = "/telegram",
   TODO = "/todo",
+  FIT = "/fit",
   ABOUT = "/about",
 }
