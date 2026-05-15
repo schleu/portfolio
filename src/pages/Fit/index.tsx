@@ -1,7 +1,7 @@
-
-
 import { useEffect, useMemo, useState } from 'react';
 import { mockedExercises, workoutMoked } from './data';
+import { FiVideo  } from 'react-icons/fi'
+import { CustomExercise, Exercise, Workout } from './types';
 
 export function FitPage(): JSX.Element {
   const [selectedWorkout, setSelectedWorkout] = useState<string>('A');
@@ -209,7 +209,7 @@ export function FitPage(): JSX.Element {
                       </div>
                     </div>
 
-                    <img src={exer?.image} alt="" className='w-20 h-20 rounded-md' />
+                    <img src={Array.isArray(exer?.image) ? exer?.image[0] : exer?.image} alt="" className='w-20 h-20 rounded-md' />
 
                     <div>
                       <iframe id="ytplayer" width="320" height="180" src={exer?.video+"?origin=http://example.com"}  />
@@ -240,18 +240,19 @@ export function FitPage(): JSX.Element {
                   key={exercise.name}
                   className="bg-zinc-800/80 border border-zinc-700 hover:border-blue-500/40 rounded-3xl p-4 transition-all duration-300"
                 >
-                  <div className="flex items-start justify-between gap-3 mb-4">
-                    <div>
-                      <h3 className="font-bold text-lg leading-tight">
-                        {exercise.name}
-                      </h3>
+                  <div className="flex items-center justify-between gap-3 mb-4">
+                    
+                    <h3 className="font-bold text-lg leading-tight">
+                      {exercise.name}
+                    </h3>
 
-                      <div className="inline-flex mt-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-xl text-xs font-bold">
-                        {exercise.muscle || 'Geral'}
-                      </div>
+                    <div className="inline-flex mt-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3 py-1 rounded-xl text-xs font-bold">
+                      {exercise.muscle || 'Geral'}
                     </div>
-
-                    <img src={exercise.image}  alt="" className='w-20 h-20 rounded-md' />
+                    
+                    {exercise.image.map(i=>(
+                    <img key={i} src={i}  alt="" className='w-20 h-20 rounded-md' />
+                    ))}
 
                     {/* <button
                       onClick={() => setPreviewImage(exercise.image)}
@@ -259,23 +260,29 @@ export function FitPage(): JSX.Element {
                     >
                       🖼️ Imagem
                     </button> */}
-                  </div>
-
-                  <div className="flex gap-2">
-                    <a
-                      href={exercise.video}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex-1 text-center bg-red-500 hover:bg-red-400 transition-all duration-300 px-4 py-3 rounded-2xl text-sm font-bold"
-                    >
-                      Vídeo
-                    </a>
+                  
+                    {/* <div>
+                      <a
+                        href={exercise.video}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex-1 text-center bg-red-500 hover:bg-red-400 transition-all duration-300 rounded-2xl text-sm font-bold w-fit"
+                      >
+                        <FiVideo />
+                        <span className='hidden md:block'>
+                          Vídeo
+                        </span>
+                      </a>
+                    </div> */}
 
                     <button
                       onClick={() => addExerciseToWorkout(exercise)}
-                      className="flex-1 bg-green-500 hover:bg-green-400 text-black transition-all duration-300 px-4 py-3 rounded-2xl text-sm font-black hover:scale-[1.02]"
+                      className="flex-1 bg-green-500 hover:bg-green-400 text-black transition-all duration-300 px-4 py-3 rounded-2xl text-sm font-black hover:scale-[1.02] max-w-fit"
                     >
-                      + Adicionar
+                      + 
+                      <span className='hidden md:block'>
+                        Adicionar
+                      </span>
                     </button>
                   </div>
                 </div>
