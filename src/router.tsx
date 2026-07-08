@@ -10,6 +10,7 @@ import { AboutPage } from "./pages/About";
 import TodoPage from "./pages/Todo";
 
 import { FitPage } from './pages/Fit'
+import YasminArrays from "./pages/Yas";
 
 export const Router = () => {
   return (
@@ -23,6 +24,7 @@ export const Router = () => {
         <Route path={AppRoutes.ABOUT} element={<AboutPage />} />
         <Route path={AppRoutes.FIT} element={<FitPage />} />
         <Route path={AppRoutes.TODO} element={<TodoPage />} />
+        <Route path={'/yas'} element={<YasminArrays />} />
       </Route>
     </Routes>
   );
