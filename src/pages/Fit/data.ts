@@ -5,21 +5,27 @@ const peitoral = [
     "id": "supino_reto",
     "name": "Supino Reto",
     "muscle": "Peitoral",
-    "image": ["https://images.unsplash.com/photo-1605296867304-46d5465b8d48?w=800&fit=crop"],
+    "image": [
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2024/04/barbell-bench-press.gif"
+    ],
     "video": "https://www.youtube.com/embed/rT7DgCr-3pg"
   },
   {
     "id": "supino_inclinado",
     "name": "Supino Inclinado",
     "muscle": "Peitoral",
-    "image": ["https://images.unsplash.com/photo-1605296867310-700e627e5d73?w=800&fit=crop"],
+    "image": [  
+      "https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/supino-inclinado-com-barra.gif"
+    ],
     "video": "https://www.youtube.com/embed/DbFgADa2PL8"
   },
   {
     "id": "supino_declinado",
     "name": "Supino Declinado",
     "muscle": "Peitoral",
-    "image": ["https://pplx-res.cloudinary.com/image/upload/pplx_search_images/ee471d6f81d2f868f7a74c852b19ebd7bfa9a026.jpg"],
+    "image": [
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2018/09/barbell-decline-bench-press.gif"
+    ],
     "video": "https://www.youtube.com/embed/LfyQBUKR8SE"
   },
   {
@@ -54,7 +60,7 @@ const peitoral = [
     "id": "supino_vertical",
     "name": "Supino Vertical",
     "muscle": "Peitoral",
-    "image": ["https://images.unsplash.com/photo-1581129724999-7a6bf24d8e05?w=800&fit=crop"],
+    "image": ["https://i0.wp.com/omelhortreino.com.br/wp-content/uploads/2025/07/Supino-na-maquina.gif?resize=550%2C550&ssl=1"],
     "video": "https://www.youtube.com/embed/9fWQ5fJqv0Q"
   },
   {
@@ -68,7 +74,9 @@ const peitoral = [
     "id": "crucifixo_reto",
     "name": "Crucifixo Reto",
     "muscle": "Peitoral",
-    "image": ["https://images.unsplash.com/photo-1605296867304-46d5465b8d48?w=800&fit=crop"],
+    "image": [
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2023/09/dumbbell-fly.gif"
+    ],
     "video": "https://www.youtube.com/embed/eozdVDA78K0"
   },
   {
@@ -89,7 +97,7 @@ const peitoral = [
     "id": "peck_deck",
     "name": "Peck Deck",
     "muscle": "Peitoral",
-    "image": ["https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&fit=crop"],
+    "image": ["https://www.hipertrofia.org/blog/wp-content/uploads/2023/09/lever-seated-fly.gif"],
     "video": "https://www.youtube.com/embed/Z57CtFmRMxA"
   },
   {
@@ -106,7 +114,10 @@ const costas = [
     "id": "puxador_vertical",
     "name": "Puxador Vertical",
     "muscle": "Costas / Dorsal",
-    "image": ["https://pplx-res.cloudinary.com/image/upload/pplx_search_images/c9e74d72933523f4f9e329f5e4f90f2bee3d65cb.jpg?w=600&h=400&fit=crop"],
+    "image": [
+      "https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/costas-puxada-com-barra-no-pulley-1.gif",
+      "https://freelife.thiagoflausino.com/wp-content/uploads/2022/06/PUXADA-INVERTIDA-1-184x300.jpg"
+    ],
     "video": "https://www.youtube.com/embed/CAwf7n6Luuc"
   },
   {
@@ -120,21 +131,28 @@ const costas = [
     "id": "banco_para_remada",
     "name": "Banco Para Remada",
     "muscle": "Costas / Dorsal",
-    "image": ["https://pplx-res.cloudinary.com/image/upload/pplx_search_images/bac767f2e7796b824cf4171fc0de9c3661d99e94.jpg?w=600&h=400&fit=crop"],
+    "image": [
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2023/11/dumbbell-one-arm-bentover-row.gif",
+      "https://pplx-res.cloudinary.com/image/upload/pplx_search_images/bac767f2e7796b824cf4171fc0de9c3661d99e94.jpg?w=600&h=400&fit=crop"
+    ],
     "video": "https://www.youtube.com/embed/roCP6wCXPqo"
   },
   {
     "id": "remada_baixa",
     "name": "Remada Baixa",
     "muscle": "Costas / Dorsal",
-    "image": ["https://pplx-res.cloudinary.com/image/upload/pplx_search_images/b2ebf12d3aab1898af2d453e005eb460655cb9f1.jpg?w=600&h=400&fit=crop"],
+    "image": [
+      "https://www.mundoboaforma.com.br/wp-content/uploads/2021/09/remada-sentado-com-cabos-e-triangulo-para-costas.gif"
+    ],
     "video": "https://www.youtube.com/embed/HJSVR_67OlM"
   },
   {
     "id": "remada_curvada",
     "name": "Remada Curvada",
     "muscle": "Costas / Dorsal",
-    "image": ["https://pplx-res.cloudinary.com/image/upload/pplx_search_images/8259608719f79ce3ca50d77911b3703e0f0cb12e.jpg?w=600&h=400&fit=crop"],
+    "image": [
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2024/05/barbell-bent-over-row.gif"
+    ],
     "video": "https://www.youtube.com/embed/vT2GjY_Umpw"
   },
   {
@@ -155,7 +173,9 @@ const costas = [
     "id": "peck_deck_dorsal",
     "name": "Peck Deck Dorsal",
     "muscle": "Costas / Dorsal",
-    "image": ["https://pplx-res.cloudinary.com/image/upload/pplx_search_images/d198b0335de97b5527bc0eba5b6dba2bd7245451.jpg?w=600&h=400&fit=crop"],
+    "image": [
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2018/03/lever-seated-reverse-fly-parallel-grip.gif"
+    ],
     "video": "https://www.youtube.com/embed/JoCRRZ3zRtA"
   },
   {
@@ -169,7 +189,9 @@ const costas = [
     "id": "barra_fixa",
     "name": "Barra Fixa",
     "muscle": "Costas / Dorsal",
-    "image": ["https://pplx-res.cloudinary.com/image/upload/pplx_search_images/b78856e8158a5d2de86fa7189476ddf24ee284ed.jpg?w=600&h=400&fit=crop"],
+    "image": [
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2019/05/pullup.gif"
+    ],
     "video": "https://www.youtube.com/embed/eGo4IYlbE5g"
   }
 ]
@@ -294,12 +316,12 @@ const biceps = [
     "name": "Rosca Martelo",
     "muscle": "Bíceps / Antebraço",
     "image": [
-        "https://www.hipertrofia.org/blog/wp-content/uploads/2024/08/cable-hammer-curl-with-rope.gif",
-        "https://www.hipertrofia.org/blog/wp-content/uploads/2024/08/dumbbell-cross-body-hammer-curl-v-2.gif",
-        "https://www.hipertrofia.org/blog/wp-content/uploads/2024/10/dumbbell-peacher-hammer-curl.gif",
-        "https://www.hipertrofia.org/blog/wp-content/uploads/2024/08/dumbbell-incline-hammer-curl.gif",
-        "https://www.hipertrofia.org/blog/wp-content/uploads/2024/08/dumbbell-alternate-seated-hammer-curl.gif",
-        "https://www.hipertrofia.org/blog/wp-content/uploads/2023/04/dumbbell-hammer-curl-v-2.gif"
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2023/04/dumbbell-hammer-curl-v-2.gif",
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2024/08/dumbbell-alternate-seated-hammer-curl.gif",
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2024/08/dumbbell-incline-hammer-curl.gif",
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2024/10/dumbbell-peacher-hammer-curl.gif",
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2024/08/dumbbell-cross-body-hammer-curl-v-2.gif",
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2024/08/cable-hammer-curl-with-rope.gif",
     ],
     "video": "https://www.youtube.com/embed/zC3nLlEvin4"
   },
@@ -439,7 +461,7 @@ const pernas = [
     "id": "leg_45",
     "name": "Leg 45º",
     "muscle": "Perna",
-    "image": ["https://www.bodybuilding.com/exercises/leg-press"],
+    "image": ["https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/pernas-leg-press-45-com-pes-distantes.gif"],
     "video": "https://www.youtube.com/embed/IZxyjW7MPJQ"
   },
   {
@@ -467,7 +489,7 @@ const pernas = [
     "id": "agachamento_smith",
     "name": "Agachamento Smith",
     "muscle": "Perna",
-    "image": ["https://www.bodybuilding.com/exercises/smith-machine-squat"],
+    "image": ["https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/agachamento-smith.gif"],
     "video": "https://www.youtube.com/embed/42bFodPahBU"
   },
   {
@@ -516,7 +538,10 @@ const pernas = [
     "id": "afundo",
     "name": "Afundo",
     "muscle": "Perna",
-    "image": ["https://www.bodybuilding.com/exercises/barbell-lunge"],
+    "image": [
+      "https://www.mundoboaforma.com.br/wp-content/uploads/2020/12/agachamento-afundo-com-barra.gif",
+      "https://www.hipertrofia.org/blog/wp-content/uploads/2024/09/Static-Lunge.gif"
+    ],
     "video": "https://www.youtube.com/embed/QOVaHwm-Q6U"
   },
   {
@@ -537,14 +562,14 @@ const pernas = [
     "id": "cadeira_extensora",
     "name": "Cadeira Extensora",
     "muscle": "Perna",
-    "image": ["https://www.bodybuilding.com/exercises/leg-extensions"],
+    "image": ["https://www.hipertrofia.org/blog/wp-content/uploads/2023/11/lever-leg-extension.gif"],
     "video": "https://www.youtube.com/embed/YyvSfVjQeL0"
   },
   {
     "id": "cadeira_flexora",
     "name": "Cadeira Flexora",
     "muscle": "Perna",
-    "image": ["https://www.bodybuilding.com/exercises/seated-leg-curl"],
+    "image": ["https://www.hipertrofia.org/blog/wp-content/uploads/2024/12/cadeira-flexora.gif"],
     "video": "https://www.youtube.com/embed/1Tq3QdYUuHs"
   },
   {
@@ -572,7 +597,7 @@ const pernas = [
     "id": "cadeira_adutora",
     "name": "Cadeira Adutora",
     "muscle": "Perna",
-    "image": ["https://www.bodybuilding.com/exercises/hip-adduction"],
+    "image": ["https://www.hipertrofia.org/blog/wp-content/uploads/2024/09/lever-seated-hip-abduction.gif"],
     "video": "https://www.youtube.com/embed/2bAlJ5h2sA4"
   }
 ]
@@ -634,7 +659,10 @@ const panturrilha = [
     "id": "panturrilha_maquina",
     "name": "Panturrilha Máquina",
     "muscle": "Panturrilha",
-    "image": ["https://www.bodybuilding.com/exercises/standing-calf-raises"],
+    "image": [
+      "https://www.mundoboaforma.com.br/wp-content/uploads/2021/03/Panturrilha-em-pe-no-aparelho.gif",
+      "https://i.pinimg.com/originals/19/54/4f/19544f4e21322137847a25acd501a18a.gif"
+    ],
     "video": "https://www.youtube.com/embed/-M4-G8p8fmc"
   },
   {
@@ -676,14 +704,14 @@ const panturrilha = [
 
 
 export const mockedExercises = [
-    // ...panturrilha,
+    ...panturrilha,
     ...costas,
     ...peitoral,
-    // ...ombro,
+    ...ombro,
     ...biceps,
     ...triceps,
-    // ...pernas,
-    // ...gluteo,
+    ...pernas,
+    ...gluteo,
 ]
 
 

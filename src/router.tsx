@@ -1,16 +1,17 @@
 import { Route, Routes } from "react-router-dom";
 import { DefaultLayout } from "./components/DefaultLayout";
 import { AppRoutes } from "./constant/AppRoutes";
+import { AboutPage } from "./pages/About";
 import { Home } from "./pages/Home";
+import { PomodoroPage } from "./pages/Pomodoro";
 import { Projects } from "./pages/Projects";
 import { ProjectsDetail } from "./pages/ProjectsDetail";
-import { PomodoroPage } from "./pages/Pomodoro";
 import { TelegramPage } from "./pages/Telegram";
-import { AboutPage } from "./pages/About";
 import TodoPage from "./pages/Todo";
 
-import { FitPage } from './pages/Fit'
-import YasminArrays from "./pages/Yas";
+import Estudo from "./pages/Estudo";
+import { FitPage } from './pages/Fit';
+
 
 export const Router = () => {
   return (
@@ -24,7 +25,7 @@ export const Router = () => {
         <Route path={AppRoutes.ABOUT} element={<AboutPage />} />
         <Route path={AppRoutes.FIT} element={<FitPage />} />
         <Route path={AppRoutes.TODO} element={<TodoPage />} />
-        <Route path={'/yas'} element={<YasminArrays />} />
+        <Route path={'/estudos'} element={<Estudo/>} />
       </Route>
     </Routes>
   );

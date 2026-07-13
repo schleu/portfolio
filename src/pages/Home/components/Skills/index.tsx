@@ -68,7 +68,7 @@ interface iCard {
 const Card = ({ icon, description, title, index }: iCard) => (
   <div
     className={classNames(
-      "w-[200px] flex flex-col justify-center items-start gap-8",
+      "max-w-[300px] w-full flex flex-col justify-center items-start gap-8",
       "rounded px-3 py-5 shadow-xl bg-dark-500",
       "sm:hover:scale-110 transition-transform ease-in-out duration-300",
       `animate-[fadeInRight_${index}s_ease-in]`
