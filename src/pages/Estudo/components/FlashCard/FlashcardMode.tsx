@@ -1,7 +1,7 @@
 // flashcard inline (usa FlipCard)
 
 import { Prova } from "../../types"
-import { FlipCard } from "../FlipCard"
+import { FlipCard } from "./FlipCard"
 
 interface FlashcardModeProps {
   prova: Prova

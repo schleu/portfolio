@@ -45,7 +45,7 @@ export function QuestaoCard({
 
       {/* enunciado */}
       <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-5 py-4 mb-1">
-        <p className="text-zinc-200 text-[15px] leading-relaxed">{questao.pergunta}</p>
+        <p className="text-zinc-200 text-[15px] leading-relaxed" dangerouslySetInnerHTML={{__html: questao.pergunta}}></p>
       </div>
 
       {/* opções */}

@@ -1,9 +1,5 @@
 import { useState } from "react"
-import { Questao } from "../types"
-
-
-
-const LETRAS = ["A", "B", "C", "D", "E"] as const
+import { Questao } from "../../types"
 
 interface FlipCardProps {
   questao: Questao

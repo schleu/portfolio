@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from "react"
-import { Prova, GabaritoEntry, ResultadoProva } from "."
+import { GabaritoEntry, Prova, ResultadoProva } from "./types"
+
 
 interface UseProvaReturn {
   questaoAtual: number
