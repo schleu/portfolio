@@ -6,7 +6,7 @@ import { ScrollIds } from "../../../../constant/ScrollIds";
 import { Experience } from "./Experience";
 import { Paragraph } from "./Paragraph";
 import { useState } from "react";
-import { experienciesMoked } from "./moked";
+import { experienciesMoked } from "../../../../data/experiencies";
 import { AboutFilter, FilterAboutType } from "./AboutFilter";
 import { AppRoutes } from "../../../../constant/AppRoutes";
 import { Link, useNavigate } from "react-router-dom";
@@ -89,8 +89,6 @@ export const About = () => {
                 Leia mais...
               </Link>
             </div>
-
-
 
             <div className="flex justify-between gap-2">
               <i className="text-dark-100/50 text-sm">Aqui começa minha jornada profissional:</i>
