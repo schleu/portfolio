@@ -18,7 +18,10 @@ export const Experience = ({
   description,
   projects,
   stack,
-  variant = "shortly"
+  variant = "shortly",
+  city,
+  contractType,
+  workmode
 }: iExperience) => {
   const [showMore, setShowMore] = useState(true);
 
@@ -28,12 +31,15 @@ export const Experience = ({
 
   return (
     <Paragraph  isActive={showMore} id={`${company}-${role}`}>
-      <h1
-        className={`text-xl font-bold ${haveProjects ? "cursor-pointer" : ""}`}
-        onClick={() => setShowMore((e) => !e)}
-      >
-        {role}
-      </h1>
+      <div className="flex items-center justify-between gap-10">
+        <h1
+          className={`text-xl font-bold ${haveProjects ? "cursor-pointer" : ""}`}
+          onClick={() => setShowMore((e) => !e)}
+        >
+          {role}
+        </h1>
+        <span className="text-dark-100 font-semibold text-base">@{company}</span>
+      </div>
       <div className="flex items-center justify-between gap-10">
         <p className="text-xs capitalize">
           {format(startDate, "MMM yyyy", { locale: ptBr })} -{" "}
@@ -42,7 +48,7 @@ export const Experience = ({
             : "Atual"}
         </p>
 
-        <span className="text-dark-100 font-semibold text-base">@{company}</span>
+        <span className="text-dark-100 font-semibold text-base">{contractType} - {workmode}{city ?? ` - ${city}`}</span>
       </div>
 
         {isFull && (

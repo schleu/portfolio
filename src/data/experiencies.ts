@@ -5,6 +5,9 @@ export interface Project {
   
 }
 
+type WorkMode = "Remoto" | "Presencial" | "Hibrido"
+type ContractType = "CLT"| "PJ" | "Estagio"
+
 export interface Experience {
   company: string;
   role: string;
@@ -13,6 +16,9 @@ export interface Experience {
   finalDate: Date | undefined;
   stack: string[];
   projects: Project[];
+  workmode?: WorkMode;
+  contractType?: ContractType
+  city?: string
 }
 export const experienciesMoked: Record<string, Experience[]> = {
   en: [
@@ -25,6 +31,9 @@ export const experienciesMoked: Record<string, Experience[]> = {
       finalDate: new Date("01.01.2016"),
       stack: ["Delphi"],
       projects: [],
+      contractType: 'CLT',
+      workmode:"Presencial",
+      city: 'Salvador'
     },
     {
       company: "Capgemini",
@@ -35,6 +44,9 @@ export const experienciesMoked: Record<string, Experience[]> = {
       finalDate: new Date("02.01.2019"),
       stack: ["COBOL", "Scrum", "Kanban", "Agile Methodologies"],
       projects: [],
+      contractType: 'CLT',
+      workmode:"Presencial",
+      city: 'Salvador'
     },
     {
       company: "Click Interativo",
@@ -71,6 +83,9 @@ export const experienciesMoked: Record<string, Experience[]> = {
             "Shopping Bela Vista, Faculdade SantaCasa, AlphaOnfit, Labchecap, Academia Alpha, Academia Hammer, Mosello Lima",
         },
       ],
+      contractType: 'CLT',
+      workmode:"Presencial",
+      city: 'Salvador'
     },
     {
       company: "Supera Inovação",
@@ -111,6 +126,8 @@ export const experienciesMoked: Record<string, Experience[]> = {
           description: "GetJus, Sapcana, Daexe, Liver Web, Liver Mobile",
         },
       ],
+      contractType: 'CLT',
+      workmode:"Remoto",
     },
     {
       company: "W3block.io",
@@ -144,6 +161,8 @@ export const experienciesMoked: Record<string, Experience[]> = {
           description: "Implementation of new features",
         },
       ],
+      contractType: 'PJ',
+      workmode:"Remoto",
     },
     {
       company: "Hiperbanco",
@@ -176,6 +195,9 @@ export const experienciesMoked: Record<string, Experience[]> = {
           description: "Checkout service.",
         },
       ],
+      contractType: 'PJ',
+      workmode:"Hibrido",
+      city: "Salvador"
     },
     {
       company: "OMP",
@@ -184,7 +206,7 @@ export const experienciesMoked: Record<string, Experience[]> = {
           Frontend development of a meme creation platform with generative AI, autonomous distribution and monetization system, using ReactJS, Vite, Tailwind, Redux and Shadcn.\r\n
           Backend development using Python with FastAPI, Firestore and Google Cloud.`,
       startDate: new Date("01.01.2024"),
-      finalDate: undefined,
+      finalDate: new Date("06.11.2025"),
       stack: [
         "Python",
         "React.JS",
@@ -207,6 +229,33 @@ export const experienciesMoked: Record<string, Experience[]> = {
           description: "Cryptocurrency transaction platform.",
         },
       ],
+      contractType: 'PJ',
+      workmode:"Hibrido",
+    },
+    {
+      company: "QIntess",
+      role: "Desenvolvedor Front-end",
+      description: `
+          Involved in the development and evolution of the IDEA System (Data Intelligence, Statistics, and Action), a core corporate platform for the Public Prosecutor's Office of the State of Bahia. This unified citizen service system automates legal workflows and extrajudicial management procedures, integrating directly with the courts of justice.`,
+      startDate: new Date("03.06.2026"),
+      finalDate: undefined,
+      stack: [
+        "React.JS",
+        "Typescript",
+        "Styled Components",
+        "Material UI",
+        "Git",
+        "GitLab",
+      ],
+      projects: [
+        {
+          title: "Idea 2.0 - MPBA",
+          description:
+            "Plataforma de criação de memes com IA generativa, distribuição autônoma e sistema de monetização.",
+        },
+      ],
+      contractType: 'CLT',
+      workmode:"Remoto"
     },
   ],
   pt: [
@@ -219,6 +268,9 @@ export const experienciesMoked: Record<string, Experience[]> = {
       finalDate: new Date("01.01.2016"),
       stack: ["Delphi"],
       projects: [],
+      contractType: 'Estagio',
+      workmode:"Presencial",
+      city: 'Salvador'
     },
     {
       company: "Capgemini",
@@ -229,6 +281,9 @@ export const experienciesMoked: Record<string, Experience[]> = {
       finalDate: new Date("02.01.2019"),
       stack: ["COBOL", "Scrum", "Kanban", "Metodologias ágeis"],
       projects: [],
+      contractType: 'CLT',
+      workmode:"Presencial",
+      city: 'Salvador'
     },
     {
       company: "Click Interativo",
@@ -265,6 +320,9 @@ export const experienciesMoked: Record<string, Experience[]> = {
             "Shopping Bela Vista, Faculdade SantaCasa, AlphaOnfit, Labchecap, Academia Alpha, Academia Hammer, Mosello Lima",
         },
       ],
+      contractType: 'CLT',
+      workmode:"Presencial",
+      city: 'Salvador'
     },
     {
       company: "Supera Inovação",
@@ -305,6 +363,8 @@ export const experienciesMoked: Record<string, Experience[]> = {
           description: "GetJus, Sapcana, Daexe, Liver Web, Liver Mobile",
         },
       ],
+      contractType: 'CLT',
+      workmode:"Remoto"
     },
     {
       company: "W3block.io",
@@ -338,6 +398,8 @@ export const experienciesMoked: Record<string, Experience[]> = {
           description: "implementação de novas features",
         },
       ],
+      contractType: 'PJ',
+      workmode:"Remoto"
     },
     {
       company: "Hiperbanco",
@@ -370,6 +432,8 @@ export const experienciesMoked: Record<string, Experience[]> = {
           description: "Serviço de checkout.",
         },
       ],
+      contractType: 'PJ',
+      workmode:"Hibrido"
     },
     {
       company: "OMP",
@@ -378,7 +442,7 @@ export const experienciesMoked: Record<string, Experience[]> = {
           Desenvolvimento front-end plataforma de criação de memes com IA generativa, distribuição autônoma e sistema de monetização, utilizando ReactJS, Vite, Tailwind, Redux e Shadcn.\r\n
           Desenvolvimento back-end utilizando Python com FastAPI, Firestore e Google Cloud.`,
       startDate: new Date("01.01.2024"),
-      finalDate: undefined,
+      finalDate: new Date("06.11.2025"),
       stack: [
         "Python",
         "React.JS",
@@ -400,6 +464,33 @@ export const experienciesMoked: Record<string, Experience[]> = {
           description: "Plataforma de transação de crypto moedas.",
         },
       ],
+      contractType: 'PJ',
+      workmode:"Remoto"
+    },
+    {
+      company: "QIntess",
+      role: "Desenvolvedor Front-end",
+      description: `
+          Atuação no desenvolvimento e evolução do Sistema IDEA (Inteligência de Dados, Estatísticas e Atuação), a plataforma corporativa central do Ministério Público do Estado da Bahia. O sistema unifica o atendimento ao cidadão, automatiza fluxos jurídicos e gerencia procedimentos extrajudiciais, integrando-se diretamente com tribunais de justiça.`,
+      startDate: new Date("03.06.2026"),
+      finalDate: undefined,
+      stack: [
+        "React.JS",
+        "Typescript",
+        "Styled Components",
+        "Material UI",
+        "Git",
+        "GitLab",
+      ],
+      projects: [
+        {
+          title: "Idea 2.0 - MPBA",
+          description:
+            "Plataforma de criação de memes com IA generativa, distribuição autônoma e sistema de monetização.",
+        },
+      ],
+      contractType: 'CLT',
+      workmode:"Remoto"
     },
   ],
 };
