@@ -1,36 +1,22 @@
 import classNames from "classnames";
-import { differenceInYears } from "date-fns";
-import ProfileImage from "../../../../assets/profile.webp";
-import { Container } from "../../../../components/Container";
-import { ScrollIds } from "../../../../constant/ScrollIds";
+import { Link, useNavigate } from "react-router-dom";
+
 import { Experience } from "./Experience";
 import { Paragraph } from "./Paragraph";
-import { useState } from "react";
-import { experienciesMoked } from "../../../../data/experiencies";
-import { AboutFilter, FilterAboutType } from "./AboutFilter";
+import { AboutFilter } from "./AboutFilter";
+
+import { Container } from "../../../../components/Container";
+import { ScrollIds } from "../../../../constant/ScrollIds";
 import { AppRoutes } from "../../../../constant/AppRoutes";
-import { Link, useNavigate } from "react-router-dom";
+import { aboutMe, age, city } from "../../../../data/aboutMe";
+import { useExperiences } from "../../../../hooks/useExperiences";
+
+import ProfileImage from "../../../../assets/profile.webp";
 import { ReactComponent as ArrowRightIcon } from "../../../../assets/arrowRight.svg";
-import { aboutMe } from "../../../../data/aboutMe";
+
 
 export const About = () => {
-  const [filter, setFilter] = useState<FilterAboutType>("recente");
-  const [stack, setStack] = useState<string[]>([]);
-
-  const age = differenceInYears(new Date(), new Date("02/18/1993"));
-  const city = "Juazeiro do Norte - Ceará";
-
-  const experienciesFiltered = experienciesMoked.sort((a, b) => {
-    if (filter === "recente")
-      return b.startDate.getTime() - a.startDate.getTime();
-    if (filter === "antigo")
-      return a.startDate.getTime() - b.startDate.getTime();
-    return 0;
-  });
-
-  function handleFilterChange(filter: FilterAboutType) {
-    setFilter(filter);
-  }
+  const { experiencesFiltered, handleFilterChange, filter } = useExperiences()
 
   const navigate = useNavigate();
 
@@ -85,18 +71,24 @@ export const About = () => {
                 {aboutMe.paragraph2}
               </Paragraph>
 
-              <Link to={AppRoutes.ABOUT} className="text-primary text-sm -mt-4">
+              <Link to={AppRoutes.ABOUT} className="text-primary text-sm -mt-4" aria-label="Redireciona para pagina sobre mim.">
                 Leia mais...
               </Link>
             </div>
 
             <div className="flex justify-between gap-2">
-              <i className="text-dark-100/50 text-sm">Aqui começa minha jornada profissional:</i>
+              <i className="text-dark-100/50 text-sm">
+              {
+                filter === "antigo"
+                  ? "O início da minha jornada profissional:"
+                  : "O momento atual da minha jornada profissional:"
+              }
+              </i>
 
               <AboutFilter onFilterChange={handleFilterChange} />
             </div>
 
-            {experienciesFiltered.map((exp) => (
+            {experiencesFiltered.map((exp) => (
               <Experience key={exp.company} {...exp} />
             ))}
           </div>

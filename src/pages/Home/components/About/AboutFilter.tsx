@@ -1,17 +1,8 @@
-import classNames from "classnames";
 import { useEffect, useState } from "react";
 import {
-  FaCheck,
-  FaCheckSquare,
-  FaChevronDown,
-  FaFilter,
-  FaSquare,
+  FaFilter
 } from "react-icons/fa";
-import { experienciesMoked, stackMoked } from "./moked";
-
-const filterOptions = ["recente", "antigo"];
-
-export type FilterAboutType = (typeof filterOptions)[number];
+import { FilterAboutType, filterOptions } from "./types";
 
 interface AboutFilterProps {
   onFilterChange: (filter: FilterAboutType) => void;

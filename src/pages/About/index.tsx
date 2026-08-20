@@ -1,21 +1,13 @@
-import classNames from "classnames";
-import { differenceInYears } from "date-fns";
 import { useEffect, useState } from "react";
 import { FiCode, FiUsers } from "react-icons/fi";
 import { GiPathDistance } from "react-icons/gi";
-import { Link, scroller } from "react-scroll";
-import ProfileImage from "../../assets/profile.webp";
-import ProfileImage2 from "../../assets/profile2.jpg";
 import { Container } from "../../components/Container";
-import {
-  AboutFilter,
-  FilterAboutType,
-} from "../Home/components/About/AboutFilter";
-import { Experience } from "../Home/components/About/Experience";
-import { experienciesMoked } from "../Home/components/About/moked";
-import { Paragraph } from "../Home/components/About/Paragraph";
+import { aboutMe, age, city } from "../../data/aboutMe";
 import { softSkillsMoked } from "../../data/soft_skills";
-import { aboutMe } from "../../data/aboutMe";
+import { useExperiences } from "../../hooks/useExperiences";
+import { AboutFilter } from "../Home/components/About/AboutFilter";
+import { Experience } from "../Home/components/About/Experience";
+import { Paragraph } from "../Home/components/About/Paragraph";
 
 enum ScrollIds {
   ABOUT_ME = "about-me",
@@ -26,28 +18,11 @@ enum ScrollIds {
 }
 
 export const AboutPage = () => {
-  const [filter, setFilter] = useState<FilterAboutType>("recente");
   const [stack, setStack] = useState<string[]>([]);
-  const [currentSection, setCurrentSection] = useState<string>(
-    ScrollIds.ABOUT_ME
-  );
 
-  const age = differenceInYears(new Date(), new Date("02/18/1993"));
-  const city = "Juazeiro do Norte - Ceará";
+  const { experiencesFiltered, handleFilterChange } = useExperiences()
 
-  const experienciesFiltered = experienciesMoked.sort((a, b) => {
-    if (filter === "recente")
-      return b.startDate.getTime() - a.startDate.getTime();
-    if (filter === "antigo")
-      return a.startDate.getTime() - b.startDate.getTime();
-    return 0;
-  });
-
-  function handleFilterChange(filter: FilterAboutType) {
-    setFilter(filter);
-  }
-
-  const hardSkills = [...new Set(experienciesFiltered.map((exp) => exp.stack).flat())];
+  const hardSkills = [...new Set(experiencesFiltered.map((exp) => exp.stack).flat())];
 
   const softSkills = softSkillsMoked["pt"]
 
@@ -57,7 +32,7 @@ export const AboutPage = () => {
     }
   }, [hardSkills]);
 
-  function Title({
+  function RenderTitle({
     id,
     text,
     icon,
@@ -80,16 +55,14 @@ export const AboutPage = () => {
     <Container
       title="Um pouco da minha história"
       section="Sobre mim"
-      classes={{
-        container: "relative",
-      }}
+      classes={{ container: "relative",}}
     >
       <div className="flex flex-col gap-6 sm:gap-16 w-full overflow-hidden md:max-w-[calc(100vw-240px)] text-dark-100  overflow-x-visible pr-4 animate-fadeIn">
         <div className="flex flex-col gap-10 ">
           {/* Quem sou eu? */}
           <LeftSide>
             <div className="flex flex-col gap-10">
-              <Title
+              <RenderTitle
                 id={ScrollIds.ABOUT_ME}
                 text="Quem é Danilo Schleu?"
                 icon={<></>}
@@ -100,20 +73,19 @@ export const AboutPage = () => {
                   {aboutMe.paragraph1.replace("{age}", age.toString()).replace("{city}", city)}
                 </Paragraph>
                 
-
-                <Paragraph id={""}>
+                <Paragraph id={"p1"}>
                   {aboutMe.paragraph2}
                 </Paragraph>
 
-                <Paragraph id={""}>
+                <Paragraph id={"p2"}>
                   {aboutMe.paragraph3}
                 </Paragraph>
 
-                <Paragraph id={""}>
+                <Paragraph id={"p3"}>
                   {aboutMe.paragraph4}
                 </Paragraph>
 
-                <Paragraph id={""}>
+                <Paragraph id={"p4"}>
                   {aboutMe.paragraph5}
                 </Paragraph>
               </div>
@@ -123,7 +95,7 @@ export const AboutPage = () => {
           {/* Habilidades técnicas */}
           <LeftSide>
             <div className="flex flex-col gap-6 max-w-[600px]">
-              <Title
+              <RenderTitle
                 id={ScrollIds.MY_HARD_SKILLS}
                 text="Habilidades técnicas"
                 icon={<FiCode />}
@@ -145,7 +117,7 @@ export const AboutPage = () => {
           {/* Habilidades interpessoais */}
           <LeftSide>
             <div className="flex flex-col gap-6 max-w-[600px]">
-              <Title
+              <RenderTitle
                 id={ScrollIds.MY_SOFT_SKILLS}
                 text="Habilidades interpessoais"
                 icon={<FiUsers />}
@@ -178,7 +150,7 @@ export const AboutPage = () => {
           <LeftSide>
             <div className="flex flex-col gap-6">
               <div className="flex justify-between gap-2">
-                <Title
+                <RenderTitle
                   id={ScrollIds.MY_JOURNEY}
                   text="Minha jornada"
                   icon={<GiPathDistance />}
@@ -187,7 +159,7 @@ export const AboutPage = () => {
                 <AboutFilter onFilterChange={handleFilterChange} />
               </div>
 
-              {experienciesFiltered.map((exp) => (
+              {experiencesFiltered.map((exp) => (
                 <Experience key={exp.company} {...exp} variant="full" />
               ))}
             </div>
@@ -196,9 +168,7 @@ export const AboutPage = () => {
 
         <p className="font-normal text-base sm:text-xl leading-8 text-dark-100/50">
           "Os limites só existem se você os deixar existir." - Son Goku
-        </p>
-
-        
+        </p>        
       </div>
     </Container>
   );

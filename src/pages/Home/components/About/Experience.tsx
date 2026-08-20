@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import ptBr from "date-fns/locale/pt-BR";
 import { useState } from "react";
 import { Paragraph } from "./Paragraph";
-import { Experience as ExperienceType } from "../../../../data/experiencies";
+import { Experience as ExperienceType } from "../../../../data/types";
 import { Project } from "./Project";
 
 interface iExperience extends ExperienceType{
@@ -29,6 +29,8 @@ export const Experience = ({
 
   const isFull = variant === 'full'
 
+  const defaultLanguage = 'pt'
+
   return (
     <Paragraph  isActive={showMore} id={`${company}-${role}`}>
       <div className="flex items-center justify-between gap-10">
@@ -36,7 +38,7 @@ export const Experience = ({
           className={`text-xl font-bold ${haveProjects ? "cursor-pointer" : ""}`}
           onClick={() => setShowMore((e) => !e)}
         >
-          {role}
+          {role[defaultLanguage]}
         </h1>
         <span className="text-dark-100 font-semibold text-base">@{company}</span>
       </div>
@@ -48,11 +50,11 @@ export const Experience = ({
             : "Atual"}
         </p>
 
-        <span className="text-dark-100 font-semibold text-base">{contractType} - {workmode}{city ?? ` - ${city}`}</span>
+        <span className="text-dark-100 font-semibold text-base">{contractType} - {workmode}{city && ` - ${city}`}</span>
       </div>
 
         {isFull && (
-          <p className="py-4 text-dark-100 font-light text-xs">{description}</p>
+          <p className="py-4 text-dark-100 font-light text-xs">{description[defaultLanguage]}</p>
         )}
 
       {projects.length && isFull ? (
@@ -66,9 +68,9 @@ export const Experience = ({
         >
           {projects.map((e) => (
             <Project
-              key={e.title}
-              title={e.title}
-              description={e.description}
+              key={e.title[defaultLanguage]}
+              title={e.title[defaultLanguage]}
+              description={e.description[defaultLanguage]}
             />
           ))}
         </div>
@@ -78,7 +80,7 @@ export const Experience = ({
 
       <div className="flex flex-wrap items-center justify-start gap-2 pt-4">
         {stack.map((e) => (
-          <div className="text-dark-200/70 text-xs capitalize">
+          <div key={e} className="text-dark-200/70 text-xs capitalize">
             #{e}
           </div>
         ))}

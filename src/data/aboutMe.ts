@@ -1,3 +1,8 @@
+import { differenceInYears } from "date-fns";
+
+export const age = differenceInYears(new Date(), new Date("02/18/1993"));
+export const city = "Fortaleza - Ceará";
+
 export const aboutMe = {
     paragraph1:`Desenvolvedor Full Stack, tecnólogo em Análise e Desenvolvimento
     de Sistemas pela Cesumar. Solteiro, {age} anos, residente em {city}. Apaixonado por esportes, estou sempre buscando
@@ -19,7 +24,7 @@ export const aboutMe = {
     só o faço quando percebo que já esgotei minhas tentativas. Ainda
     assim, não tenho problema algum em assumir responsabilidades ou
     reconhecer meus erros.`,
-    paragraph5: `Sou adepto de uma cultura de feedback constante — gosto de ouvir
+    paragraph5: `Sou adepto de uma cultura de feedback constante, gosto de ouvir
     críticas construtivas e também me disponho sempre a dar
     feedbacks com empatia e clareza. Acredito que o crescimento
     profissional vem da troca, da escuta e do esforço contínuo em
