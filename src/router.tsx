@@ -9,7 +9,6 @@ import { ProjectsDetail } from "./pages/ProjectsDetail";
 import { TelegramPage } from "./pages/Telegram";
 import TodoPage from "./pages/Todo";
 
-import Estudo from "./pages/Estudo";
 import { FitPage } from './pages/Fit';
 
 
@@ -25,7 +24,6 @@ export const Router = () => {
         <Route path={AppRoutes.ABOUT} element={<AboutPage />} />
         <Route path={AppRoutes.FIT} element={<FitPage />} />
         <Route path={AppRoutes.TODO} element={<TodoPage />} />
-        <Route path={'/estudos'} element={<Estudo/>} />
       </Route>
     </Routes>
   );
